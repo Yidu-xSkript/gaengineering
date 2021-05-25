@@ -10,7 +10,7 @@ class About extends Model
     use HasFactory;
     protected $fillable = ['thumbnail', 'video_url', 'about_title', 'about_content'];
 
-    public function UpdateAbout($thumbnail, $videoURL, $aboutTitle, $aboutContent, $id)
+    public function UpdateAbout($thumbnail, $videoURL, $aboutTitle, $aboutContent)
     {
         $about = $this::first();
         $about->thumbnail = $thumbnail;

@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Request;
 
 trait CloudinaryTrait
 {
-    public function UploadImage(Request $request, String $name) {
-        return Cloudinary::upload($request->file($name)->getRealPath())->getSecurePath();
+    public function UploadImage(String $request) {
+        return Cloudinary::upload($request)->getSecurePath();
     }
 }
