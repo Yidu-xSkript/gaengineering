@@ -20,6 +20,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role'
     ];
 
     /**
@@ -40,4 +41,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function CreateUser($name, $email, $password)
+    {
+        $this::create([
+            'name' => $name,
+            'email' => $email,
+            'password' => bcrypt($password),
+            'role' => "content_manager"
+        ]);
+    }
 }
