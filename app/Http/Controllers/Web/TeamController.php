@@ -10,23 +10,23 @@ use App\Traits\CloudinaryTrait;
 class TeamController extends Controller
 {
     use CloudinaryTrait;
-    private $teamModel;
+    private $m_team;
 
     public function __construct()
     {
         $this->middleware(['auth', 'admin', 'manager'])->except(['index']);
-        $this->teamModel = new Team();
+        $this->m_team = new Team();
     }
 
     public function index()
     {
-        $team = $this->teamModel->GetTeam();
+        $team = $this->m_team->GetTeam();
         return View('', compact(['team']));
     }
 
     public function adminIndex()
     {
-        $team = $this->teamModel->GetTeam();
+        $team = $this->m_team->GetTeam();
         return View('', compact(['team']));
     }
 
@@ -45,7 +45,7 @@ class TeamController extends Controller
         $this->validate__($request);
         $imageURL = !is_null($request->image_url) ?
             $this->UploadImage($request->file('image_url')->getRealPath()) : null;
-        $this->teamModel->CreateTeam($request->name, $request->position, $request->twitter, $request->facebook, $request->instagram, $request->linked_in, $request->slug, $imageURL);
+        $this->m_team->CreateTeam($request->name, $request->position, $request->twitter, $request->facebook, $request->instagram, $request->linked_in, $request->slug, $imageURL);
         return back()->with('success', 'Team member is successfully added!');
     }
 
@@ -54,13 +54,13 @@ class TeamController extends Controller
         $this->validate__($request);
         $imageURL = !is_null($request->image_url) ?
             $this->UploadImage($request->file('image_url')->getRealPath()) : null;
-        $this->teamModel->UpdateTeam($id, $request->name, $request->position, $request->twitter, $request->facebook, $request->instagram, $request->linked_in, $request->slug, $imageURL);
+        $this->m_team->UpdateTeam($id, $request->name, $request->position, $request->twitter, $request->facebook, $request->instagram, $request->linked_in, $request->slug, $imageURL);
         return back()->with('success', 'Team member is successfully updated!');
     }
 
     public function destroy($id)
     {
-        $this->teamModel->DestroyTeam($id);
+        $this->m_team->DestroyTeam($id);
         return back()->with('success', 'Team member is removed!');
     }
 }

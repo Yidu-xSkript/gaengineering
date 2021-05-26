@@ -12,27 +12,27 @@ use App\Traits\CloudinaryTrait;
 class AboutController extends Controller
 {
     use CloudinaryTrait;
-    private $aboutModel, $settingModel, $workProcessModel;
+    private $m_about, $m_setting, $m_workProcess;
 
     public function __construct()
     {
         $this->middleware(['admin', 'auth'])->except(['index']);
-        $this->aboutModel = new About();
-        $this->settingModel = new Setting();
-        $this->workProcessModel = new WorkProcess();
+        $this->m_about = new About();
+        $this->m_setting = new Setting();
+        $this->m_workProcess = new WorkProcess();
     }
 
     public function adminIndex()
     {
-        $about = $this->aboutModel->GetAbout();
+        $about = $this->m_about->GetAbout();
         return View('', compact(['about']));
     }
 
     public function index()
     {
-        $setting = $this->settingModel->RetrieveSetting();
-        $about = $this->aboutModel->GetAbout();
-        $workProcess = $this->workProcessModel->GetWorkProcess();
+        $setting = $this->m_setting->RetrieveSetting();
+        $about = $this->m_about->GetAbout();
+        $workProcess = $this->m_workProcess->GetWorkProcess();
         return View('', compact(['setting', 'about', 'workProcess']));
     }
 
@@ -46,7 +46,7 @@ class AboutController extends Controller
         ]);
         !is_null($request->thumbnail) ?
             $thumbnailURL = $this->UploadImage($request->file('thumbnail')->getRealPath()) : $thumbnailURL = null;
-        $this->aboutModel->UpdateAbout($thumbnailURL, $request->videoURL, $request->title, $request->content);
+        $this->m_about->UpdateAbout($thumbnailURL, $request->videoURL, $request->title, $request->content);
         return back()->with('success', 'About successfully created!');
     }
 }
