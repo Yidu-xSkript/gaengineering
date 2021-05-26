@@ -10,7 +10,7 @@ class Header extends Model
     use HasFactory;
     protected $fillable = ['title', 'slug', 'image_url'];
 
-    public function UpdateHeader($title, $slug, $image_url)
+    public function UpdateHeader(String $title, String $slug, String $image_url)
     {
         $header = $this::first();
         $header->title = $title;

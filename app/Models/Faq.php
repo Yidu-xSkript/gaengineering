@@ -10,7 +10,7 @@ class Faq extends Model
     use HasFactory;
     protected $fillable = ['question', 'answer'];
 
-    public function CreateFAQ($question, $answer)
+    public function CreateFAQ(String $question, String $answer)
     {
         $this::create([
             'question' => $question,
@@ -18,7 +18,7 @@ class Faq extends Model
         ]);
     }
 
-    public function updateFAQ($question, $answer, $id)
+    public function updateFAQ(String $question, String $answer, Int $id)
     {
         $FAQ = $this::find($id);
         $FAQ->question = $question;
@@ -26,7 +26,7 @@ class Faq extends Model
         $FAQ->save();
     }
 
-    public function destroyFAQ($id)
+    public function destroyFAQ(Int $id)
     {
         $this::find($id)->delete();
     }
