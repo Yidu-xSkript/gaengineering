@@ -10,12 +10,12 @@ class Subscription extends Model
     use HasFactory;
     protected $fillable = ['email'];
 
-    public function CreateSubscription($email)
+    public function CreateSubscription(String $email)
     {
         $this::create(['email' => $email]);
     }
 
-    public function UpdateSubscription($email, $id)
+    public function UpdateSubscription(String $email, Int $id)
     {
         $sub = $this::find($id);
         $sub->email = $email;

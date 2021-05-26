@@ -13,7 +13,7 @@ class About extends Model
     public function UpdateAbout($thumbnail, $videoURL, $aboutTitle, $aboutContent)
     {
         $about = $this::first();
-        $about->thumbnail = $thumbnail;
+        if (!is_null($thumbnail)) $about->thumbnail = $thumbnail;
         $about->video_url = $videoURL;
         $about->about_title = $aboutTitle;
         $about->about_content = $aboutContent;

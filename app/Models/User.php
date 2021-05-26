@@ -42,7 +42,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function CreateUser($name, $email, $password)
+    public function CreateUser(String $name, String $email, String $password)
     {
         $this::create([
             'name' => $name,

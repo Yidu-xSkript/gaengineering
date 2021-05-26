@@ -44,8 +44,8 @@ class AboutController extends Controller
             'title' => 'required',
             'content' => 'required'
         ]);
-
-        $thumbnailURL = $this->UploadImage($request->file('thumbnail')->getRealPath());
+        !is_null($request->thumbnail) ?
+            $thumbnailURL = $this->UploadImage($request->file('thumbnail')->getRealPath()) : $thumbnailURL = null;
         $this->aboutModel->UpdateAbout($thumbnailURL, $request->videoURL, $request->title, $request->content);
         return back()->with('success', 'About successfully created!');
     }

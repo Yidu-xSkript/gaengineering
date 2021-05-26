@@ -20,7 +20,7 @@ class Team extends Model
             'instagram' => $instagram,
             'linked_in' => $linked_in,
             'slug' => $slug,
-            'image_url' => $image_url
+            'image_url' => !is_null($image_url) ? $image_url : null
         ]);
     }
 
@@ -34,7 +34,7 @@ class Team extends Model
         $team->instagram = $instagram;
         $team->linked_in = $linked_in;
         $team->slug = $slug;
-        $team->image_url = $image_url;
+        if (!is_null($image_url)) $team->image_url = $image_url;
         $team->save();
     }
 

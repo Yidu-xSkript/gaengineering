@@ -14,18 +14,20 @@ class WCUController extends Controller
 
     public function __construct()
     {
-        // $this->middleware();
+        $this->middleware(['auth', 'admin'])->except(['index']);
         $this->wcuModel = new WhyChooseUs();
     }
 
     public function index()
     {
-        return View();
+        $wcu = $this->wcuModel->GetWCU();
+        return View('', compact(['wcu']));
     }
 
     public function adminIndex()
     {
-        return View();
+        $wcu = $this->wcuModel->GetWCU();
+        return View('', compact(['wcu']));
     }
 
     public function validate__(Request $request)
@@ -40,8 +42,8 @@ class WCUController extends Controller
     public function create(Request $request)
     {
         $this->validate__($request);
-        if (!is_null($request->imageURL))
-            $imageURL__ = $this->UploadImage($request->file('imageURL')->getRealPath());
+        $imageURL__ = !is_null($request->imageURL) ?
+            $this->UploadImage($request->file('imageURL')->getRealPath()) : null;
         $this->wcuModel->CreateWCU($request->title, $imageURL__, $request->slug);
         return back()->with('success', 'WCU is successfully created!');
     }
@@ -49,8 +51,8 @@ class WCUController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate__($request);
-        if (!is_null($request->imageURL))
-            $imageURL__ = $this->UploadImage($request->file('imageURL')->getRealPath());
+        $imageURL__ = !is_null($request->imageURL) ?
+            $this->UploadImage($request->file('imageURL')->getRealPath()) : null;
         $this->wcuModel->UpdateWCU($id, $request->title, $imageURL__, $request->slug);
         return back()->with('success', 'WCU is successfully updated!');
     }

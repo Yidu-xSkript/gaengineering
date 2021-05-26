@@ -10,7 +10,7 @@ class NewsLetter extends Model
     use HasFactory;
     protected $fillable = ['title', 'slug'];
 
-    public function CreateNewsLetter($title, $slug)
+    public function CreateNewsLetter(String $title, String $slug)
     {
         $this::create([
             'title' => $title,
@@ -18,7 +18,7 @@ class NewsLetter extends Model
         ]);
     }
 
-    public function UpdateNewsLetter($id, $title, $slug)
+    public function UpdateNewsLetter(Int $id, String $title, String $slug)
     {
         $newsLetter = $this::find($id);
         $newsLetter->title = $title;
@@ -26,12 +26,12 @@ class NewsLetter extends Model
         $newsLetter->save();
     }
 
-    public function DestroyNewsLetter($id)
+    public function DestroyNewsLetter(Int $id)
     {
         $this::find($id)->delete();
     }
 
-    public function SendMassEmails($newsLetterID)
+    public function SendMassEmails(Int $newsLetterID)
     {
         $newsLetter = $this::find($newsLetterID);
         $_subscribers = Subscription::all();
@@ -43,7 +43,7 @@ class NewsLetter extends Model
         }
     }
 
-    public function SendEmailToSelectedMembers(Subscription $subscribers, $newsLetterID)
+    public function SendEmailToSelectedMembers(Subscription $subscribers, Int $newsLetterID)
     {
         $newsLetter = $this::find($newsLetterID);
         for ($i = 0; $i < count($subscribers); $i++) {

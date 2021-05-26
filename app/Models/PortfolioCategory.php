@@ -15,19 +15,19 @@ class PortfolioCategory extends Model
         return $this->belongsTo(Portfolio::class);
     }
 
-    public function CreatePC($name)
+    public function CreatePC(String $name)
     {
         $this::create(['name' => $name]);
     }
 
-    public function UpdatePC($name, $id)
+    public function UpdatePC(String $name, Int $id)
     {
         $pc = $this::find($id);
         $pc->name = $name;
         $pc->save();
     }
 
-    public function DestroyPC($id)
+    public function DestroyPC(Int $id)
     {
         $this::find($id)->delete();
     }

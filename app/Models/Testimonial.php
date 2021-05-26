@@ -10,7 +10,7 @@ class Testimonial extends Model
     use HasFactory;
     protected $fillable = ['image_url', 'name', 'job_title', 'company_name', 'testimony'];
 
-    public function CreateTestimony($image_url, $name, $job_title, $company_name, $testimony)
+    public function CreateTestimony(String $image_url, String $name, String $job_title, String $company_name, String $testimony)
     {
         $this::create([
             'name' => $name,
@@ -21,7 +21,7 @@ class Testimonial extends Model
         ]);
     }
 
-    public function UpdateTestimony($id, $image_url, $name, $job_title, $company_name, $testimony)
+    public function UpdateTestimony(Int $id, String $image_url, String $name, String $job_title, String $company_name, String $testimony)
     {
         $testimony__ = $this::find($id);
         $testimony__->image_url = $image_url;

@@ -15,7 +15,7 @@ class PortfolioImage extends Model
         return $this->belongsTo(Portfolio::class);
     }
 
-    public function CreatePortfolioImage($image_url, $portfolio_id)
+    public function CreatePortfolioImage(String $image_url, Int $portfolio_id)
     {
         $this::create([
             'image_url' => $image_url,
@@ -23,7 +23,7 @@ class PortfolioImage extends Model
         ]);
     }
 
-    public function UpdatePortfolioImage($image_url, $portfolio_id, $id)
+    public function UpdatePortfolioImage(String $image_url, Int $portfolio_id, Int $id)
     {
         $PI = $this::find($id);
         $PI->image_url = $image_url;
@@ -31,7 +31,7 @@ class PortfolioImage extends Model
         $PI->save();
     }
 
-    public function DestroyPI($id)
+    public function DestroyPI(Int $id)
     {
         $this::find($id)->delete();
     }

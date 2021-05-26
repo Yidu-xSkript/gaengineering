@@ -20,7 +20,7 @@ class Portfolio extends Model
         return $this->hasOne(PortfolioCategory::class, 'id', 'portfolio_category_id');
     }
 
-    public function CreatePortfolio($title, $image_url, $portfolio_category_id, $project_date, $slug, $portfolio_url)
+    public function CreatePortfolio(String $title, String $image_url, Int $portfolio_category_id, $project_date, String $slug, String $portfolio_url)
     {
         $this::create([
             'title' => $title,
@@ -32,7 +32,7 @@ class Portfolio extends Model
         ]);
     }
 
-    public function UpdatePortfolio($title, $image_url, $portfolio_category_id, $project_date, $slug, $portfolio_url, $id) {
+    public function UpdatePortfolio(String $title, String $image_url, Int $portfolio_category_id, $project_date, String $slug, String $portfolio_url, Int $id) {
         $portfolio = $this::find($id);
         $portfolio->title = $title;
         $portfolio->image_url = $image_url;

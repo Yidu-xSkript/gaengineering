@@ -43,7 +43,8 @@ class TeamController extends Controller
     public function create(Request $request)
     {
         $this->validate__($request);
-        $imageURL = $this->UploadImage($request->file('image_url')->getRealPath());
+        $imageURL = !is_null($request->image_url) ?
+            $this->UploadImage($request->file('image_url')->getRealPath()) : null;
         $this->teamModel->CreateTeam($request->name, $request->position, $request->twitter, $request->facebook, $request->instagram, $request->linked_in, $request->slug, $imageURL);
         return back()->with('success', 'Team member is successfully added!');
     }
@@ -51,7 +52,8 @@ class TeamController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate__($request);
-        $imageURL = $this->UploadImage($request->file('image_url')->getRealPath());
+        $imageURL = !is_null($request->image_url) ?
+            $this->UploadImage($request->file('image_url')->getRealPath()) : null;
         $this->teamModel->UpdateTeam($id, $request->name, $request->position, $request->twitter, $request->facebook, $request->instagram, $request->linked_in, $request->slug, $imageURL);
         return back()->with('success', 'Team member is successfully updated!');
     }

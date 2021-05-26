@@ -10,7 +10,7 @@ class Video extends Model
     use HasFactory;
     protected $fillable = ['thumbnail', 'video_url'];
 
-    public function AddVideo($thumbnail, $video_url)
+    public function AddVideo(String $thumbnail, String $video_url)
     {
         $this::create([
             'thumbnail' => $thumbnail,
@@ -18,7 +18,7 @@ class Video extends Model
         ]);
     }
 
-    public function UpdateVideo($thumbnail, $video_url, $id)
+    public function UpdateVideo(String $thumbnail, String $video_url, Int $id)
     {
         $__ = $this::find($id);
         $__->thumbnail = $thumbnail;

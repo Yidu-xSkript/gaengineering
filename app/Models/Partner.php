@@ -11,7 +11,7 @@ class Partner extends Model
 
     protected $fillable = ['image_url', 'company_name', 'slug'];
 
-    public function CreatePartner($imageURL, $company_name, $slug)
+    public function CreatePartner(String $imageURL, String $company_name, String $slug)
     {
         $this::create([
             'image_url' => $imageURL,
@@ -20,7 +20,7 @@ class Partner extends Model
         ]);
     }
 
-    public function UpdatePartner($id, $imageURL, $company_name, $slug)
+    public function UpdatePartner(Int $id, String $imageURL, String $company_name, String $slug)
     {
         $partner = $this::find($id);
         $partner->image_url = $imageURL;
@@ -29,7 +29,7 @@ class Partner extends Model
         $partner->save();
     }
 
-    public function DestroyPartner($id)
+    public function DestroyPartner(Int $id)
     {
         $this::find($id)->delete();
     }

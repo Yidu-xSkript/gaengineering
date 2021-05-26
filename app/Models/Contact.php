@@ -10,7 +10,7 @@ class Contact extends Model
     use HasFactory;
     protected $fillable = ['name', 'email', 'subject', 'message'];
 
-    public function ContactGA($name, $email, $subject, $message)
+    public function ContactGA(String $name, String $email, String $subject, String $message)
     {
         $this::create([
             'name' => $name,
