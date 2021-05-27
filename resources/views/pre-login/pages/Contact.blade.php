@@ -1,8 +1,8 @@
 @extends('pre-login.index.header')
 @section('content')
+    @include('partials.error2')
+    @include('partials.success2')
     <main id="main">
-
-        <!-- ======= Breadcrumbs ======= -->
         <section id="breadcrumbs" class="breadcrumbs">
             <div class="breadcrumb-hero">
                 <div class="container">
