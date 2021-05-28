@@ -21,7 +21,7 @@ class Video extends Model
     public function UpdateVideo(String $thumbnail, String $video_url, Int $id)
     {
         $__ = $this::find($id);
-        $__->thumbnail = $thumbnail;
+        if (!is_null($thumbnail)) $__->thumbnail = $thumbnail;
         $__->video_url = $video_url;
         $__->save();
     }

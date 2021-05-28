@@ -25,7 +25,7 @@ class WorkProcess extends Model
     {
         $WorkProcess = $this::find($id);
         $WorkProcess->title = $title;
-        $WorkProcess->image_url = $imageURL;
+        if (!is_null($imageURL)) $WorkProcess->image_url = $imageURL;
         $WorkProcess->slug = $slug;
         $WorkProcess->image_position = $image_position;
         $WorkProcess->save();

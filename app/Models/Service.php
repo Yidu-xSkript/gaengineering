@@ -23,7 +23,7 @@ class Service extends Model
     {
         $Service = $this::find($id);
         $Service->title = $title;
-        $Service->image_url = $imageURL;
+        if (!is_null($imageURL)) $Service->image_url = $imageURL;
         $Service->slug = $slug;
         $Service->save();
     }

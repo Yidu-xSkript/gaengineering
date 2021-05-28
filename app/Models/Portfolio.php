@@ -35,7 +35,7 @@ class Portfolio extends Model
     public function UpdatePortfolio(String $title, String $image_url, Int $portfolio_category_id, $project_date, String $slug, String $portfolio_url, Int $id) {
         $portfolio = $this::find($id);
         $portfolio->title = $title;
-        $portfolio->image_url = $image_url;
+        if (!is_null($image_url)) $portfolio->image_url = $image_url;
         $portfolio->portfolio_category_id = $portfolio_category_id;
         $portfolio->project_date = $project_date;
         $portfolio->slug = $slug;

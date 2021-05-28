@@ -24,7 +24,7 @@ class Testimonial extends Model
     public function UpdateTestimony(Int $id, String $image_url, String $name, String $job_title, String $company_name, String $testimony)
     {
         $testimony__ = $this::find($id);
-        $testimony__->image_url = $image_url;
+        if (!is_null($image_url)) $testimony__->image_url = $image_url;
         $testimony__->name = $name;
         $testimony__->job_title = $job_title;
         $testimony__->company_name = $company_name;

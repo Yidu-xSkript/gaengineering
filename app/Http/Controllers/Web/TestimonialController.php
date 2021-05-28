@@ -41,8 +41,7 @@ class TestimonialController extends Controller
     public function create(Request $request)
     {
         $this->validate__($request);
-        $image_url = !is_null($request->image_url) ?
-            $this->UploadImage($request->file('image_url')->getRealPath()) : null;
+        $image_url = $this->UploadImage($request->file('image_url')->getRealPath());
         $this->m_testimony->CreateTestimony($image_url, $request->name, $request->job_title, $request->company_name, $request->testimony);
         return back()->with('success', 'Testimony is successfully created!');
     }

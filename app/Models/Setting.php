@@ -9,6 +9,7 @@ class Setting extends Model
 {
     use HasFactory;
     // Change logo and favicon | use local storage.
+    // Change Skill image | use local storage.
 
     protected $fillable = ['about', 'happy_client', 'project', 'years_of_experience', 'awards', 'phone_number', 'location', 'map_location', 'email', 'phone_number_2', 'twitter', 'facebook', 'instagram', 'skype', 'linked_in'];
 
