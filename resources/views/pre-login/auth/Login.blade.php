@@ -22,7 +22,8 @@
             <div class="container">
                 <div class="row mt-5">
                     <div class="col-lg-12 mt-5 mt-lg-0" data-aos="fade-left">
-                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                        <form action="{{ route('login') }}" method="POST" role="form" class="php-email-form">
+                            @csrf
                             <div class="form-group">
                                 <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
                                     data-rule="email" data-msg="Please enter a valid email" />
