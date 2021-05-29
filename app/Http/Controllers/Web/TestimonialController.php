@@ -20,7 +20,7 @@ class TestimonialController extends Controller
 
     public function index()
     {
-        return View();
+        return View('pre-login.pages.Testimonials');
     }
 
     public function adminIndex()

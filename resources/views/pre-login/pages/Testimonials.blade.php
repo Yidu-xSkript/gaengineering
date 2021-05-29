@@ -19,7 +19,7 @@
             </div>
             <div class="container">
                 <ol>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Testimonials</li>
                 </ol>
             </div>
@@ -31,7 +31,7 @@
                     <div class="col-md-4 testimonial-three-col">
                         <div class="testimonial-inner">
                             <div class="testimonial-image" itemprop="image">
-                                <img width="180" height="180" src="assets/img/testimonials/testimonials-4.jpg">
+                                <img width="180" height="180" src="pre/img/testimonials/testimonials-4.jpg">
                             </div>
                             <div class="testimonial-content">
                                 <p>
@@ -51,7 +51,7 @@
                     <div class="col-md-4 testimonial-three-col">
                         <div class="testimonial-inner">
                             <div class="testimonial-image" itemprop="image">
-                                <img width="180" height="180" src="assets/img/testimonials/testimonials-5.jpg">
+                                <img width="180" height="180" src="pre/img/testimonials/testimonials-5.jpg">
                             </div>
 
                             <div class="testimonial-content">
@@ -72,7 +72,7 @@
                     <div class="col-md-4 testimonial-three-col">
                         <div class="testimonial-inner">
                             <div class="testimonial-image" itemprop="image">
-                                <img width="180" height="180" src="assets/img/testimonials/testimonials-1.jpg">
+                                <img width="180" height="180" src="pre/img/testimonials/testimonials-1.jpg">
                             </div>
                             <div class="testimonial-content">
                                 <p>
@@ -92,7 +92,7 @@
                     <div class="col-md-4 testimonial-three-col">
                         <div class="testimonial-inner">
                             <div class="testimonial-image" itemprop="image">
-                                <img width="180" height="180" src="assets/img/testimonials/testimonials-2.jpg">
+                                <img width="180" height="180" src="pre/img/testimonials/testimonials-2.jpg">
                             </div>
 
                             <div class="testimonial-content">
@@ -113,7 +113,7 @@
                     <div class="col-md-4 testimonial-three-col">
                         <div class="testimonial-inner">
                             <div class="testimonial-image" itemprop="image">
-                                <img width="180" height="180" src="assets/img/testimonials/testimonials-3.jpg">
+                                <img width="180" height="180" src="pre/img/testimonials/testimonials-3.jpg">
                             </div>
                             <div class="testimonial-content">
                                 <p>
@@ -133,7 +133,7 @@
                     <div class="col-md-4 testimonial-three-col">
                         <div class="testimonial-inner">
                             <div class="testimonial-image" itemprop="image">
-                                <img width="180" height="180" src="assets/img/testimonials/testimonials-4.jpg">
+                                <img width="180" height="180" src="pre/img/testimonials/testimonials-4.jpg">
                             </div>
 
                             <div class="testimonial-content">

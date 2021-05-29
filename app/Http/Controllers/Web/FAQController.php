@@ -16,7 +16,7 @@ class FAQController extends Controller
 
     public function index()
     {
-        return View();
+        return View('pre-login.pages.FAQs');
     }
 
     public function adminIndex()

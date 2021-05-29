@@ -13,13 +13,12 @@
                 <div class="container">
                     <div class="breadcrumb-hero">
                         <h2>Portfolio Details</h2>
-                        <p>Project....</p>
                     </div>
                 </div>
             </div>
             <div class="container">
                 <ol>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Portfolio Details</li>
                 </ol>
             </div>
@@ -31,9 +30,9 @@
                 <div class="portfolio-details-container">
 
                     <div class="owl-carousel portfolio-details-carousel">
-                        <img src="assets/img/portfolio/news-4.jpg" class="img-fluid" alt="">
-                        <img src="assets/img/portfolio/news-2.jpg" class="img-fluid" alt="">
-                        <img src="assets/img/portfolio/news-4.jpg" class="img-fluid" alt="">
+                        <img src="/pre/img/portfolio/news-4.jpg" class="img-fluid" alt="">
+                        <img src="/pre/img/portfolio/news-2.jpg" class="img-fluid" alt="">
+                        <img src="/pre/img/portfolio/news-4.jpg" class="img-fluid" alt="">
                     </div>
 
                     <div class="portfolio-info">

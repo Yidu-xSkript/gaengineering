@@ -3,7 +3,6 @@
     <div class="footer-top">
         <div class="container">
             <div class="row">
-
                 <div class="col-lg-3 col-md-6 footer-info">
                     <h3>GA Engineering</h3>
                     <p>Gezahegn Ayalew General Trading is a private company established in 2010 We specialize in

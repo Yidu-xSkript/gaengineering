@@ -6,7 +6,7 @@
 
 @section('content')
     <!-- ======= Hero Section ======= -->
-    <section id="hero">
+  <section id="hero" style="background: url(pre/img/bg.jpg) top center; background-size: cover;">
         <div class="hero-container" data-aos="fade-up">
             <h1>Welcome to GA <br>Engineering</h1>
             <h2>We are a team of engineering professionals.</h2>
@@ -63,7 +63,7 @@
                 <div class="row">
 
                     <div class="col-lg-6 video-box align-self-baseline">
-                        <img src="assets/img/about.jpg" class="img-fluid" alt="">
+                        <img src="pre/img/about.jpg" class="img-fluid" alt="">
                         <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4"
                             data-vbtype="video" data-autoplay="true"></a>
                     </div>
@@ -191,13 +191,13 @@
                 </div>
 
                 <div class="owl-carousel clients-carousel" data-aos="fade-up">
-                    <a href="https://www.baltoncp.com/" target="_blank"><img src="assets/img/clients/balton.PNG"></a>
-                    <a href="http://bstrading.biz" target="_blank"><img src="assets/img/clients/bs-trading.jpg"></a>
-                    <a href="http://www.etonepower.com/" target="_blank"><img src="assets/img/clients/etone.png"></a>
-                    <a href="https://www.huawei.com/en/" target="_blank"><img src="assets/img/clients/huawei_logo.webp"></a>
+                    <a href="https://www.baltoncp.com/" target="_blank"><img src="pre/img/clients/balton.PNG"></a>
+                    <a href="http://bstrading.biz" target="_blank"><img src="pre/img/clients/bs-trading.jpg"></a>
+                    <a href="http://www.etonepower.com/" target="_blank"><img src="pre/img/clients/etone.png"></a>
+                    <a href="https://www.huawei.com/en/" target="_blank"><img src="pre/img/clients/huawei_logo.webp"></a>
                     <a href="https://www.isinaydinlatma.com.tr/en/" target="_blank"><img
-                            src="assets/img/clients/isin.png"></a>
-                    <a href="http://en.kano-cn.com/" target="_blank"><img src="assets/img/clients/kano.png"></a>
+                            src="pre/img/clients/isin.png"></a>
+                    <a href="http://en.kano-cn.com/" target="_blank"><img src="pre/img/clients/kano.png"></a>
                 </div>
 
             </div>

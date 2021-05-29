@@ -19,7 +19,7 @@
             </div>
             <div class="container">
                 <ol>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>News</li>
                 </ol>
             </div>
@@ -35,20 +35,20 @@
                         <article class="entry">
 
                             <div class="entry-img">
-                                <img src="assets/img/news/news-1.jpg" alt="" class="img-fluid">
+                                <img src="pre/img/news/news-1.jpg" alt="" class="img-fluid">
                             </div>
 
                             <h2 class="entry-title">
-                                <a href="news-single.html">Dolorum optio tempore voluptas dignissimos cumque fuga qui
+                                <a href="/news/detail">Dolorum optio tempore voluptas dignissimos cumque fuga qui
                                     quibusdam quia</a>
                             </h2>
 
                             <div class="entry-meta">
                                 <ul>
                                     <li class="d-flex align-items-center"><i class="icofont-user"></i> <a
-                                            href="news-single.html">John Doe</a></li>
+                                            href="/news/detail">John Doe</a></li>
                                     <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a
-                                            href="news-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
+                                            href="/news/detail"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
                                 </ul>
                             </div>
 
@@ -59,7 +59,7 @@
                                     maraeda talan mas indera.
                                 </p>
                                 <div class="read-more">
-                                    <a href="news-single.html">Read More</a>
+                                    <a href="/news/detail">Read More</a>
                                 </div>
                             </div>
 
@@ -70,19 +70,19 @@
                         <article class="entry">
 
                             <div class="entry-img">
-                                <img src="assets/img/news/news-2.jpg" alt="" class="img-fluid">
+                                <img src="pre/img/news/news-2.jpg" alt="" class="img-fluid">
                             </div>
 
                             <h2 class="entry-title">
-                                <a href="news-single.html">Nisi magni odit consequatur autem nulla dolorem</a>
+                                <a href="/news/detail">Nisi magni odit consequatur autem nulla dolorem</a>
                             </h2>
 
                             <div class="entry-meta">
                                 <ul>
                                     <li class="d-flex align-items-center"><i class="icofont-user"></i> <a
-                                            href="news-single.html">John Doe</a></li>
+                                            href="/news/detail">John Doe</a></li>
                                     <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a
-                                            href="news-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
+                                            href="/news/detail"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
                                 </ul>
                             </div>
 
@@ -93,7 +93,7 @@
                                     molestiae. Facilis et sint quos sed voluptas. Maxime sed tempore enim omnis non alias.
                                 </p>
                                 <div class="read-more">
-                                    <a href="news-single.html">Read More</a>
+                                    <a href="/news/detail">Read More</a>
                                 </div>
                             </div>
 
@@ -104,20 +104,20 @@
                         <article class="entry">
 
                             <div class="entry-img">
-                                <img src="assets/img/news/news-3.jpg" alt="" class="img-fluid">
+                                <img src="pre/img/news/news-3.jpg" alt="" class="img-fluid">
                             </div>
 
                             <h2 class="entry-title">
-                                <a href="news-single.html">Possimus soluta ut id suscipit ea ut. In quo quia et soluta
+                                <a href="/news/detail">Possimus soluta ut id suscipit ea ut. In quo quia et soluta
                                     libero sit sint.</a>
                             </h2>
 
                             <div class="entry-meta">
                                 <ul>
                                     <li class="d-flex align-items-center"><i class="icofont-user"></i> <a
-                                            href="news-single.html">John Doe</a></li>
+                                            href="/news/detail">John Doe</a></li>
                                     <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a
-                                            href="news-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
+                                            href="/news/detail"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
                                 </ul>
                             </div>
 
@@ -128,7 +128,7 @@
                                     metaruna nedore stan.
                                 </p>
                                 <div class="read-more">
-                                    <a href="news-single.html">Read More</a>
+                                    <a href="/news/detail">Read More</a>
                                 </div>
                             </div>
 
@@ -139,20 +139,20 @@
                         <article class="entry">
 
                             <div class="entry-img">
-                                <img src="assets/img/news/news-4.jpg" alt="" class="img-fluid">
+                                <img src="pre/img/news/news-4.jpg" alt="" class="img-fluid">
                             </div>
 
                             <h2 class="entry-title">
-                                <a href="news-single.html">Non rem rerum nam cum quo minus. Dolor distinctio deleniti
+                                <a href="/news/detail">Non rem rerum nam cum quo minus. Dolor distinctio deleniti
                                     explicabo eius exercitationem.</a>
                             </h2>
 
                             <div class="entry-meta">
                                 <ul>
                                     <li class="d-flex align-items-center"><i class="icofont-user"></i> <a
-                                            href="news-single.html">John Doe</a></li>
+                                            href="/news/detail">John Doe</a></li>
                                     <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a
-                                            href="news-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
+                                            href="/news/detail"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
                                 </ul>
                             </div>
 
@@ -162,7 +162,7 @@
                                     veritatis rerum enim et autem. Saepe atque cum eligendi eaque iste omnis a qui.
                                 </p>
                                 <div class="read-more">
-                                    <a href="news-single.html">Read More</a>
+                                    <a href="/news/detail">Read More</a>
                                 </div>
                             </div>
 
@@ -173,19 +173,19 @@
                         <article class="entry">
 
                             <div class="entry-img">
-                                <img src="assets/img/news/news-5.jpg" alt="" class="img-fluid">
+                                <img src="pre/img/news/news-5.jpg" alt="" class="img-fluid">
                             </div>
 
                             <h2 class="entry-title">
-                                <a href="news-single.html">Blanditiis dignissimos deleniti. Rerum iste et.</a>
+                                <a href="/news/detail">Blanditiis dignissimos deleniti. Rerum iste et.</a>
                             </h2>
 
                             <div class="entry-meta">
                                 <ul>
                                     <li class="d-flex align-items-center"><i class="icofont-user"></i> <a
-                                            href="news-single.html">John Doe</a></li>
+                                            href="/news/detail">John Doe</a></li>
                                     <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a
-                                            href="news-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
+                                            href="/news/detail"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
                                 </ul>
                             </div>
 
@@ -196,7 +196,7 @@
                                     vitae explicabo. Corrupti esse sed a a. Laborum optio reprehenderit quia dena per.
                                 </p>
                                 <div class="read-more">
-                                    <a href="news-single.html">Read More</a>
+                                    <a href="/news/detail">Read More</a>
                                 </div>
                             </div>
 
@@ -207,20 +207,20 @@
                         <article class="entry">
 
                             <div class="entry-img">
-                                <img src="assets/img/news/news-6.jpg" alt="" class="img-fluid">
+                                <img src="pre/img/news/news-6.jpg" alt="" class="img-fluid">
                             </div>
 
                             <h2 class="entry-title">
-                                <a href="news-single.html">Debitis cupiditate saepe ex quam aut id. Consequatur dignissimos
+                                <a href="/news/detail">Debitis cupiditate saepe ex quam aut id. Consequatur dignissimos
                                     et id id.</a>
                             </h2>
 
                             <div class="entry-meta">
                                 <ul>
                                     <li class="d-flex align-items-center"><i class="icofont-user"></i> <a
-                                            href="news-single.html">John Doe</a></li>
+                                            href="/news/detail">John Doe</a></li>
                                     <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a
-                                            href="news-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
+                                            href="/news/detail"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
                                 </ul>
                             </div>
 
@@ -231,7 +231,7 @@
                                     delata sera marto ned.
                                 </p>
                                 <div class="read-more">
-                                    <a href="news-single.html">Read More</a>
+                                    <a href="/news/detail">Read More</a>
                                 </div>
                             </div>
 

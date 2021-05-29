@@ -19,7 +19,12 @@ class NewsController extends Controller
 
     public function index()
     {
-        return View();
+        return View('pre-login.pages.News.Index');
+    }
+
+    public function detail()
+    {
+        return View('pre-login.pages.News.Detail');
     }
 
     public function adminIndex()

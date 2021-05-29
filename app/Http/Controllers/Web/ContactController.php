@@ -14,6 +14,19 @@ class ContactController extends Controller
         $this->m_contact = new Contact();
     }
 
+    public function index()
+    {
+        return View('pre-login.pages.Contact');
+    }
+
+
+    public function adminIndex()
+    {
+        $contactInfo = $this->m_contact->GetMessages();
+        return View('', compact(['contactInfo']));
+    }
+
+
     private function validate__(Request $request)
     {
         $this->validate($request, [
@@ -22,17 +35,6 @@ class ContactController extends Controller
             'name' => 'required',
             'message' => 'required'
         ]);
-    }
-
-    public function index()
-    {
-        return View();
-    }
-
-    public function adminIndex()
-    {
-        $contactInfo = $this->m_contact->GetMessages();
-        return View('', compact(['contactInfo']));
     }
 
     public function sendContactMessage(Request $request)

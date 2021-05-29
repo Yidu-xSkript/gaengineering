@@ -1,9 +1,7 @@
 @extends('post-login.index.header')
-
 @section('content')
 
 @include('partials.error2')
-
 @include('partials.success2')
 
 <div class="main-panel">

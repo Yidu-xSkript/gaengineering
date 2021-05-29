@@ -16,6 +16,11 @@ class VideoController extends Controller
         $this->m_video = new Video();
     }
 
+    public function index()
+    {
+        return View('pre-login.pages.Videos');
+    }
+
     private function validate__(Request $request)
     {
         $this->validate($request, [

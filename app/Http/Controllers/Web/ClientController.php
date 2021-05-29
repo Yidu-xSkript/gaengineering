@@ -20,7 +20,7 @@ class ClientController extends Controller
 
     public function index()
     {
-        return View();
+        return View('pre-login.pages.Clients');
     }
 
     public function adminIndex()

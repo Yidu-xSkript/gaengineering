@@ -20,8 +20,8 @@ class WCUController extends Controller
 
     public function index()
     {
-        $wcu = $this->m_wcu->GetWCU();
-        return View('', compact(['wcu']));
+        // $wcu = $this->m_wcu->GetWCU();
+        return View('pre-login.pages.WCU'/*, compact(['wcu'])*/);
     }
 
     public function adminIndex()

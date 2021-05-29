@@ -72,7 +72,7 @@
                 <div class="row">
 
                     <div class="col-lg-6 video-box align-self-baseline">
-                        <img src="assets/img/about.jpg" class="img-fluid" alt="">
+                        <img src="pre/img/about.jpg" class="img-fluid" alt="">
                         <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4"
                             data-vbtype="video" data-autoplay="true"></a>
                     </div>
@@ -125,7 +125,7 @@
 
                 <div class="row content">
                     <div class="col-md-5" data-aos="fade-right">
-                        <img src="assets/img/work-process-1.png" class="img-fluid" alt="">
+                        <img src="pre/img/work-process-1.png" class="img-fluid" alt="">
                     </div>
                     <div class="col-md-7 pt-4" data-aos="fade-left">
                         <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
@@ -144,7 +144,7 @@
 
                 <div class="row content">
                     <div class="col-md-5 order-1 order-md-2" data-aos="fade-left">
-                        <img src="assets/img/work-process-2.png" class="img-fluid" alt="">
+                        <img src="pre/img/work-process-2.png" class="img-fluid" alt="">
                     </div>
                     <div class="col-md-7 pt-5 order-2 order-md-1" data-aos="fade-right">
                         <h3>Design</h3>
@@ -162,7 +162,7 @@
 
                 <div class="row content">
                     <div class="col-md-5" data-aos="fade-right">
-                        <img src="assets/img/work-process-3.png" class="img-fluid" alt="">
+                        <img src="pre/img/work-process-3.png" class="img-fluid" alt="">
                     </div>
                     <div class="col-md-7 pt-5" data-aos="fade-left">
                         <h3>Product</h3>
@@ -175,7 +175,7 @@
 
                 <div class="row content">
                     <div class="col-md-5 order-1 order-md-2" data-aos="fade-left">
-                        <img src="assets/img/work-process-4.png" class="img-fluid" alt="">
+                        <img src="pre/img/work-process-4.png" class="img-fluid" alt="">
                     </div>
                     <div class="col-md-7 pt-5 order-2 order-md-1" data-aos="fade-right">
                         <h3>Project Management</h3>
@@ -205,7 +205,7 @@
 
                 <div class="row">
                     <div class="col-lg-6" data-aos="fade-right">
-                        <img src="assets/img/skills-img.jpg" class="img-fluid" alt="">
+                        <img src="pre/img/skills-img.jpg" class="img-fluid" alt="">
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
                         <h3>We have become amazingly experienced over the past 10 years since our company was first founded.

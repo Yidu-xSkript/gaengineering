@@ -32,11 +32,11 @@ class AboutController extends Controller
 
     public function index()
     {
-        $setting = $this->m_setting->RetrieveSetting();
-        $about = $this->m_about->GetAbout();
-        $workProcess = $this->m_workProcess->GetWorkProcess();
-        $skills = $this->m_skill->GetSkills();
-        return View('', compact(['setting', 'about', 'workProcess', 'skills']));
+        // $setting = $this->m_setting->RetrieveSetting();
+        // $about = $this->m_about->GetAbout();
+        // $workProcess = $this->m_workProcess->GetWorkProcess();
+        // $skills = $this->m_skill->GetSkills();
+        return View('pre-login.pages.About'/*, compact(['setting', 'about', 'workProcess', 'skills'])*/);
     }
 
     public function update(Request $request)

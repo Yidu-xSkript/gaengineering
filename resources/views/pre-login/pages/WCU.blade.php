@@ -19,7 +19,7 @@
             </div>
             <div class="container">
                 <ol>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Why Choose Us</li>
                 </ol>
             </div>
@@ -30,7 +30,7 @@
                 <div>
                     <div class="row content why-bg">
                         <div class="col-md-5" data-aos="fade-right">
-                            <img src="assets/img/work-process-1.png" class="img-fluid" alt="">
+                            <img src="pre/img/work-process-1.png" class="img-fluid" alt="">
                         </div>
                         <div class="col-md-7 pt-4" data-aos="fade-left">
                             <h3>Reason 1</h3>
@@ -45,7 +45,7 @@
 
                 <div class="row content ">
                     <div class="col-md-5" data-aos="fade-right">
-                        <img src="assets/img/work-process-2.png" class="img-fluid" alt="">
+                        <img src="pre/img/work-process-2.png" class="img-fluid" alt="">
                     </div>
                     <div class="col-md-7 pt-4" data-aos="fade-left">
                         <h3>Reason 2</h3>

@@ -9,26 +9,14 @@
         <nav class="nav-menu d-none d-lg-block">
             <ul>
                 <li @if(\Request::is('/')) class="active" @endif><a href="/">Home</a></li>
-                <li class="drop-down"><a href="#">About</a>
+                <li @if(\Request::is('/about') || \Request::is('/team') || \Request::is('/why-choose-us') || \Request::is('/clients') || \Request::is('/testimonials') || \Request::is('/FAQs')) class="drop-down active" @else class="drop-down" @endif><a href="#">About</a>
                     <ul>
-                        <li @if(\Request::is('/about')) class="active" @endif >
-                            <a href="/about">About Us</a>
-                        </li>
-                        <li @if(\Request::is('/team')) class="active" @endif >
-                            <a href="/team">Our Team</a>
-                        </li>
-                        <li @if(\Request::is('/why-Choose-Us')) class="active" @endif >
-                            <a href="/why-Choose-Us">Why Choose Us</a>
-                        </li>
-                        <li @if(\Request::is('/clients')) class="active" @endif >
-                            <a href="/clients">Our Clients</a>
-                        </li>
-                        <li @if(\Request::is('/testimonials')) class="active" @endif >
-                            <a href="/testimonials">Testimonials</a>
-                        </li>
-                        <li @if(\Request::is('/FAQs')) class="active" @endif >
-                            <a href="/FAQs">FAQs</a>
-                        </li>
+                        <li> <a href="/about">About Us</a></li>
+                        <li> <a href="/team">Our Team</a></li>
+                        <li> <a href="/why-choose-us">Why Choose Us</a></li>
+                        <li> <a href="/clients">Our Clients</a></li>
+                        <li> <a href="/testimonials">Testimonials</a></li>
+                        <li> <a href="/FAQs">FAQs</a></li>
                     </ul>
                 </li>
 
@@ -37,23 +25,23 @@
                 </li>
                 <li class="drop-down"><a href="/services">Services</a>
                     <ul>
-                        <li @if(\Request::is('/service/1')) class="active" @endif>
-                            <a href="/service/1">Maintenance and consultancy</a>
+                        <li @if(\Request::is('/service/detail')) class="active" @endif>
+                            <a href="/service/detail">Maintenance and consultancy</a>
                         </li>
-                        <li @if(\Request::is('/service/1')) class="active" @endif>
-                            <a href="/service/1">Import/Supply</a>
+                        <li @if(\Request::is('/service/detail')) class="active" @endif>
+                            <a href="/service/detail">Import/Supply</a>
                         </li>
-                        <li @if(\Request::is('/service/1')) class="active" @endif>
-                            <a href="/service/1">Supply, design and commissioning</a>
+                        <li @if(\Request::is('/service/detail')) class="active" @endif>
+                            <a href="/service/detail">Supply, design and commissioning</a>
                         </li>
-                        <li @if(\Request::is('/service/1')) class="active" @endif>
-                            <a href="/service/1">Electrical, Electronics and Electro-mechanical Products</a>
+                        <li @if(\Request::is('/service/detail')) class="active" @endif>
+                            <a href="/service/detail">Electrical, Electronics and Electro-mechanical Products</a>
                         </li>
-                        <li @if(\Request::is('/service/1')) class="active" @endif>
-                            <a href="/service/1">Industrial Machinary</a>
+                        <li @if(\Request::is('/service/detail')) class="active" @endif>
+                            <a href="/service/detail">Industrial Machinary</a>
                         </li>
-                        <li @if(\Request::is('/service/1')) class="active" @endif>
-                            <a href="/service/1">Installation and Implementation</a>
+                        <li @if(\Request::is('/service/detail')) class="active" @endif>
+                            <a href="/service/detail">Installation and Implementation</a>
                         </li>
                     </ul>
                 </li>
@@ -67,7 +55,7 @@
                     <a href="/contact">Contact Us</a>
                 </li>
 
-                <li class="get-started"><a href="contact.html">Get Started</a></li>
+                <li class="get-started"><a href="/contact">Get Started</a></li>
             </ul>
         </nav><!-- .nav-menu -->
 

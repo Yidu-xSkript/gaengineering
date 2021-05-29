@@ -23,7 +23,12 @@ class PortfolioController extends Controller
 
     public function index()
     {
-        return View();
+        return View('pre-login.pages.Portfolio.Index');
+    }
+
+    public function detail()
+    {
+        return View('pre-login.pages.Portfolio.Detail');
     }
 
     public function adminIndex()

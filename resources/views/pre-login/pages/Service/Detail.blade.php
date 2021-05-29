@@ -12,14 +12,14 @@
             <div class="breadcrumb-hero">
                 <div class="container">
                     <div class="breadcrumb-hero">
-                        <h2>Services</h2>
+                        <h2>Service name</h2>
                     </div>
                 </div>
             </div>
             <div class="container">
                 <ol>
-                    <li><a href="index.html">Home</a></li>
-                    <li> <a href="services.html">Services</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li> <a href="/services">Services</a></li>
                     <li>Maintenance</li>
                 </ol>
             </div>
@@ -29,7 +29,7 @@
             <div class="container">
                 <div class="row content">
                     <div class="col-md-5" data-aos="fade-right">
-                        <img src="assets/img/about.jpg" class="img-fluid" alt="">
+                        <img src="/pre/img/about.jpg" class="img-fluid" alt="">
                     </div>
                     <div class="col-md-7 pt-4" data-aos="fade-left">
                         <h3>Our maintenance and consultancy service is one of our highly desired services - here is why...

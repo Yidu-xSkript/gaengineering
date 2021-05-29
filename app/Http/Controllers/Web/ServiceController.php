@@ -16,6 +16,16 @@ class ServiceController extends Controller
         $this->m_service = new Service();
     }
 
+    public function index()
+    {
+        return View('pre-login.pages.Service.Index');
+    }
+
+    public function detail()
+    {
+        return View('pre-login.pages.Service.Detail');
+    }
+
     private function validate__(Request $req)
     {
         $this->validate($req, [

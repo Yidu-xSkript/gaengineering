@@ -12,14 +12,13 @@
                 <div class="container">
                     <div class="breadcrumb-hero">
                         <h2>Frequently Asked Questions</h2>
-                        <p>You may have many questions regarding what we do. Here are the main questions we get asked
-                            frequently and their answers. </p>
+                        <p>You may have many questions regarding what we do. Here are the main questions we get asked frequently and their answers. </p>
                     </div>
                 </div>
             </div>
             <div class="container">
                 <ol>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>FAQs</li>
                 </ol>
             </div>

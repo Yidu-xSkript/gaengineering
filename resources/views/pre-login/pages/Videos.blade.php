@@ -19,7 +19,7 @@
             </div>
             <div class="container">
                 <ol>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Videos</li>
                 </ol>
             </div>
@@ -29,17 +29,17 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 video-box align-self-baseline">
-                        <img src="assets/img/videos/1.jpg" class="img-fluid" alt="">
+                        <img src="pre/img/videos/1.jpg" class="img-fluid" alt="">
                         <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4"
                             data-vbtype="video" data-autoplay="true"></a>
                     </div>
                     <div class="col-lg-4 video-box align-self-baseline">
-                        <img src="assets/img/videos/3.jpg" class="img-fluid" alt="">
+                        <img src="pre/img/videos/3.jpg" class="img-fluid" alt="">
                         <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4"
                             data-vbtype="video" data-autoplay="true"></a>
                     </div>
                     <div class="col-lg-4 video-box align-self-baseline">
-                        <img src="assets/img/videos/1.jpg" class="img-fluid" alt="">
+                        <img src="pre/img/videos/1.jpg" class="img-fluid" alt="">
                         <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4"
                             data-vbtype="video" data-autoplay="true"></a>
                     </div>
@@ -49,17 +49,17 @@
 
                 <div class="row">
                     <div class="col-lg-4 video-box align-self-baseline">
-                        <img src="assets/img/videos/1.jpg" class="img-fluid" alt="">
+                        <img src="pre/img/videos/1.jpg" class="img-fluid" alt="">
                         <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4"
                             data-vbtype="video" data-autoplay="true"></a>
                     </div>
                     <div class="col-lg-4 video-box align-self-baseline">
-                        <img src="assets/img/videos/3.jpg" class="img-fluid" alt="">
+                        <img src="pre/img/videos/3.jpg" class="img-fluid" alt="">
                         <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4"
                             data-vbtype="video" data-autoplay="true"></a>
                     </div>
                     <div class="col-lg-4 video-box align-self-baseline">
-                        <img src="assets/img/videos/1.jpg" class="img-fluid" alt="">
+                        <img src="pre/img/videos/1.jpg" class="img-fluid" alt="">
                         <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4"
                             data-vbtype="video" data-autoplay="true"></a>
                     </div>

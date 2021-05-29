@@ -19,8 +19,8 @@
             </div>
             <div class="container">
                 <ol>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="news.html">News</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/news">News</a></li>
                     <li>Ethiopian House of representatives gather to make ammendment.</li>
                 </ol>
             </div>
@@ -37,21 +37,17 @@
                         <article class="entry entry-single">
 
                             <div class="entry-img">
-                                <img src="assets/img/news/news-1.jpg" alt="" class="img-fluid">
+                                <img src="/pre/img/news/news-1.jpg" alt="" class="img-fluid">
                             </div>
 
                             <h2 class="entry-title">
-                                <a href="blog-single.html">Ethiopian House of representatives gather to make ammendment.</a>
+                                Ethiopian House of representatives gather to make ammendment.
                             </h2>
 
                             <div class="entry-meta">
                                 <ul>
-                                    <li class="d-flex align-items-center"><i class="icofont-user"></i> <a
-                                            href="blog-single.html">John Doe</a></li>
-                                    <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a
-                                            href="blog-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
-                                    <li class="d-flex align-items-center"><i class="icofont-comment"></i> <a
-                                            href="blog-single.html">12 Comments</a></li>
+                                    <li class="d-flex align-items-center" style="font-size:12px;"><i class="icofont-user" style="font-size:12px;"></i>John Doe</li>
+                                    <li class="d-flex align-items-center" style="font-size:12px;"><i class="icofont-wall-clock" style="font-size:12px;"></i><time datetime="2020-01-01">Jan 1, 2020</time></li>
                                 </ul>
                             </div>
 
@@ -103,7 +99,7 @@
                                     Beatae minima sunt libero soluta sapiente in rem assumenda. Et qui odit voluptatem. Cum
                                     quibusdam voluptatem voluptatem accusamus mollitia aut atque aut.
                                 </p>
-                                <img src="assets/img/news/news-3.jpg" class="img-fluid" alt="">
+                                <img src="/pre/img/news/news-3.jpg" class="img-fluid" alt="">
 
                                 <h3>Ut repellat blanditiis est dolore sunt dolorum quae.</h3>
                                 <p>
@@ -122,33 +118,10 @@
 
                             </div>
 
-                            <div class="entry-footer clearfix">
-                                <div class="float-left">
-                                    <i class="icofont-folder"></i>
-                                    <ul class="cats">
-                                        <li><a href="#">Business</a></li>
-                                    </ul>
-
-                                    <i class="icofont-tags"></i>
-                                    <ul class="tags">
-                                        <li><a href="#">Creative</a></li>
-                                        <li><a href="#">Tips</a></li>
-                                        <li><a href="#">Marketing</a></li>
-                                    </ul>
-                                </div>
-
-                                <div class="float-right share">
-                                    <a href="" title="Share on Twitter"><i class="icofont-twitter"></i></a>
-                                    <a href="" title="Share on Facebook"><i class="icofont-facebook"></i></a>
-                                    <a href="" title="Share on Instagram"><i class="icofont-instagram"></i></a>
-                                </div>
-
-                            </div>
-
                         </article><!-- End blog entry -->
 
                         <div class="blog-author clearfix">
-                            <img src="assets/img/blog-author.jpg" class="rounded-circle float-left" alt="">
+                            <img src="/pre/img/blog-author.jpg" class="rounded-circle float-left" alt="">
                             <h4>Helen Abera</h4>
                             <div class="social-links">
                                 <a href="https://twitters.com/#"><i class="icofont-twitter"></i></a>
@@ -179,47 +152,34 @@
 
                             </div><!-- End sidebar search formn-->
 
-                            <h3 class="sidebar-title">Categories</h3>
-                            <div class="sidebar-item categories">
-                                <ul>
-                                    <li><a href="#">General <span>(25)</span></a></li>
-                                    <li><a href="#">Lifestyle <span>(12)</span></a></li>
-                                    <li><a href="#">Travel <span>(5)</span></a></li>
-                                    <li><a href="#">Design <span>(22)</span></a></li>
-                                    <li><a href="#">Creative <span>(8)</span></a></li>
-                                    <li><a href="#">Education <span>(14)</span></a></li>
-                                </ul>
-
-                            </div><!-- End sidebar categories-->
-
                             <h3 class="sidebar-title">Recent Posts</h3>
                             <div class="sidebar-item recent-posts">
                                 <div class="post-item clearfix">
-                                    <img src="assets/img/blog-recent-1.jpg" alt="">
+                                    <img src="/pre/img/blog-recent-1.jpg" alt="">
                                     <h4><a href="blog-single.html">Nihil blanditiis at in nihil autem</a></h4>
                                     <time datetime="2020-01-01">Jan 1, 2020</time>
                                 </div>
 
                                 <div class="post-item clearfix">
-                                    <img src="assets/img/blog-recent-2.jpg" alt="">
+                                    <img src="/pre/img/blog-recent-2.jpg" alt="">
                                     <h4><a href="blog-single.html">Quidem autem et impedit</a></h4>
                                     <time datetime="2020-01-01">Jan 1, 2020</time>
                                 </div>
 
                                 <div class="post-item clearfix">
-                                    <img src="assets/img/blog-recent-3.jpg" alt="">
+                                    <img src="/pre/img/blog-recent-3.jpg" alt="">
                                     <h4><a href="blog-single.html">Id quia et et ut maxime similique occaecati ut</a></h4>
                                     <time datetime="2020-01-01">Jan 1, 2020</time>
                                 </div>
 
                                 <div class="post-item clearfix">
-                                    <img src="assets/img/blog-recent-4.jpg" alt="">
+                                    <img src="/pre/img/blog-recent-4.jpg" alt="">
                                     <h4><a href="blog-single.html">Laborum corporis quo dara net para</a></h4>
                                     <time datetime="2020-01-01">Jan 1, 2020</time>
                                 </div>
 
                                 <div class="post-item clearfix">
-                                    <img src="assets/img/blog-recent-5.jpg" alt="">
+                                    <img src="/pre/img/blog-recent-5.jpg" alt="">
                                     <h4><a href="blog-single.html">Et dolores corrupti quae illo quod dolor</a></h4>
                                     <time datetime="2020-01-01">Jan 1, 2020</time>
                                 </div>

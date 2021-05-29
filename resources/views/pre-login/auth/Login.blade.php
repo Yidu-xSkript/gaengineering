@@ -20,20 +20,19 @@
         </section>
         <section id="contact" class="contact">
             <div class="container">
-                <div class="row mt-5">
-                    <div class="col-lg-12 mt-5 mt-lg-0" data-aos="fade-left">
+                <div class="row mt-5 ">
+                    <div class="offset-md-2 col-lg-8 mt-5 mt-lg-0 shadow-md p-5" data-aos="fade-left">
                         <form action="{{ route('login') }}" method="POST" role="form" class="php-email-form">
                             @csrf
                             <div class="form-group">
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
-                                    data-rule="email" data-msg="Please enter a valid email" />
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
                                 <div class="validate"></div>
                             </div>
                             <div class="form-group">
                                 <input type="password" class="form-control" name="password" id="password"
                                     placeholder="Password" />
                             </div>
-                            <div class="text-center"><button type="submit">Login</button></div>
+                            <div class="text-center"><button class="btn-block" style="font-weight: 900;" type="submit">Login</button></div>
                         </form>
                     </div>
                 </div>

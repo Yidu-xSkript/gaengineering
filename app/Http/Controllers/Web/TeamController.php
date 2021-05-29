@@ -20,8 +20,8 @@ class TeamController extends Controller
 
     public function index()
     {
-        $team = $this->m_team->GetTeam();
-        return View('', compact(['team']));
+        // $team = $this->m_team->GetTeam();
+    return View('pre-login.pages.Team'/*, compact(['team'])*/);
     }
 
     public function adminIndex()
