@@ -16,6 +16,16 @@ class AuthenticateManager
      */
     public function handle(Request $request, Closure $next)
     {
-        return $next($request);
+        if(!is_null(auth()->user()))
+        {
+            if(auth()->user()->role == 'content_manager')
+            {
+                return $next($request);
+            }
+            else
+            {
+                return redirect('/dashboard');
+            }
+        }
     }
 }

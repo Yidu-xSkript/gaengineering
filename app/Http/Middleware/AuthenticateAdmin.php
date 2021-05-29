@@ -16,6 +16,16 @@ class AuthenticateAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        return $next($request);
+        if(!is_null(auth()->user()))
+        {
+            if(auth()->user()->role == 'admin')
+            {
+                return $next($request);
+            }
+            else
+            {
+                return redirect('/dashboard');
+            }
+        }
     }
 }
