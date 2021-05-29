@@ -1,5 +1,4 @@
 <style type="text/css">
-
   .sidebar {
     min-height: calc(100vh - 63px);
     background: #ffffff;
@@ -17,7 +16,7 @@
 </style>
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
   <ul class="nav">
-   
+
     <li class="nav-item nav-profile">
       <div class="nav-link">
         <div class="user-wrapper">
@@ -34,7 +33,7 @@
         </div>
       </div>
     </li>
-    
+
     <li class="nav-item">
       <a class="nav-link" href="/dashboard">
         <i class="menu-icon mdi mdi-television"></i>
@@ -73,7 +72,7 @@
         </ul>
       </div>
     </li>
-   
+
     <li class="nav-item">
       <a class="nav-link" href="/admin-news">
         <i class="menu-icon mdi mdi-newspaper"></i>
@@ -116,6 +115,6 @@
         <span class="menu-title">Contact</span>
       </a>
     </li>
-    
+
   </ul>
 </nav>

@@ -1,4 +1,9 @@
 @extends('pre-login.index.header')
+
+@section('title', 'Home - GA Engineering')
+@section('meta_keywords', 'Home - GA Engineering')
+@section('meta_description', 'Home - GA Engineering')
+
 @section('content')
     <!-- ======= Hero Section ======= -->
     <section id="hero">

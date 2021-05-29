@@ -1,6 +1,6 @@
 <?php
 
-$settings = App\CompanySettings::first();
+$settings = App\Models\Setting::first();
 
 ?>
 
