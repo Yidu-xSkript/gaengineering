@@ -14,7 +14,6 @@ class WCUController extends Controller
 
     public function __construct()
     {
-        $this->middleware(['auth', 'admin'])->except(['index']);
         $this->m_wcu = new WhyChooseUs();
     }
 

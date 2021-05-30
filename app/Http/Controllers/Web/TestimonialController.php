@@ -14,7 +14,6 @@ class TestimonialController extends Controller
 
     public function __construct()
     {
-        $this->middleware(['auth', 'admin'])->except(['index']);
         $this->m_testimony = new Testimonial();
     }
 

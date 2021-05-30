@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Web\DashboardController;
 use App\Http\Controllers\Web\AboutController;
 use App\Http\Controllers\Web\ClientController;
 use App\Http\Controllers\Web\ContactController;
@@ -45,8 +46,10 @@ Route::get('/news/detail', [NewsController::class, 'detail']);
 
 Route::get('/contact', [ContactController::class, 'index']);
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    // Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['role:admin'])->name('dashboard');
+    // Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['role:content_manager'])->name('dashboard');
+});
 
 require __DIR__.'/auth.php';

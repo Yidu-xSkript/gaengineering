@@ -51,4 +51,9 @@ class User extends Authenticatable
             'role' => "content_manager"
         ]);
     }
+
+    public function hasRole(string $role, int $userId)
+    {
+        return $this::where('id', $userId)->where('role', $role)->count() == 1 ? true : false;
+    }
 }

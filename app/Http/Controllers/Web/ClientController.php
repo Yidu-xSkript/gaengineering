@@ -14,7 +14,6 @@ class ClientController extends Controller
 
     public function __construct()
     {
-        $this->middleware(['auth', 'admin'])->except(['index']);
         $this->m_client = new Partner();
     }
 

@@ -14,14 +14,13 @@ class TeamController extends Controller
 
     public function __construct()
     {
-        $this->middleware(['auth', 'admin', 'manager'])->except(['index']);
         $this->m_team = new Team();
     }
 
     public function index()
     {
         // $team = $this->m_team->GetTeam();
-    return View('pre-login.pages.Team'/*, compact(['team'])*/);
+        return View('pre-login.pages.Team'/*, compact(['team'])*/);
     }
 
     public function adminIndex()

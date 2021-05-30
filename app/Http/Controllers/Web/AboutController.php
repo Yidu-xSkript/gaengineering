@@ -17,7 +17,6 @@ class AboutController extends Controller
 
     public function __construct()
     {
-        $this->middleware(['admin', 'auth'])->except(['index']);
         $this->m_about = new About();
         $this->m_setting = new Setting();
         $this->m_workProcess = new WorkProcess();
