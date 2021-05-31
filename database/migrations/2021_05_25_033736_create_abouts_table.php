@@ -17,7 +17,6 @@ class CreateAboutsTable extends Migration
             $table->id();
             $table->string("thumbnail");
             $table->string("video_url");
-            $table->string("about_title");
             $table->longText("about_content");
             $table->timestamps();
         });

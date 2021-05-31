@@ -43,12 +43,11 @@ class AboutController extends Controller
         $this->validate($request, [
             'thumbnail' => 'required|image|mimes:jpg,png,jpeg,svg',
             'videoURL' => 'required',
-            'title' => 'required',
             'content' => 'required'
         ]);
         !is_null($request->thumbnail) ?
             $thumbnailURL = $this->UploadImage($request->file('thumbnail')->getRealPath()) : $thumbnailURL = null;
-        $this->m_about->UpdateAbout($thumbnailURL, $request->videoURL, $request->title, $request->content);
+        $this->m_about->UpdateAbout($thumbnailURL, $request->videoURL, $request->content);
         return back()->with('success', 'About successfully created!');
     }
 

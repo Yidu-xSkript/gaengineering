@@ -115,7 +115,7 @@
         </section><!-- End About Section -->
 
         <!-- ======= Work Process Section ======= -->
-        <section id="work-process" class="work-process">
+        <section id="work-process" class="work-process mt-5">
             <div class="container">
 
                 <div class="section-title" data-aos="fade-up">
