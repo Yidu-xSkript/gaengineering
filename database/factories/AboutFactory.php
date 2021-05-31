@@ -24,7 +24,6 @@ class AboutFactory extends Factory
         return [
             'thumbnail' => $this->faker->imageUrl(),
             'video_url' => $this->faker->url,
-            'about_title' => $this->faker->title(),
             'about_content' => $this->faker->text()
         ];
     }

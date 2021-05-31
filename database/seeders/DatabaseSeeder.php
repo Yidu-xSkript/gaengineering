@@ -25,10 +25,6 @@ class DatabaseSeeder extends Seeder
         ]);
         Setting::factory()->create([
             'about' => 'Gezahegn Ayalew General Trading is a private company established in 2010 We specialize in Providing Better Services for Supply And Installation Works of Electro-Mechanical and related Equipment In Ethiopia.',
-            'happy_client' => 65,
-            'projects' => 85,
-            'years_of_experience' => 10,
-            'awards' => 15,
             'phone_number' => '+251920743179',
             'location' => 'Branch 1: Lucky Building 4th Floor,
             Bole Medhanialem, Infront of Monarch Hotel <br>
