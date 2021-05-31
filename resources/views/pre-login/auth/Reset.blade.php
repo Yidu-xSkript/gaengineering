@@ -22,7 +22,7 @@
         <section id="contact" class="contact">
             <div class="container">
                 <div class="row mt-5">
-                    <div class="offset-md-2 col-lg-12 mt-5 mt-lg-0 shadow-md p-5" data-aos="fade-left">
+                    <div class="offset-md-2 col-lg-8 mt-5 mt-lg-0 shadow-md p-5" data-aos="fade-left">
                         <form action="{{ route('reset-password') }}" method="POST" role="form" class="php-email-form">
                             @csrf
                             <input type="hidden" name="token" value="{{ $token }}">
