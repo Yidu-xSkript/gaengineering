@@ -72,7 +72,7 @@
                 <div class="row">
 
                     <div class="col-lg-6 video-box align-self-baseline">
-                        <img src="pre/img/about.jpg" class="img-fluid" alt="">
+                        <img src="pre/img/about.jpg" class="img-fluid shadow" style="border-radius: 20px;" alt="">
                         <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4"
                             data-vbtype="video" data-autoplay="true"></a>
                     </div>

@@ -392,16 +392,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #hero .btn-get-started {
-  font-family: "Raleway", sans-serif;
-  font-weight: 600;
-  font-size: 13px;
+  /* font-family: "Raleway", sans-serif; */
+  font-weight: 700;
+  font-size: 15px;
   letter-spacing: 1px;
   display: inline-block;
-  padding: 8px 28px;
+  padding: 16px 28px;
   border-radius: 50px;
   transition: 0.5s;
   margin: 10px;
-  border: 2px solid #1f8bf8;
+  background: #1f8bf8;
   text-transform: uppercase;
   color: #fff;
 }
@@ -1021,7 +1021,7 @@ section {
   opacity: 0;
   transition: bottom ease-in-out 0.4s;
   text-align: center;
-  background: rgba(69, 143, 192, 0.8);
+  background: #1f8bf8;
 }
 
 .team .member .social a {
@@ -1033,7 +1033,7 @@ section {
 }
 
 .team .member .social a:hover {
-  color: #1e2e3d;
+  color: #c7e3fd;
 }
 
 .team .member .social i {
@@ -1596,7 +1596,11 @@ section {
   opacity: 0;
   transition: bottom ease-in-out 0.4s;
   text-align: center;
-  background: rgba(69, 143, 192, 0.8);
+  background: #1f8bf8;
+}
+
+.video-img-container {
+    object-fit: cover; background-size:cover; height: 100%; width: auto; max-width: 100%;
 }
 
 .team .member .social a {
@@ -1608,7 +1612,7 @@ section {
 }
 
 .team .member .social a:hover {
-  color: #1e2e3d;
+  color: #c7e3fd;
 }
 
 .team .member .social i {

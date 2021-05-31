@@ -110,12 +110,12 @@ section {
     margin-left: 50px;
 }
 
-.testimonial-two .owl-carousel .owl-dots .owl-dot.active span, 
+.testimonial-two .owl-carousel .owl-dots .owl-dot.active span,
 .testimonial-two .owl-carousel .owl-dots .owl-dot:hover span {
        border-color: #0cb4ce;
 }
 
-.testimonial-two .owl-carousel .owl-dots .owl-dot.active span:before, 
+.testimonial-two .owl-carousel .owl-dots .owl-dot.active span:before,
 .testimonial-two .owl-carousel .owl-dots .owl-dot:hover span:before {
     background-color: #0cb4ce;
 }
@@ -134,6 +134,7 @@ section {
 
 .testimonial-three .testimonial-content {
     overflow: hidden;
+    cursor: default;
 }
 
 .testimonial-three .testimonial-meta {
@@ -296,7 +297,7 @@ section {
    padding-top: 10px;
    margin-bottom: -2px;
    font-weight: 600;
-   font-size: 13px; 
+   font-size: 13px;
 }
 
 .testimonial-five .testimonial-author span {
@@ -310,7 +311,7 @@ section {
    width: 100%;
    border-radius: 4px;
    position: relative;
-   margin-bottom: 30px; 
+   margin-bottom: 30px;
    border: 0px solid #eaeaea;
    background-color: #f7f7f7;
 }
