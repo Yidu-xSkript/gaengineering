@@ -54,7 +54,9 @@
                                         <label for="portfolio_category_id" style="font-size: 15px;">Portfolio Category <small style="color: red;">*</small></label>
                                         <select class="form-control" style="font-size: 17px;" name="portfolio_category_id">
                                             <option value="" selected="" disabled="">Please select a category</option>
-                                            <option value="">portfolio category 1</option>
+                                            @foreach($categories as $category)
+                                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
 

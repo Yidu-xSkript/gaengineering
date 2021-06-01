@@ -45,12 +45,8 @@
                                         </div>
 
                                         <div class="form-group">
-
                                             <label for="slug" style="font-size: 15px;">Slug/Description about News <small style="color: red;">*</small></label>
-
-                                            <textarea class="form-control" rows="8" name="slug" id="slug"
-                                                placeholder="Slug / Description" style="font-size: 15px;"
-                                                required></textarea>
+                                            <textarea class="form-control" rows="8" name="slug" id="slug" placeholder="Slug / Description" style="font-size: 15px;" required></textarea>
                                         </div>
 
                                         <button type="submit" class="btn btn-primary mr-2 mt-4"><i

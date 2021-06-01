@@ -1,4 +1,4 @@
-<div class="modal modal-edu-general Customwidth-popup-WarningModal fade" role="dialog" id=<?= 'edit'.$manager->id ?>>
+<div class="modal modal-edu-general Customwidth-popup-WarningModal fade" role="dialog" id=<?= 'edit'.$category->id ?>>
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header header-color-modal bg-color-3">
@@ -8,13 +8,13 @@
                 </div>
             </div>
 
-            <form action="/auth/manager/{{ $manager->id }}/edit" method="post">
+            <form action="/auth/portfolio/category/{{ $category->id }}/edit" method="post">
                 @csrf
                 @METHOD('PATCH')
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="name" style="font-size: 15px;">Name <small style="color: red;">*</small></label>
-                        <input type="text" class="form-control" value="{{ $manager->name }}" name="name" id="name" placeholder="Name" style="font-size: 15px; font-weight: bold;" required="">
+                        <label for="name" style="font-size: 15px;">Category Name <small style="color: red;">*</small></label>
+                        <input type="text" class="form-control" value="{{ $category->name }}" required style="font-size: 16px;" id=category_name name="name" placeholder="Category Name">
                     </div>
                 </div>
 
@@ -28,10 +28,10 @@
 </div>
 
 {{-- Delete --}}
-<div class="modal fade" role="dialog" style="border: none;" id=<?= 'delete'.$manager->id; ?>>
+<div class="modal fade" role="dialog" style="border: none;" id=<?= 'delete'.$category->id; ?>>
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="/auth/manager/{{$manager->id}}/destroy" method="post">
+            <form action="/auth/portfolio/category/{{$category->id}}/destroy" method="post">
                 @csrf
                 @method('DELETE')
                 <div class="modal-header header-color-modal bg-color-4" style="background: rgb(230, 82, 81); color: #fff;">

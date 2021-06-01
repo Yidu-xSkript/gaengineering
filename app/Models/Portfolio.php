@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -26,7 +27,7 @@ class Portfolio extends Model
             'title' => $title,
             'image_url' => $image_url,
             'portfolio_category_id' => $portfolio_category_id,
-            'project_date' => $project_date,
+            'project_date' => Carbon::createFromFormat('YY-mm-dd', $project_date),
             'slug' => $slug,
             'portfolio_url' => $portfolio_url
         ]);

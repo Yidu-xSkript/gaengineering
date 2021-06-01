@@ -39,7 +39,8 @@ class PortfolioController extends Controller
 
     public function adminCreate()
     {
-        return View('post-login.pages.Portfolio.create');
+        $categories = $this->m_portfolioCategory->GetPC();
+        return View('post-login.pages.Portfolio.create', compact('categories'));
     }
 
     public function m_indexPortfolioImage()

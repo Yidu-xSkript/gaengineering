@@ -104,10 +104,12 @@ Route::group(['middleware' => 'auth', 'prefix' => 'auth'], function () {
         Route::patch('/{id}/edit', [PortfolioController::class, 'update'])->name('portfolio.admin.edit');
         Route::delete('/{id}/destroy', [PortfolioController::class, 'destroy'])->name('portfolio.admin.destroy');
 
-        Route::get('/category', [PortfolioController::class, 'm_indexPortfolioCategory']);
-        Route::post('/category/store', [PortfolioController::class, 'm_createPortfolioCategory']);
-        Route::patch('/category/{id}/edit', [PortfolioController::class, 'm_updatePortfolioCategory']);
-        Route::delete('/category/{id}/destroy', [PortfolioController::class, 'm_destroyPortfolioCategory']);
+        Route::group(['prefix' => 'category'], function() {
+            Route::get('/', [PortfolioController::class, 'm_indexPortfolioCategory']);
+            Route::post('/', [PortfolioController::class, 'm_createPortfolioCategory']);
+            Route::patch('/{id}/edit', [PortfolioController::class, 'm_updatePortfolioCategory']);
+            Route::delete('/{id}/destroy', [PortfolioController::class, 'm_destroyPortfolioCategory']);
+        });
     });
 
     Route::get('/video', [VideoController::class, 'adminIndex'])->name('video.admin.index');

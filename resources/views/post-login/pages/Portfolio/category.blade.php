@@ -29,11 +29,11 @@
 
       					<div class="dropdown-divider w-25 "></div>
 
-      					<form class="forms-sample mt-4" action="/auth/portfolio" method="post">
+      					<form class="forms-sample mt-4" action="/auth/portfolio/category" method="post">
                         @csrf
 		                    <div class="form-group">
                                 <label for="category_name" style="font-size: 15px;">Category Name</label>
-                                <input type="text" class="form-control" required style="font-size: 16px;" id=category_name name="category_name" placeholder="Category Name">
+                                <input type="text" class="form-control" required style="font-size: 16px;" id=category_name name="name" placeholder="Category Name">
                             </div>
 
 			                <button type="submit" class="btn btn-primary mr-2 mt-4"><i class="mdi mdi-plus"></i>Create Portfolio Category</button>
@@ -59,13 +59,13 @@
 
                                 <tbody>
                                     @foreach($categories as $category)
-                                    @include('post-login.partials.modal.category-modal')
+                                    @include('post-login.partials.category-modal')
                                     <tr class="record">
                                         <td style="font-size: 15px;">{{ $category->name }}</td>
 
-                                        <td style="font-size: 17px;"><button type="button" class="btn btn-success"  data-toggle="modal" data-target=<?= '#edit-category'.$category->id;?>><i class="mdi mdi-image"></i> Update Category</button></td>
+                                        <td style="font-size: 17px;"><button type="button" class="btn btn-primary"  data-toggle="modal" data-target=<?= '#edit'.$category->id;?>><i class="mdi mdi-pencil"></i> Edit</button></td>
 
-                                        <td style="font-size: 17px;"><button type="button" class="btn btn-danger"  data-toggle="modal" data-target=<?= '#delete-category'.$category->id;?>><i class="mdi mdi-delete"></i> Delete</button></td>
+                                        <td style="font-size: 17px;"><button type="button" class="btn btn-danger"  data-toggle="modal" data-target=<?= '#delete'.$category->id;?>><i class="mdi mdi-delete"></i> Delete</button></td>
                                     </tr>
                                     @endforeach
                                 </tbody>
