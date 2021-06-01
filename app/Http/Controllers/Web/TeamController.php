@@ -35,11 +35,11 @@ class TeamController extends Controller
             'name' => 'required',
             'position' => 'required',
             'slug' => 'required',
-            'image_url' => !is_null($request->image_url) ? 'required|image|mimes:jpg,png,jpeg,svg' : ''
+            'image_url' => !is_null($request->image_url) ? 'required|image|mimes:jpeg,jpg,png,svg' : ''
         ]);
     }
 
-    public function create(Request $request)
+    public function store(Request $request)
     {
         $this->validate__($request);
         $imageURL = !is_null($request->image_url) ?

@@ -22,7 +22,7 @@
 
       					<div class="dropdown-divider w-25 "></div>
 
-      					<form class="forms-sample mt-4" action="/team" method="post" enctype="multipart/form-data">
+      					<form class="forms-sample mt-4" action="/auth/team" method="post" enctype="multipart/form-data">
                             @csrf
       						<div class="form-group">
 		                      	<label for="name" style="font-size: 15px;">Name</label>
@@ -36,7 +36,7 @@
 
 		                    <div class="form-group">
                                 <label for="image" style="font-size: 15px;">Image</label>
-                                <input type="file" class="form-control"  style="font-size: 16px;" id=image name="image" placeholder="Image">
+                                <input type="file" class="form-control"  style="font-size: 16px;" id=image name="image_url" placeholder="Image">
                             </div>
 
 		                    <div class="form-group">
@@ -61,8 +61,8 @@
 
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label for="google_plus" style="font-size: 15px;">google plus</label>
-                                        <input type="url" class="form-control"  style="font-size: 16px;" id="google_plus" name="google_plus" placeholder="Google plus" >
+                                        <label for="linked_in" style="font-size: 15px;">linked in</label>
+                                        <input type="url" class="form-control"  style="font-size: 16px;" id="linked_in" name="linked_in" placeholder="Linked in" >
                                     </div>
                                 </div>
 
@@ -91,6 +91,7 @@
                                         <th style="font-size: 18px;">Name</th>
                                         <th style="font-size: 18px;">Image</th>
                                         <th style="font-size: 18px;">Company Position</th>
+                                        <th style="font-size: 18px;">Slug</th>
                                         <th style="font-size: 18px;">Social Media</th>
                                         <th></th>
                                         <th></th>
@@ -99,15 +100,15 @@
 
                                 <tbody>
                                     @foreach($team as $person)
-                                    @include('post-login.partials.modal.team-modal')
+                                    @include('post-login.partials.team-modal')
                                     <tr class="record">
                                         <td style="font-size: 15px;">{{$person->name}}</td>
 
-                                        <td style="font-size: 15px;">@if(!is_null($person->image))<img src="{{ $person->image }}" alt="testimony">@endif</td>
+                                        <td style="font-size: 15px;">@if(!is_null($person->image_url))<img src="{{ $person->image_url }}" alt="testimony">@endif</td>
+                                        <td style="font-size: 15px;">{{$person->position}}</td>
+                                        <td style="font-size: 15px;"><?= Str::limit($person->slug, 100); ?></td>
 
-                                        <td style="font-size: 15px;"><?= str_limit($person->slug, 200); ?></td>
-
-                                        <td style="font-size: 15px;">@if(!is_null($person->facebook))<a href="{{$person->facebook}}">Facebook</a>, @endif @if(!is_null($person->google_plus)) <br><a href="{{$person->google_plus}}">Google plus</a>{{$person->google_plus}}, @endif @if(!is_null($person->instagram)) <br> <a href="{{$person->instagram}}">Instagram</a>, @endif @if(!is_null($person->twitter)) <br><a href="{{$person->twitter}}">Twitter</a> @endif</td>
+                                        <td style="font-size: 15px;">@if(!is_null($person->facebook))<a href="{{$person->facebook}}" target="#">Facebook</a>, @endif @if(!is_null($person->linked_in)) <br><a target="#" href="{{$person->linked_in}}">Linked In</a>, @endif @if(!is_null($person->instagram)) <br> <a target="#" href="{{$person->instagram}}">Instagram</a>, @endif @if(!is_null($person->twitter)) <br><a target="#" href="{{$person->twitter}}">Twitter</a> @endif</td>
                                         <td style="font-size: 17px;"><button type="button" class="btn btn-info"  data-toggle="modal" data-target=<?= '#edit-person'.$person->id;?>><i class="mdi mdi-pencil"></i> Edit</button></td>
 
                                         <td style="font-size: 17px;"><button type="button" class="btn btn-danger"  data-toggle="modal" data-target=<?= '#delete-person'.$person->id;?>><i class="mdi mdi-delete"></i> Delete</button></td>

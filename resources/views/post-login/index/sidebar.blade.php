@@ -43,6 +43,7 @@
                 <span class="menu-title">Dashboard</span>
             </a>
         </li>
+        @if(auth()->user()->role == "admin")
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
                 <i class="menu-icon mdi mdi-content-copy"></i>
@@ -57,7 +58,6 @@
                 </ul>
             </div>
         </li>
-        @if (auth()->user()->role == 'admin')
         <li class="nav-item">
             <a class="nav-link" href="/auth/manager">
                 <i class="menu-icon mdi mdi-account-plus-outline"></i>
@@ -71,12 +71,14 @@
                 <span class="menu-title">News</span>
             </a>
         </li>
+        @if(auth()->user()->role == 'admin')
         <li class="nav-item">
             <a class="nav-link" href="/auth/service">
                 <i class="menu-icon mdi mdi-receipt"></i>
                 <span class="menu-title">Service</span>
             </a>
         </li>
+        @endif
         <li class="nav-item">
             <a class="nav-link" href="/auth/team">
                 <i class="menu-icon mdi mdi-account-multiple"></i>
@@ -89,6 +91,7 @@
                 <span class="menu-title">Testimony</span>
             </a>
         </li>
+        @if (auth()->user()->role == 'admin')
         <li class="nav-item">
             <a class="nav-link" href="/auth/partners">
                 <i class="menu-icon mdi mdi-checkbox-multiple-marked-outline"></i>
@@ -107,6 +110,7 @@
                 <span class="menu-title">Portfolio</span>
             </a>
         </li>
+        @endif
         <li class="nav-item">
             <a class="nav-link" href="/auth/video">
                 <i class="menu-icon mdi mdi-file-video"></i>

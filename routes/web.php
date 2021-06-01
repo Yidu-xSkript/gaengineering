@@ -71,9 +71,17 @@ Route::group(['middleware' => 'auth', 'prefix' => 'auth'], function () {
         Route::get('/', [ServiceController::class, 'adminIndex'])->name('service.admin.index');
         Route::get('/create', [ServiceController::class, 'adminCreate'])->name('service.admin.create');
         Route::post('/', [ServiceController::class, 'store'])->name('service.admin.store');
+        Route::patch('/{id}/edit', [ServiceController::class, 'update'])->name('service.admin.edit');
+        Route::delete('/{id}/destroy', [ServiceController::class, 'destroy'])->name('service.admin.destroy');
     });
 
-    Route::get('/team', [TeamController::class, 'adminIndex'])->name('team.admin.index');
+    Route::group(['prefix' => 'team'], function() {
+        Route::get('/', [TeamController::class, 'adminIndex']);
+        Route::post('/', [TeamController::class, 'store']);
+        Route::patch('/{id}/edit', [TeamController::class, 'update']);
+        Route::delete('/{id}/destroy', [TeamController::class, 'destroy']);
+    });
+
     Route::get('/failed-emails', [EmailController::class, 'index'])->name('failed-email.admin.index');
     Route::get('/partners', [PartnerController::class, 'index'])->name('partner.admin.index');
     Route::get('/clients', [ClientController::class, 'adminIndex'])->name('client.admin.index');

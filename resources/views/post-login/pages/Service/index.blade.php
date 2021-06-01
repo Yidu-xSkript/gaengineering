@@ -29,13 +29,13 @@
 	            				<div class="row">
 	            					@if(!is_null($services))
 	            					@foreach($services as $service)
-	            					@include('post-login.partials.modal.service_modal')
+	            					@include('post-login.partials.service_modal')
 
                                     <div class="col-md-4 mt-3">
 		              					<div class="card2">
 
-		              						@if(!is_null($service->image))
-		                                    <img class="card-img-top" style="height: 250px; object-fit: cover;" src="{{ $service->image }}" alt="{{ $service->image }}">
+		              						@if(!is_null($service->image_url))
+		                                    <img class="card-img-top" style="height: 250px; object-fit: cover;" src="{{ $service->image_url }}" alt="{{ $service->image_url }}">
 		                                    @else
 
 		                                    <div style="padding-top: 51%; border-top-left-radius: 10px; border-top-right-radius: 10px;  background: linear-gradient(120deg, #00e4d0, #429FFD);" alt="Card image cap"></div>
@@ -45,7 +45,7 @@
 		                                    <div class="card-body">
 		                                        <h4 class="card-title mb-3" style="font-weight: bold;">{{$service->title}}</h4>
 		                                        <div class="dropdown-divider"></div>
-		                                        <p style="font-size: 16px;"><?= str_limit($service->slug, 200);?></p>
+		                                        <p style="font-size: 16px;"><?= Str::limit($service->slug, 200);?></p>
 
 		                                        <div class="ticket-actions mb-3">
 
@@ -55,19 +55,11 @@
 
 							                          	<div class="dropdown-menu">
 							                            	<a class="dropdown-item" data-toggle="modal" href="#" data-target="<?= '#edit-service'.$service->id; ?>">
-
 							                              		<i class="mdi mdi-tooltip-edit mr-2" style="color: rgba(0,0,0,0.5);"></i>Edit</a>
 
 							                            	<div class="dropdown-divider"></div>
 
-							                            	<a class="dropdown-item" data-toggle="modal" href="#" data-target="<?= '#update-image-service'.$service->id; ?>">
-
-							                              		<i class="mdi mdi-tooltip-edit mr-2" style="color: rgba(0,0,0,0.5);"></i>Update Image</a>
-
-							                            	<div class="dropdown-divider"></div>
-
 							                            	<a class="dropdown-item" data-toggle="modal" href="#" data-target="<?= '#delete-service'.$service->id; ?>">
-
 							                              		<i class="mdi mdi-delete-forever mr-2" style="color: rgba(0,0,0,0.5);"></i>Delete</a>
 							                          	</div>
 							                        </div>

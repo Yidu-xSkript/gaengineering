@@ -19,11 +19,11 @@ class News extends Model
         ]);
     }
 
-    public function UpdateNews(Int $id, String $title, String $imageURL, String $slug)
+    public function UpdateNews(Int $id, String $title, $imageURL, String $slug)
     {
         $News = $this::find($id);
         $News->title = $title;
-        $News->image_url = $imageURL;
+        if (!is_null($imageURL)) $News->image_url = $imageURL;
         $News->slug = $slug;
         $News->save();
     }

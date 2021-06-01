@@ -19,7 +19,7 @@ class Service extends Model
         ]);
     }
 
-    public function UpdateService(Int $id, String $title, String $imageURL, String $slug)
+    public function UpdateService(Int $id, String $title, $imageURL, String $slug)
     {
         $Service = $this::find($id);
         $Service->title = $title;

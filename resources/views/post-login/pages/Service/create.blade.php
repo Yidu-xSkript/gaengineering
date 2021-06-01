@@ -39,13 +39,12 @@
                                             <label for="title" style="font-size: 15px;">Title <small
                                                     style="color: red;">*</small></label>
                                             <input type="text" class="form-control" name="title" id="title"
-                                                placeholder="Title" style="font-size: 15px;">
+                                                placeholder="Title" required style="font-size: 15px;">
                                         </div>
 
                                         <div class="form-group">
                                             <label for="image" style="font-size: 15px;">Image</label>
-                                            <input type="file" name="image" class="form-control" id="image"
-                                                placeholder="Image" style="font-size: 15px; font-weight: bold;">
+                                            <input type="file" name="imageURL" required class="form-control" id="image" placeholder="Image" style="font-size: 15px; font-weight: bold;">
                                         </div>
 
                                         <div class="form-group">
