@@ -24,7 +24,8 @@ class TestimonialController extends Controller
 
     public function adminIndex()
     {
-        return View();
+        $testimonies = $this->m_testimony->GetAllTestimonies();
+        return View('post-login.pages.Testimony.index', compact('testimonies'));
     }
 
     private function validate__(Request $request)
@@ -37,7 +38,7 @@ class TestimonialController extends Controller
         ]);
     }
 
-    public function create(Request $request)
+    public function store(Request $request)
     {
         $this->validate__($request);
         $image_url = $this->UploadImage($request->file('image_url')->getRealPath());

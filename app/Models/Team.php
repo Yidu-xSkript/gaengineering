@@ -45,11 +45,11 @@ class Team extends Model
 
     public function GetTeam()
     {
-        return $this::get()->latest();
+        return $this::latest()->get();
     }
 
     public function GetPaginatedTeam()
     {
-        return $this::paginate(9)->latest();
+        return $this::latest()->paginate(9);
     }
 }

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Web;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Partner;
+use App\Models\Client;
 use App\Traits\CloudinaryTrait;
 
 class ClientController extends Controller
@@ -14,7 +14,7 @@ class ClientController extends Controller
 
     public function __construct()
     {
-        $this->m_client = new Partner();
+        $this->m_client = new Client();
     }
 
     public function index()
@@ -24,7 +24,8 @@ class ClientController extends Controller
 
     public function adminIndex()
     {
-
+        $clients = $this->m_client->GetClients();
+        return View('post-login.pages.Clients.index', compact('clients'));
     }
 
     private function validate__(Request $request)
@@ -41,7 +42,7 @@ class ClientController extends Controller
         $this->validate__($request);
         $imageURL = !is_null($request->imageURL) ?
             $this->UploadImage($request->file('imageURL')->getRealPath()) : null;
-        $this->m_client->CreatePartner($imageURL, $request->company_name, $request->slug);
+        $this->m_client->CreateClient($imageURL, $request->company_name, $request->slug);
         return back()->with('success', 'Client is successfully created!');
     }
 
@@ -50,13 +51,13 @@ class ClientController extends Controller
         $this->validate__($request);
         $imageURL = !is_null($request->imageURL) ?
             $this->UploadImage($request->file('imageURL')->getRealPath()) : null;
-        $this->m_client->UpdatePartner($id, $imageURL, $request->company_name, $request->slug);
+        $this->m_client->UpdateClient($id, $imageURL, $request->company_name, $request->slug);
         return back()->with('success', 'Client is successfully updated!');
     }
 
     public function destroy($id)
     {
-        $this->m_client->DestroyPartner($id);
+        $this->m_client->DestroyClient($id);
         return back()->with('success', 'Client is successfully deleted!');
     }
 }

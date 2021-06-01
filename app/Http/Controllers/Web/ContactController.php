@@ -19,13 +19,11 @@ class ContactController extends Controller
         return View('pre-login.pages.Contact');
     }
 
-
     public function adminIndex()
     {
-        $contactInfo = $this->m_contact->GetMessages();
-        return View('', compact(['contactInfo']));
+        $contacts = $this->m_contact->GetMessages();
+        return View('post-login.pages.Contact.index', compact(['contacts']));
     }
-
 
     private function validate__(Request $request)
     {

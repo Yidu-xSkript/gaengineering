@@ -22,11 +22,11 @@ class Contact extends Model
 
     public function GetMessages()
     {
-        return $this::get()->latest();
+        return $this::latest()->get();
     }
 
     public function GetPaginatedMessages()
     {
-        return $this::paginate(10)->latest();
+        return $this::latest()->paginate(10);
     }
 }

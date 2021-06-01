@@ -21,6 +21,12 @@ class VideoController extends Controller
         return View('pre-login.pages.Videos');
     }
 
+    public function adminIndex()
+    {
+        $videos = $this->m_video->GetAllVideos();
+        return View('post-login.pages.Video.index', compact('videos'));
+    }
+
     private function validate__(Request $request)
     {
         $this->validate($request, [

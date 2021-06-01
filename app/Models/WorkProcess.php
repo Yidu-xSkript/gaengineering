@@ -38,11 +38,11 @@ class WorkProcess extends Model
 
     public function GetWorkProcess()
     {
-        return $this::get()->latest();
+        return $this::latest()->get();
     }
 
     public function GetPaginatedWorkProcess()
     {
-        return $this::paginate(9)->latest();
+        return $this::latest()->paginate(9);
     }
 }

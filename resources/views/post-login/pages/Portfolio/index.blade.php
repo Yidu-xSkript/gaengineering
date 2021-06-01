@@ -1,59 +1,39 @@
 @extends('post-login.index.header')
-
 @section('content')
 
 @include('partials.error2')
-
 @include('partials.success2')
 
-
-
 <div class="main-panel">
-
 	<div class="content-wrapper">
-
 	  	<div class="row">
-
 	    	<div class="col-md-12 d-flex align-items-stretch grid-margin">
-
 	      		<div class="row flex-grow">
-
 	        		<div class="col-12">
-
 	          			<div class="card">
-
 	            			<div class="card-body">
-
 	            				<div class="row">
-
-	            					<div class="col-md-10">
-
+	            					<div class="col-md-8">
 	              						<h4 class="card-title">Portfolio</h4>
-
 	            					</div>
-
+                                    <div class="col-md-2">
+                                        <a class="btn btn-success btn-block" href="/auth/portfolio/category" style="color: #fff;">
+                                          <i class="mdi mdi-plus"></i> Add Category
+                                        </a>
+                                    </div>
 	            					<div class="col-md-2">
-
-			              				<a class="btn btn-success btn-block" href="/add-portfolio" style="color: #fff;">		
-
+			              				<a class="btn btn-success btn-block" href="/auth/portfolio/create" style="color: #fff;">
 							                <i class="mdi mdi-plus"></i> Add portfolio
-
 							            </a>
-
 	            					</div>
-
 	            				</div>
 
 	            				<div class="dropdown-divider w-25"></div>
 
 	            				<div class="row">
-
 	            					@if(!is_null($portfolios))
-
 	            					@foreach($portfolios as $portfolio)
-
-	            					@include('partials.modal.portfolio_modal')
-
+	            					@include('post-login.partials.modal.portfolio_modal')
 		            				<div class="col-md-4 mt-3">
 
 		              					<div class="card2">
@@ -68,7 +48,7 @@
 
 		                                    <div class="card-body">
 
-		                                    	
+
 		                                        <h4 class="card-title mb-3" style="font-weight: bold;">{{$portfolio->title}}</h4>
 
 		                                        <div class="dropdown-divider"></div>
@@ -102,55 +82,24 @@
 							                            	<a class="dropdown-item" data-toggle="modal" href="#" data-target="<?= '#delete-portfolio'.$portfolio->id; ?>">
 
 							                              		<i class="mdi mdi-delete-forever mr-2" style="color: rgba(0,0,0,0.5);"></i>Delete</a>
-
 							                          	</div>
-
 							                        </div>
-
 							                    </div>
-
-		                                        <p class="card-text" style="color: rgba(0,0,0,0.3); font-size: 14px;"><i class="mdi mdi-clock"></i> {{$portfolio->created_at->diffForHumans()}}</p> 
-
+		                                        <p class="card-text" style="color: rgba(0,0,0,0.3); font-size: 14px;"><i class="mdi mdi-clock"></i> {{$portfolio->created_at->diffForHumans()}}</p>
 		                                    </div>
-
 		                                </div>
-
 		            				</div>
-
 		            				@endforeach
-
-		            				@endif		            				
-
+		            				@endif
 	            				</div>
-
 	            			</div>
-
 	          			</div>
-
 	        		</div>
-
 	    		</div>
-
 			</div>
-
 		</div>
-
 	</div>
-
 	@include('post-login.index.footer')
-
 </div>
-
-<script src="js/jquery.min.js"></script>
-
-<script type="text/javascript">
-
-  $(document).ready(function() {
-
-    $(".slug").wysihtml5();
-
-  });
-
-</script>
 
 @endsection

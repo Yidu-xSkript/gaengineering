@@ -50,7 +50,7 @@ class Portfolio extends Model
 
     public function GetAllPortfolios()
     {
-        return $this::with(['portfolio_category', 'portfolio_images'])->get()->latest();
+        return $this::with(['portfolio_category', 'portfolio_images'])->latest()->get();
     }
 
     public function GetPaginatedPortfolios()

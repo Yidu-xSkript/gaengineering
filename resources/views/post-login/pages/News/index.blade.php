@@ -3,7 +3,6 @@
 @section('content')
 
 @include('partials.error2')
-
 @include('partials.success2')
 
 <div class="main-panel">
@@ -19,7 +18,7 @@
 	              						<h4 class="card-title">News</h4>
 	            					</div>
 	            					<div class="col-md-2">
-			              				<a class="btn btn-success btn-block" href="/add-news" style="color: #fff;">		
+			              				<a class="btn btn-success btn-block" href="/auth/news/create" style="color: #fff;">
 							                <i class="mdi mdi-plus"></i> Add News
 							            </a>
 	            					</div>
@@ -29,17 +28,18 @@
 
 	            					@if(!is_null($newz))
 	            					@foreach($newz as $news)
-	            					@include('partials.modal.news-modal')
+	            					@include('post-login.partials.modal.news-modal')
 		            				<div class="col-md-3 mt-3">
 		              					<div class="card2">
 
 		              						@if(!is_null($news->image))
-		                                    <img class="card-img-top" style="height: 250px; object-fit: cover;" src="{{URL::asset('storage/app/public/uploads/news/'.$news->image)}}" alt="Card image cap">
+		                                    <img class="card-img-top" style="height: 250px; object-fit: cover;" src="{{$news->image}}" alt="Card image cap">
 		                                    @else
 
 		                                    <div style="padding-top: 68%; border-top-left-radius: 10px; border-top-right-radius: 10px;  background: linear-gradient(120deg, #00e4d0, #429FFD);" alt="Card image cap"></div>
 
 		                                    @endif
+
 		                                    <div class="card-body">
 		                                        <h4 class="card-title mb-3" style="font-weight: bold;">{{str_limit($news->title, 20)}}</h4>
 		                                        <p style="font-size: 16px;"><?= str_limit($news->slug, 60);?></p>
@@ -60,10 +60,7 @@
 							                          	</div>
 							                        </div>
 							                    </div>
-		                                        <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-		                                            content.
-		                                        </p> -->
-		                                        <p class="card-text" style="color: rgba(0,0,0,0.3); font-size: 14px;"><i class="mdi mdi-clock"></i>{{$news->created_at->diffForHumans()}}</p> 
+		                                        <p class="card-text" style="color: rgba(0,0,0,0.3); font-size: 14px;"><i class="mdi mdi-clock"></i>{{$news->created_at->diffForHumans()}}</p>
 		                                    </div>
 		                                </div>
 		            				</div>

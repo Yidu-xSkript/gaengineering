@@ -19,14 +19,14 @@ class TeamController extends Controller
 
     public function index()
     {
-        // $team = $this->m_team->GetTeam();
-        return View('pre-login.pages.Team'/*, compact(['team'])*/);
+        $team = $this->m_team->GetTeam();
+        return View('pre-login.pages.Team', compact(['team']));
     }
 
     public function adminIndex()
     {
         $team = $this->m_team->GetTeam();
-        return View('', compact(['team']));
+        return View('post-login.pages.Team.index', compact(['team']));
     }
 
     public function validate__(Request $request)

@@ -29,11 +29,11 @@ class Subscription extends Model
 
     public function GetSubscribers()
     {
-        return $this::get()->latest();
+        return $this::latest()->get();
     }
 
     public function GetPaginatedSubscribers()
     {
-        return $this::paginate(12)->latest();
+        return $this::latest()->paginate(12);
     }
 }

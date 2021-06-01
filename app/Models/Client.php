@@ -35,11 +35,11 @@ class Client extends Model
 
     public function GetClients()
     {
-        return $this::get()->latest();
+        return $this::latest()->get();
     }
 
     public function GetPaginatedClients()
     {
-        return $this::paginate(10)->latest();
+        return $this::latest()->paginate(10);
     }
 }

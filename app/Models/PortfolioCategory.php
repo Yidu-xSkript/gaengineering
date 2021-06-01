@@ -34,6 +34,6 @@ class PortfolioCategory extends Model
 
     public function GetPC()
     {
-        return $this::get()->latest();
+        return $this::latest()->get();
     }
 }

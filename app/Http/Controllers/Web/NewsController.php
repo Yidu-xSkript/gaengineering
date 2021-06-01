@@ -29,7 +29,13 @@ class NewsController extends Controller
 
     public function adminIndex()
     {
-        return View();
+        $newz = $this->m_news->GetPaginatedNews();
+        return View('post-login.pages.News.index', compact("newz"));
+    }
+
+    public function adminCreate()
+    {
+        return View('post-login.pages.News.create');
     }
 
     private function validate__(Request $request)
@@ -41,7 +47,7 @@ class NewsController extends Controller
         ]);
     }
 
-    public function create(Request $request)
+    public function store(Request $request)
     {
         $this->validate__($request);
         $imageURL = !is_null($request->imageURL) ?

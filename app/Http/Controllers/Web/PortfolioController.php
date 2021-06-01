@@ -33,7 +33,13 @@ class PortfolioController extends Controller
 
     public function adminIndex()
     {
-        return View();
+        $portfolios = $this->m_portfolio->GetAllPortfolios();
+        return View('post-login.pages.Portfolio.index', compact('portfolios'));
+    }
+
+    public function adminCreate()
+    {
+        return View('post-login.pages.Portfolio.create');
     }
 
     public function m_indexPortfolioImage()
@@ -43,7 +49,8 @@ class PortfolioController extends Controller
 
     public function m_indexPortfolioCategory()
     {
-        return View();
+        $categories = $this->m_portfolioCategory->GetPC();
+        return View('post-login.pages.Portfolio.category', compact('categories'));
     }
 
     private function m_validatePortfolioCategory(Request $request)
@@ -115,7 +122,7 @@ class PortfolioController extends Controller
         ]);
     }
 
-    public function create(Request $request)
+    public function store(Request $request)
     {
         $this->validate__($request);
         $image_url = !is_null($request->image_url) ?

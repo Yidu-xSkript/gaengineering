@@ -56,12 +56,12 @@ class NewsLetter extends Model
 
     public function GetNewsLetters()
     {
-        return $this::get()->latest();
+        return $this::latest()->get();
     }
 
     public function GetPaginatedNewsLetter()
     {
-        return $this::paginate(10)->latest();
+        return $this::latest()->paginate(10);
     }
 
     public function ViewNewsLetter($id)

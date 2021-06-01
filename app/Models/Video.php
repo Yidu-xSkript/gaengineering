@@ -33,11 +33,11 @@ class Video extends Model
 
     public function GetAllVideos()
     {
-        return $this::get()->latest();
+        return $this::latest()->get();
     }
 
     public function GetPaginatedVideos()
     {
-        return $this::paginate(9)->latest();
+        return $this::latest()->paginate(9);
     }
 }

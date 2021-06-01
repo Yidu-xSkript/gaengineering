@@ -26,6 +26,17 @@ class ServiceController extends Controller
         return View('pre-login.pages.Service.Detail');
     }
 
+    public function adminIndex()
+    {
+        $services = $this->m_service->GetPaginatedService();
+        return View('post-login.pages.Service.index', compact('services'));
+    }
+
+    public function adminCreate()
+    {
+        return View('post-login.pages.Service.create');
+    }
+
     private function validate__(Request $req)
     {
         $this->validate($req, [
@@ -35,7 +46,7 @@ class ServiceController extends Controller
         ]);
     }
 
-    public function create(Request $req)
+    public function store(Request $req)
     {
         $this->validate__($req);
         $imageURL = $this->UploadImage($req->file('imageURL')->getRealPath());

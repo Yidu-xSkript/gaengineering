@@ -55,7 +55,7 @@
                     <a href="/contact">Contact Us</a>
                 </li>
 
-                <li class="get-started"><a href="/contact">Get Started</a></li>
+                <li class="get-started">@guest<a href="/contact">Get Started</a>@endguest @auth<a href="/auth/dashboard">Go to Dashboard</a>@endauth</li>
             </ul>
         </nav><!-- .nav-menu -->
 

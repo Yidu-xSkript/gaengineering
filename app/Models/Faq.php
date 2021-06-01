@@ -33,11 +33,11 @@ class Faq extends Model
 
     public function GetFAQ()
     {
-        return $this::get()->latest();
+        return $this::latest()->get();
     }
 
     public function GetPaginatedFAQ()
     {
-        return $this::paginate(10)->latest();
+        return $this::latest()->paginate(10);
     }
 }

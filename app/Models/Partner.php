@@ -22,7 +22,7 @@ class Partner extends Model
     public function UpdatePartner(Int $id, String $imageURL, String $url)
     {
         $partner = $this::find($id);
-        $partner->image_url = $imageURL;
+        if (!is_null($imageURL)) $partner->image_url = $imageURL;
         $partner->url = $url;
         $partner->save();
     }
@@ -34,11 +34,11 @@ class Partner extends Model
 
     public function GetPartners()
     {
-        return $this::get()->latest();
+        return $this::latest()->get();
     }
 
     public function GetPaginatedPartners()
     {
-        return $this::paginate(10)->latest();
+        return $this::latest()->paginate(10);
     }
 }

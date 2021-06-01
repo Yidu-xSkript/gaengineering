@@ -35,12 +35,12 @@ class News extends Model
 
     public function GetNews()
     {
-        return $this::get()->latest();
+        return $this::latest()->get();
     }
 
     public function GetPaginatedNews()
     {
-        return $this::paginate(9)->latest();
+        return $this::latest()->paginate(9);
     }
 
     public function ViewNews($id)

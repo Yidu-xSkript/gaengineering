@@ -35,12 +35,12 @@ class Service extends Model
 
     public function GetService()
     {
-        return $this::get()->latest();
+        return $this::latest()->get();
     }
 
     public function GetPaginatedService()
     {
-        return $this::paginate(9)->latest();
+        return $this::latest()->paginate(9);
     }
 
     public function ViewService($id)

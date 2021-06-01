@@ -35,11 +35,11 @@ class WhyChooseUs extends Model
 
     public function GetWCU()
     {
-        return $this::get()->latest();
+        return $this::latest()->get();
     }
 
     public function GetPaginatedWCU()
     {
-        return $this::paginate(9)->latest();
+        return $this::latest()->paginate(9);
     }
 }
