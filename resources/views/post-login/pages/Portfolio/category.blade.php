@@ -29,11 +29,11 @@
 
       					<div class="dropdown-divider w-25 "></div>
 
-      					<form class="forms-sample mt-4" action="/partners" method="post" enctype="multipart/form-data">
+      					<form class="forms-sample mt-4" action="/auth/portfolio" method="post">
                         @csrf
 		                    <div class="form-group">
                                 <label for="category_name" style="font-size: 15px;">Category Name</label>
-                                <input type="file" class="form-control" required style="font-size: 16px;" id=category_name name="category_name" placeholder="Category Name">
+                                <input type="text" class="form-control" required style="font-size: 16px;" id=category_name name="category_name" placeholder="Category Name">
                             </div>
 
 			                <button type="submit" class="btn btn-primary mr-2 mt-4"><i class="mdi mdi-plus"></i>Create Portfolio Category</button>

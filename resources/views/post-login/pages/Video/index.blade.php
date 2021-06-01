@@ -27,12 +27,13 @@
       					<form class="forms-sample mt-4" action="/partners" method="post" enctype="multipart/form-data">
                         @csrf
 		                    <div class="form-group">
-                                <label for="image_url" style="font-size: 15px;">Image</label>
-                                <input type="file" class="form-control" required style="font-size: 16px;" id=image_url name="image_url" placeholder="Select Image">
+                                <label for="thumbnail" style="font-size: 15px;">Thumbnail</label>
+                                <input type="file" class="form-control" required style="font-size: 16px;" id=thumbnail name="thumbnail" placeholder="Select Image">
                             </div>
+
                             <div class="form-group">
                                 <label for="video_url" style="font-size: 15px;">Video URL</label>
-                                <input type="text" class="form-control" name="video_url" id="video_url" placeholder="video url" style="font-size: 15px;">
+                                <input type="url" class="form-control" name="video_url" id="video_url" placeholder="video url" style="font-size: 15px;">
                             </div>
 
 			                <button type="submit" class="btn btn-primary mr-2 mt-4"><i class="mdi mdi-plus"></i>Add</button>

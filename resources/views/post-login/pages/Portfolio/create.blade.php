@@ -65,7 +65,7 @@
 
                                     <div class="form-group">
                                         <label for="project_url" style="font-size: 15px;">Project URL</label>
-                                        <input class="form-control" id="project_url" name="project_url" type="text" style="font-size: 15px;">
+                                        <input class="form-control" id="project_url" name="project_url" type="url" style="font-size: 15px;" placeholder="Project URL">
                                     </div>
 
 					                <div class="form-group">

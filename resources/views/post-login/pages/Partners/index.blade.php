@@ -18,9 +18,7 @@
 
         				<div class="dropdown-divider w-25"></div>
 
-      					<p class="card-description mt-2 mb-2">
-        					Create Partner
-      					</p>
+      					<p class="card-description mt-2 mb-2">Create Partner</p>
 
       					<div class="dropdown-divider w-25 "></div>
 
@@ -32,7 +30,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="url" style="font-size: 15px;">URL</label>
-                                <input type="text" class="form-control" name="url" id="url" placeholder="URL" style="font-size: 15px;">
+                                <input type="url" class="form-control" name="url" id="url" placeholder="URL" style="font-size: 15px;">
                             </div>
 
 			                <button type="submit" class="btn btn-primary mr-2 mt-4"><i class="mdi mdi-plus"></i>Add</button>

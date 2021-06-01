@@ -48,28 +48,28 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="Twitter" style="font-size: 15px;">Twitter</label>
-                                        <input type="text" class="form-control"  style="font-size: 16px;" id="Twitter" name="twitter" placeholder="Twitter Link" >
+                                        <input type="url" class="form-control"  style="font-size: 16px;" id="Twitter" name="twitter" placeholder="Twitter Link" >
                                     </div>
                                 </div>
 
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="facebook" style="font-size: 15px;">Facebook</label>
-                                        <input type="text" class="form-control"  style="font-size: 16px;" id='facebook' name="facebook" placeholder="Facebook" >
+                                        <input type="url" class="form-control"  style="font-size: 16px;" id='facebook' name="facebook" placeholder="Facebook" >
                                     </div>
                                 </div>
 
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="google_plus" style="font-size: 15px;">google plus</label>
-                                        <input type="text" class="form-control"  style="font-size: 16px;" id="google_plus" name="google_plus" placeholder="Google plus" >
+                                        <input type="url" class="form-control"  style="font-size: 16px;" id="google_plus" name="google_plus" placeholder="Google plus" >
                                     </div>
                                 </div>
 
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="instagram" style="font-size: 15px;">Instagram</label>
-                                        <input type="text" class="form-control"  style="font-size: 16px;" id="instagram" name="instagram" placeholder="Instagram" >
+                                        <input type="url" class="form-control"  style="font-size: 16px;" id="instagram" name="instagram" placeholder="Instagram" >
                                     </div>
                                 </div>
                             </div>
