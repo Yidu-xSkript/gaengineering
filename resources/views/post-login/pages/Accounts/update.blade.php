@@ -14,7 +14,7 @@
 	            			<div class="card-body">
 	              				<h4 class="card-title">Manage your account</h4>
                                 <hr/>
-              					<form class="forms-sample" action="/account" method="post">
+              					<form class="forms-sample" action="/auth/account" method="post">
               						@csrf
               						@method('PATCH')
 					                <div class="form-group">

@@ -17,7 +17,7 @@
             </div>
 
             <form action="/admin-news/{{$news->id}}" method="post">
-                
+
                 @csrf
 
                 @METHOD('PATCH')
@@ -33,11 +33,11 @@
                     </div>
 
                     <div class="form-group">
-                                    
+
                         <label for="slug" style="font-size: 15px;">Slug/Description about the News<small style="color: red;">*</small></label>
-                    
+
                         <textarea class="form-control slug"  rows="8" name="slug" id="slug" placeholder="Slug / Description" style="font-size: 15px;" required><?= $news->slug;?></textarea>
-                    
+
                     </div>
 
                 </div>
@@ -78,10 +78,10 @@
             </div>
 
             <form action="/admin-news/{{$news->id}}/image" method="post" enctype="multipart/form-data">
-                
+
                 @csrf
 
-                @METHOD('patch')                
+                @METHOD('patch')
 
                 <div class="modal-body">
 
@@ -125,7 +125,7 @@
         <div class="modal-content">
 
             <form action="/admin-news/{{$news->id}}" method="post">
-                
+
                 @csrf
 
                 @method('DELETE')

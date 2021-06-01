@@ -23,10 +23,12 @@
                             class="mdi mdi-account-circle"></i>
                         Manage Account
                     </a>
+                    @if(auth()->user()->role == 'admin')
                     <a href="/auth/settings" class="dropdown-item" style="font-size: 16px;"><i
                             class="mdi mdi-settings"></i>
                         Company Settings
                     </a>
+                    @endif
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <button type="submit" class="dropdown-item" style="font-size: 16px;"><i

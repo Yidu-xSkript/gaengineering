@@ -31,16 +31,25 @@ class UserController extends Controller
             'email' => 'required|email|unique:users',
             'name' => 'required'
         ]);
-        $this->m_user->CreateUser($request->name, $request->email, bcrypt('password'));
+        $this->m_user->CreateUser($request->name, $request->email, 'password');
         return back()->with('success', 'user account is successfully created!');
     }
 
-    public function update(Request $request, int $id)
+    public function updateManager(Request $request, int $id)
     {
-        $this->validate($request, ['email' => 'required|email|unique:users', 'name' => 'required']);
-        if (!isEmptyOrNullString($request->password))
+        $this->validate($request, ['email' => 'required|email', 'name' => 'required']);
+        if (!is_null($request->password) && $request->password != "")
             $this->validate($request, ['password' => 'required|confirmed']);
         $this->m_user->UpdateUser($id, $request->name, $request->email, $request->password);
+        return back()->with('success', 'user account is successfully updated!');
+    }
+
+    public function update(Request $request)
+    {
+        $this->validate($request, ['email' => 'required|email', 'name' => 'required']);
+        if (!is_null($request->password) && $request->password != "")
+            $this->validate($request, ['password' => 'required|confirmed']);
+        $this->m_user->UpdateUser(auth()->user()->id, $request->name, $request->email, $request->password);
         return back()->with('success', 'user account is successfully updated!');
     }
 

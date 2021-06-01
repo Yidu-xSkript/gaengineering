@@ -57,9 +57,14 @@ class User extends Authenticatable
     {
         $user = $this::find($id);
         $user->name = $name;
-        $user->email = $email;
+        if (!$this->UserEmailExists($email)) $user->email = $email;
         if (!is_null($password)) $user->password = bcrypt($password);
         $user->save();
+    }
+
+    public function UserEmailExists(string $email)
+    {
+        return $this::where('email', $email)->count() > 0 ? true : false;
     }
 
     private function CheckCurrentPassword(string $current_pass, User $user)

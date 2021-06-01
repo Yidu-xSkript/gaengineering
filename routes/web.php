@@ -78,10 +78,10 @@ Route::group(['middleware' => 'auth', 'prefix' => 'auth'], function () {
     Route::get('/partners', [PartnerController::class, 'index'])->name('partner.admin.index');
     Route::get('/clients', [ClientController::class, 'adminIndex'])->name('client.admin.index');
 
-    Route::group(['prefix' => 'manager'], function() {
+    Route::group(['prefix' => 'manager', 'middleware' => 'role:admin'], function() {
         Route::get('/', [UserController::class, 'index'])->name('user.admin.index');
         Route::post('/', [UserController::class, 'addManager'])->name('user.admin.store');
-        Route::patch('/{id}/edit', [UserController::class, 'update'])->name('user.admin.update');
+        Route::patch('/{id}/edit', [UserController::class, 'updateManager'])->name('user.admin.update');
         Route::delete('/{id}/destroy', [UserController::class, 'destroy'])->name('user.admin.destroy');
     });
 
@@ -112,13 +112,16 @@ Route::group(['middleware' => 'auth', 'prefix' => 'auth'], function () {
 
     Route::get('/video', [VideoController::class, 'adminIndex'])->name('video.admin.index');
 
-    Route::group(['prefix' => 'settings'], function() {
-        Route::get('/', [SettingController::class, 'index'])->middleware(['role:admin']);
-        Route::patch('/', [SettingController::class, 'update'])->middleware(['role:admin']);
+    Route::group(['prefix' => 'settings', 'middleware' => 'role:admin'], function() {
+        Route::get('/', [SettingController::class, 'index']);
+        Route::patch('/', [SettingController::class, 'update']);
     });
 
-    Route::get('/account', [UserController::class, 'setup'])->name('account.admin.index');
-    Route::get('/contact', [ContactController::class, 'adminIndex'])->name('contact.admin.index');
+    Route::group(['prefix' => 'account'], function() {
+        Route::get('/', [UserController::class, 'setup']);
+        Route::patch('/', [UserController::class, 'update']);
+    });
+    Route::get('/contact', [ContactController::class, 'adminIndex']);
 });
 // 'throttle:6,1'
 require __DIR__.'/auth.php';

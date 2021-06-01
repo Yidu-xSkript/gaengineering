@@ -59,14 +59,14 @@
 
                                 <tbody>
                                     @foreach($users as $manager)
-                                    @include('post-login.partials.modal.manager-modal')
+                                    @include('post-login.partials.manager-modal')
                                     <tr class="record">
                                         <td style="font-size: 15px;">{{ $manager->name }}</td>
                                         <td style="font-size: 15px;">{{ $manager->email }}</td>
 
-                                        <td style="font-size: 17px;"><button type="button" class="btn btn-success"  data-toggle="modal" data-target=<?= '#edit-manager'.$manager->id;?>><i class="mdi mdi-image"></i> Edit</button></td>
+                                        <td style="font-size: 17px;"><button type="button" class="btn btn-primary" data-toggle="modal" data-target=<?= '#edit'.$manager->id;?>><i class="mdi mdi-pencil"></i> Edit</button></td>
 
-                                        <td style="font-size: 17px;"><button type="button" class="btn btn-danger"  data-toggle="modal" data-target=<?= '#delete-manager'.$manager->id;?>><i class="mdi mdi-delete"></i> Delete</button></td>
+                                        <td style="font-size: 17px;"><button type="button" class="btn btn-danger"  data-toggle="modal" data-target=<?= '#delete'.$manager->id;?>><i class="mdi mdi-delete"></i> Delete</button></td>
                                     </tr>
                                     @endforeach
                                 </tbody>
