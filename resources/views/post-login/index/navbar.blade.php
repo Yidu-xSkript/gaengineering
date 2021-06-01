@@ -1,9 +1,9 @@
 <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
     <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
-        <a class="navbar-brand brand-logo" href="/dashboard">
+        <a class="navbar-brand brand-logo" href="/">
             <img src="storage/app/public/uploads/logo.png" style="object-fit: contain;" alt="logo" />
         </a>
-        <a class="navbar-brand brand-logo-mini" href="/dashboard">
+        <a class="navbar-brand brand-logo-mini" href="/">
             <img src="storage/app/public/uploads/logo.png" style="object-fit: contain;" alt="logo" />
         </a>
     </div>
@@ -14,8 +14,8 @@
             <li class="nav-item dropdown d-none d-xl-inline-block">
                 <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown"
                     aria-expanded="false">
-                    <span class="profile-text" style="font-size: 14px;">Hello, {{ auth()->user()->name }} !</span>
-                    <img class="img-xs rounded-circle" src="images/index.png" alt="Profile image">
+                    <span class="profile-text" style="font-size: 14px;">Welcome back, <b>{{ auth()->user()->name }}</b></span>
+                    <img class="img-xs rounded-circle" src="https://i.pravatar.cc/100" alt="Profile image">
                 </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
 

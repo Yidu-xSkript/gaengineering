@@ -2,7 +2,7 @@
     .sidebar {
         min-height: calc(100vh - 63px);
         background: #ffffff;
-        font-family: "Nunito Sans", "Nunito", sans-serif;
+        font-family: "Poppins", "Nunito", sans-serif;
         padding: 0;
         width: 255px;
         z-index: 11;
@@ -24,9 +24,9 @@
             <div class="nav-link">
                 <div class="user-wrapper">
                     <div class="profile-image">
-                        <img src="images/index.png" alt="profile image">
+                        <img src="https://i.pravatar.cc/100" alt="profile image">
                     </div>
-                    <div class="text-wrapper text-center">
+                    <div class="text-wrapper text-center mt-3">
                         <p class="profile-name  text-center" style="font-size: 20px;">{{ auth()->user()->name }}</p>
                         <div>
                             <small class="designation text-muted">{{ auth()->user()->email }}</small>
@@ -133,7 +133,7 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/auth/failed-emails">
-                <i class="menu-icon mdi mdi-email"></i>
+                <i class="menu-icon mdi mdi-email-alert"></i>
                 <span class="menu-title">Failed Emails</span>
             </a>
         </li>

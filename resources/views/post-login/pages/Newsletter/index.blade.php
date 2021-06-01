@@ -23,8 +23,7 @@
       					<div class="dropdown-divider w-25 "></div>
 
       					<form class="forms-sample mt-4" action="/auth/newsletter" method="post">
-                        @csrf
-
+                            @csrf
                             <div class="form-group">
                                 <label for="title" style="font-size: 15px;">Title</label>
                                 <input type="text" class="form-control" name="title" id="title" placeholder="title" style="font-size: 15px;" required>
@@ -32,7 +31,7 @@
 
                             <div class="form-group">
                                 <label for="slug" style="font-size: 15px;">Newsletter Content</label>
-                                <textarea class="form-control testimony" rows="10" style="font-size: 16px;" id="slug" name="slug" placeholder="Newsletter content" ></textarea>
+                                <textarea class="form-control testimony" rows="10" id="slug" name="slug" placeholder="Newsletter content" ></textarea>
                             </div>
 
 			                <button type="submit" class="btn btn-primary mr-2 mt-4"><i class="mdi mdi-plus"></i>Add</button>
@@ -44,7 +43,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title" style="font-size:17px; text-transform:uppercase;">
-                            <b>Partners</b></h4>
+                            <b>Newsletters</b></h4>
                         <div class="dropdown-divider mb-4" style="width:25.5%;"></div>
                         <div class="table-responsive">
                             <table class="table table-hover" id="dataTables-example">
@@ -60,16 +59,16 @@
 
                                 <tbody>
                                     @foreach($newsletters as $newsletter)
-                                    @include('post-login.partials.modal.newsletter-modal')
+                                    @include('post-login.partials.newsletter-modal')
                                     <tr class="record">
                                         <td style="font-size: 15px;">{{ $newsletter->title }}</td>
                                         <td style="font-size: 15px;"><?= Str::limit($newsletter->slug, 200); ?></td>
 
-                                        <td style="font-size: 17px;"><button type="button" class="btn btn-success"  data-toggle="modal" data-target=<?= '#send-newsletter'.$newsletter->id;?>><i class="mdi mdi-send"></i> Send Email</button></td>
+                                        <td style="font-size: 17px;"><button type="button" class="btn btn-info"  data-toggle="modal" data-target=<?= '#send'.$newsletter->id;?>><i class="mdi mdi-send"></i> Send Email</button></td>
 
-                                        <td style="font-size: 17px;"><button type="button" class="btn btn-success"  data-toggle="modal" data-target=<?= '#edit-newsletter'.$newsletter->id;?>><i class="mdi mdi-image"></i> Edit</button></td>
+                                        <td style="font-size: 17px;"><button type="button" class="btn btn-primary"  data-toggle="modal" data-target=<?= '#edit'.$newsletter->id;?>><i class="mdi mdi-image"></i> Edit</button></td>
 
-                                        <td style="font-size: 17px;"><button type="button" class="btn btn-danger"  data-toggle="modal" data-target=<?= '#delete-newsletter'.$newsletter->id;?>><i class="mdi mdi-delete"></i> Delete</button></td>
+                                        <td style="font-size: 17px;"><button type="button" class="btn btn-danger"  data-toggle="modal" data-target=<?= '#delete'.$newsletter->id;?>><i class="mdi mdi-delete"></i> Delete</button></td>
                                     </tr>
                                     @endforeach
                                 </tbody>

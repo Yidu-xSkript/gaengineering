@@ -14,10 +14,9 @@
     <link rel="stylesheet" href="{{ URL::asset('post/vendors/css/vendor.bundle.addons.css') }}">
 
     <link rel="stylesheet" href="{{ URL::asset('post/css/bootstrap.css') }}">
-    {{-- <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet"> --}}
 
     <!-- endinject -->
-    {{-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script> --}}
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
     <script src="{{ URL::asset('post/vendors/table/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ URL::asset('post/vendors/table/metisMenu/metisMenu.min.js') }}"></script>
     <script src="{{ URL::asset('post/vendors/table/datatables/js/jquery.dataTables.min.js') }}"></script>
@@ -63,12 +62,38 @@
     <script src="{{ URL::asset('post/js/misc.js') }}"></script>
     <script src="{{ URL::asset('post/js/dashboard.js') }}"></script>
 
-    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.min.js"></script> --}}
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
     <script type="text/javascript">
         $('#slug').summernote({
-            height: 400
+            height: 400,
+            fontSizes: ['8', '9', '10', '11', '12', '14', '16', '18', '20'],
+            toolbar: [
+                ['style', ['bold', 'italic', 'underline', 'clear', 'style']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['font', ['strikethrough', 'superscript', 'subscript']],
+                ['color', ['color']],
+                ['fontsize', ['fontsize']],
+                ['height', ['height']],
+                ['insert', ['link', 'picture']],
+                ['view', ['codeview', 'help']],
+                ['table', ['table']],
+            ]
+        });
+        $('#slug_modal').summernote({
+            height: 400,
+            fontSizes: ['8', '9', '10', '11', '12', '14', '16', '18', '20'],
+            toolbar: [
+                ['style', ['bold', 'italic', 'underline', 'clear', 'style']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['font', ['strikethrough', 'superscript', 'subscript']],
+                ['color', ['color']],
+                ['fontsize', ['fontsize']],
+                ['height', ['height']],
+                ['insert', ['link', 'picture']],
+                ['view', ['codeview', 'help']],
+                ['table', ['table']],
+            ]
         });
         $(document).ready(function() {
             $('#dataTables-example').DataTable({

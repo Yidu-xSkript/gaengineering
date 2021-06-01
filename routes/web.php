@@ -87,7 +87,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'auth'], function () {
 
     Route::group(['prefix' => 'newsletter'], function() {
         Route::get('/', [NewsletterController::class, 'index'])->name('newsletter.admin.index');
-        Route::post('/', [NewsletterController::class, 'addManager'])->name('newsletter.admin.store');
+        Route::post('/', [NewsletterController::class, 'store'])->name('newsletter.admin.store');
         Route::patch('/{id}/edit', [NewsletterController::class, 'update'])->name('newsletter.admin.update');
         Route::delete('/{id}/destroy', [NewsletterController::class, 'destroy'])->name('newsletter.admin.destroy');
     });
