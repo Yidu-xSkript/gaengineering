@@ -34,7 +34,8 @@ class TestimonialController extends Controller
             'image_url' => !is_null($request->image_url) ? 'required|image|mimes:jpg,png,jpeg,svg' : '',
             'company_name' => 'required',
             'job_title' => 'required',
-            'testimony' => 'required'
+            'testimony' => 'required',
+            'name' => 'required'
         ]);
     }
 

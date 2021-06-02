@@ -21,7 +21,7 @@ class Testimonial extends Model
         ]);
     }
 
-    public function UpdateTestimony(Int $id, String $image_url, String $name, String $job_title, String $company_name, String $testimony)
+    public function UpdateTestimony(Int $id, $image_url, String $name, String $job_title, String $company_name, String $testimony)
     {
         $testimony__ = $this::find($id);
         if (!is_null($image_url)) $testimony__->image_url = $image_url;

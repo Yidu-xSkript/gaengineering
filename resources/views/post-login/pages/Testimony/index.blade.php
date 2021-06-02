@@ -36,7 +36,7 @@
 
                             <div class="form-group">
                                 <label for="company_name" style="font-size: 15px;">Company name</label>
-                                <input type="text" class="form-control" name="company_name" id="company name" placeholder="company_name" style="font-size: 15px;" required>
+                                <input type="text" class="form-control" name="company_name" id="company name" placeholder="Company name" style="font-size: 15px;" required>
                             </div>
 
                             <div class="form-group">
@@ -76,15 +76,15 @@
 
                                 <tbody>
                                     @foreach($testimonies as $testimony)
-                                    @include('post-login.partials.modal.testimony-modal')
+                                    @include('post-login.partials.testimony-modal')
                                     <tr class="record">
                                         <td style="font-size: 15px;"><img src="{{ $testimony->image_url }}" alt="{{$testimony->image_url}}"></td>
                                         <td style="font-size: 15px;">{{ $testimony->name }}</td>
                                         <td style="font-size: 15px;">{{ $testimony->company_name }}</td>
                                         <td style="font-size: 15px;">{{ $testimony->job_title }}</td>
-                                        <td style="font-size: 15px;"><?= Str::limit($testimony->testimony, 200); ?></td>
+                                        <td style="font-size: 15px;"><?= Str::limit($testimony->testimony, 80); ?></td>
 
-                                        <td style="font-size: 17px;"><button type="button" class="btn btn-success"  data-toggle="modal" data-target=<?= '#edit-testimony'.$testimony->id;?>><i class="mdi mdi-image"></i> Edit</button></td>
+                                        <td style="font-size: 17px;"><button type="button" class="btn btn-primary"  data-toggle="modal" data-target=<?= '#edit-testimony'.$testimony->id;?>><i class="mdi mdi-pencil"></i> Edit</button></td>
 
                                         <td style="font-size: 17px;"><button type="button" class="btn btn-danger"  data-toggle="modal" data-target=<?= '#delete-testimony'.$testimony->id;?>><i class="mdi mdi-delete"></i> Delete</button></td>
                                     </tr>
