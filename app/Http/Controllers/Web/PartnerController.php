@@ -34,7 +34,7 @@ class PartnerController extends Controller
     public function store(Request $request)
     {
         $this->validate__($request);
-        $imageURL = $this->UploadImage($request->imageURL);
+        $imageURL = $this->UploadImage($request->file("imageURL")->getRealPath());
         $this->m_partner->CreatePartner($imageURL, $request->url);
         return back()->with('success', 'Partner is successfully created!');
     }
@@ -42,7 +42,8 @@ class PartnerController extends Controller
     public function update(Request $request, int $id)
     {
         $this->validate__($request);
-        $imageURL = !is_null($request->imageURL) ? $this->UploadImage($request->imageURL) : null;
+        $imageURL = !is_null($request->imageURL) ?
+            $this->UploadImage($request->file("imageURL")->getRealPath()) : null;
         $this->m_partner->UpdatePartner($id, $imageURL, $request->url);
         return back()->with('success', 'Partner is successfully updated!');
     }

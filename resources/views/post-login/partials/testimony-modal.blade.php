@@ -13,7 +13,7 @@
                 @METHOD('PATCH')
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="name" style="font-size: 20px;">Name</label>
+                        <label for="name" style="font-size: 15px;">Name</label>
                         <input type="text" class="form-control"  value="{{$testimony->name}}" style="font-size: 16px;" id=name name="name" placeholder="Name" required>
                     </div>
 
@@ -28,7 +28,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="slug_modal" style="font-size: 20px;">Testimony</label>
+                        <label for="slug_modal" style="font-size: 15px;">Testimony</label>
                         <textarea class="form-control testimony" rows="10" style="font-size: 16px;" id="slug_modal" name="testimony" placeholder=" Testimony" required> <?= $testimony->testimony;?></textarea>
                     </div>
 

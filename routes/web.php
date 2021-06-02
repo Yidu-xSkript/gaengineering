@@ -83,7 +83,12 @@ Route::group(['middleware' => 'auth', 'prefix' => 'auth'], function () {
     });
 
     Route::get('/failed-emails', [EmailController::class, 'index'])->name('failed-email.admin.index');
-    Route::get('/partners', [PartnerController::class, 'index'])->name('partner.admin.index');
+    Route::group(['prefix' => 'partners'], function() {
+        Route::get('/', [PartnerController::class, 'index']);
+        Route::post('/', [PartnerController::class, 'store']);
+        Route::patch('/{id}/edit', [PartnerController::class, 'update']);
+        Route::delete('/{id}/destroy', [PartnerController::class, 'destroy']);
+    });
     Route::get('/clients', [ClientController::class, 'adminIndex'])->name('client.admin.index');
 
     Route::group(['prefix' => 'manager', 'middleware' => 'role:admin'], function() {

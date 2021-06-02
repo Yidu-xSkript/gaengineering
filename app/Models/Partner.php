@@ -19,7 +19,7 @@ class Partner extends Model
         ]);
     }
 
-    public function UpdatePartner(Int $id, String $imageURL, String $url)
+    public function UpdatePartner(Int $id, $imageURL, String $url)
     {
         $partner = $this::find($id);
         if (!is_null($imageURL)) $partner->image_url = $imageURL;

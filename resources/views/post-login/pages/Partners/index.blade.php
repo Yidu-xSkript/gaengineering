@@ -22,15 +22,15 @@
 
       					<div class="dropdown-divider w-25 "></div>
 
-      					<form class="forms-sample mt-4" action="/partners" method="post" enctype="multipart/form-data">
+      					<form class="forms-sample mt-4" action="/auth/partners" method="post" enctype="multipart/form-data">
                         @csrf
 		                    <div class="form-group">
                                 <label for="image" style="font-size: 15px;">Image</label>
-                                <input type="file" class="form-control" required style="font-size: 16px;" id=image name="image" placeholder="Image">
+                                <input type="file" class="form-control" required style="font-size: 16px;" id=image name="imageURL" placeholder="Image">
                             </div>
                             <div class="form-group">
                                 <label for="url" style="font-size: 15px;">URL</label>
-                                <input type="url" class="form-control" name="url" id="url" placeholder="URL" style="font-size: 15px;">
+                                <input type="url" class="form-control" name="url" id="url" placeholder="URL" style="font-size: 15px;" required>
                             </div>
 
 			                <button type="submit" class="btn btn-primary mr-2 mt-4"><i class="mdi mdi-plus"></i>Add</button>
@@ -57,12 +57,12 @@
 
                                 <tbody>
                                     @foreach($partners as $partner)
-                                    @include('post-login.partials.modal.partner-modal')
+                                    @include('post-login.partials.partner-modal')
                                     <tr class="record">
                                         <td style="font-size: 15px;"><img src="{{ $partner->image_url }}" alt="{{$partner->image_url}}"></td>
                                         <td style="font-size: 15px;">{{ $partner->url }}</td>
 
-                                        <td style="font-size: 17px;"><button type="button" class="btn btn-success"  data-toggle="modal" data-target=<?= '#edit-partner-image'.$partner->id;?>><i class="mdi mdi-image"></i> Update Image</button></td>
+                                        <td style="font-size: 17px;"><button type="button" class="btn btn-primary"  data-toggle="modal" data-target=<?= '#edit-partner-image'.$partner->id;?>><i class="mdi mdi-pencil"></i> Edit</button></td>
 
                                         <td style="font-size: 17px;"><button type="button" class="btn btn-danger"  data-toggle="modal" data-target=<?= '#delete-partner'.$partner->id;?>><i class="mdi mdi-delete"></i> Delete</button></td>
                                     </tr>
