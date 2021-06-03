@@ -21,7 +21,7 @@ class WorkProcess extends Model
         ]);
     }
 
-    public function UpdateWorkProcess(Int $id, String $title, String $imageURL, String $slug, String $image_position)
+    public function UpdateWorkProcess(Int $id, String $title, $imageURL, String $slug, String $image_position)
     {
         $WorkProcess = $this::find($id);
         $WorkProcess->title = $title;

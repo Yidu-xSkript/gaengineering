@@ -19,7 +19,7 @@
             </div>
             <div class="container">
                 <ol>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Our Clients</li>
                 </ol>
             </div>
@@ -36,15 +36,19 @@
                 </div>
 
                 <div class="row content">
-                    <div class="col-md-5" data-aos="fade-right">
-                        <img src="pre/img/work-process-1.png" class="img-fluid" alt="">
+                    @foreach($clients as $client)
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-5" data-aos="fade-right">
+                                <img src="{{ $client->image_url }}" class="img-fluid" alt="">
+                            </div>
+                            <div class="col-md-7 pt-4" data-aos="fade-left">
+                                <h3>{{ $client->company_name }}</h3>
+                                <p class="font-italic"><?= $client->slug; ?></p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-7 pt-4" data-aos="fade-left">
-                        <h3>Company name</h3>
-                        <p class="font-italic">
-                            Description of work done with this company.
-                        </p>
-                    </div>
+                    @endforeach
                 </div>
 
             </div>

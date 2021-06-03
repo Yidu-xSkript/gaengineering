@@ -19,7 +19,8 @@ class ClientController extends Controller
 
     public function index()
     {
-        return View('pre-login.pages.Clients');
+        $clients = $this->m_client->GetClients();
+        return View('pre-login.pages.Clients', compact('clients'));
     }
 
     public function adminIndex()
@@ -37,7 +38,7 @@ class ClientController extends Controller
         ]);
     }
 
-    public function create(Request $request)
+    public function store(Request $request)
     {
         $this->validate__($request);
         $imageURL = !is_null($request->imageURL) ?

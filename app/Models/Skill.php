@@ -33,6 +33,6 @@ class Skill extends Model
 
     public function GetSkills()
     {
-        return $this::get()->latest();
+        return $this::latest()->get();
     }
 }

@@ -17,7 +17,7 @@ class CreateWhyChooseUsTable extends Migration
             $table->id();
             $table->string("image_url");
             $table->string("title");
-            $table->string("slug");
+            $table->longText("slug");
             $table->timestamps();
         });
     }

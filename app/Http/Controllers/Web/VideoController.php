@@ -18,7 +18,8 @@ class VideoController extends Controller
 
     public function index()
     {
-        return View('pre-login.pages.Videos');
+        $videos = $this->m_video->GetAllVideos();
+        return View('pre-login.pages.Videos', compact('videos'));
     }
 
     public function adminIndex()
@@ -31,11 +32,11 @@ class VideoController extends Controller
     {
         $this->validate($request, [
             'video_url' => 'required|url',
-            'thumbnail' => 'required|image|mimes:jpeg,jpg,png,svg'
+            'thumbnail' => !is_null($request->thumbnail) ? 'required|image|mimes:jpeg,jpg,png,svg' : ''
         ]);
     }
 
-    public function create(Request $request)
+    public function store(Request $request)
     {
         $this->validate__($request);
         $thumbnail = $this->UploadImage($request->file('thumbnail')->getRealPath());

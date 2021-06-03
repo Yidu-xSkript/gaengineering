@@ -25,11 +25,10 @@
 	            				</div>
 	            				<div class="dropdown-divider w-25"></div>
 	            				<div class="row">
-
 	            					@if(!is_null($newz))
 	            					@foreach($newz as $news)
 	            					@include('post-login.partials.news-modal')
-		            				<div class="col-md-3 mt-3">
+		            				<div class="col-md-4 mt-3">
 		              					<div class="card2">
 
 		              						@if(!is_null($news->image_url))
@@ -73,15 +72,4 @@
 	</div>
 	@include('post-login.index.footer')
 </div>
-<script src="js/jquery.min.js"></script>
-
-<script type="text/javascript">
-
-  $(document).ready(function() {
-
-    $(".slug").wysihtml5();
-
-  });
-
-</script>
 @endsection

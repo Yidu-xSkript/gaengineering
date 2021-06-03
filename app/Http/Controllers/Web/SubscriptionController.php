@@ -26,4 +26,10 @@ class SubscriptionController extends Controller
         $this->m_subscription->CreateSubscription($request->email);
         return back()->with('success', 'Thank you for subscribing.');
     }
+
+    public function removeSubscriber(int $id)
+    {
+        $this->m_subscription->DestroySubscription($id);
+        return back()->with('success', 'Subscriber is removed from email list.');
+    }
 }

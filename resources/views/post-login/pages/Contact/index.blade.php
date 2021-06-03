@@ -28,12 +28,13 @@
 
                                     <tbody>
                                         @foreach ($contacts as $contact)
+                                            @include('post-login.partials.contact-modal')
                                             <tr class="record">
                                                 <td style="font-size: 15px;">{{ $contact->name }}</td>
                                                 <td style="font-size: 15px;">{{ $contact->email }}</td>
                                                 <td style="font-size: 15px;">{{ $contact->subject }}</td>
                                                 <td style="font-size: 15px;">{{ $contact->message }}</td>
-                                                <td style="font-size: 17px;"><button type="button" class="btn btn-danger"  data-toggle="modal" data-target=<?= '#delete-contact'.$contact->id;?>><i class="mdi mdi-delete"></i> Remove</button></td>
+                                                <td style="font-size: 17px;"><button type="button" class="btn btn-danger"  data-toggle="modal" data-target=<?= '#delete'.$contact->id;?>><i class="mdi mdi-delete"></i> Remove</button></td>
                                             </tr>
                                         @endforeach
                                     </tbody>

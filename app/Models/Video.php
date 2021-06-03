@@ -18,7 +18,7 @@ class Video extends Model
         ]);
     }
 
-    public function UpdateVideo(String $thumbnail, String $video_url, Int $id)
+    public function UpdateVideo($thumbnail, String $video_url, Int $id)
     {
         $__ = $this::find($id);
         if (!is_null($thumbnail)) $__->thumbnail = $thumbnail;

@@ -23,29 +23,28 @@ class PortfolioController extends Controller
 
     public function index()
     {
-        return View('pre-login.pages.Portfolio.Index');
+        $portfolios = $this->m_portfolio->GetAllPortfolios();
+        $categories = $this->m_portfolioCategory->GetPC();
+        return View('pre-login.pages.Portfolio.Index', compact('portfolios', 'categories'));
     }
 
-    public function detail()
+    public function detail(int $id)
     {
-        return View('pre-login.pages.Portfolio.Detail');
+        $portfolio = $this->m_portfolio->ViewPortfolio($id);
+        return View('pre-login.pages.Portfolio.Detail', compact('portfolio'));
     }
 
     public function adminIndex()
     {
         $portfolios = $this->m_portfolio->GetAllPortfolios();
-        return View('post-login.pages.Portfolio.index', compact('portfolios'));
+        $categories = $this->m_portfolioCategory->GetPC();
+        return View('post-login.pages.Portfolio.index', compact('portfolios', 'categories'));
     }
 
     public function adminCreate()
     {
         $categories = $this->m_portfolioCategory->GetPC();
         return View('post-login.pages.Portfolio.create', compact('categories'));
-    }
-
-    public function m_indexPortfolioImage()
-    {
-        return View();
     }
 
     public function m_indexPortfolioCategory()
@@ -79,65 +78,67 @@ class PortfolioController extends Controller
         return back()->with('success', 'Portfolio Category is successfully deleted!');
     }
 
-    private function m_validatePortfolioImage(Request $request)
+    public function m_updatePortfolioImage(Request $request, Int $portfolio_id)
     {
         $this->validate($request, [
-            'image_url' => !is_null($request->image_url) ? 'required|image|mimes:jpg,png,jpeg,svg' : '',
-            'portfolio_id' => 'required|integer'
+            'image_url' => 'required|array',
+            'image_url.*' => 'required|image|mimes:jpg,png,jpeg,svg',
         ]);
-    }
-
-    public function m_createPortfolioImage(Request $request)
-    {
-        $this->m_validatePortfolioImage($request);
-        $image_url = !is_null($request->image_url) ?
-            $this->UploadImage($request->file('image_url')->getRealPath()) : null;
-        $this->m_portfolioImage->CreatePortfolioImage($image_url, $request->portfolio_id);
-        return back()->with('success', 'Portfolio Image is successfully created!');
-    }
-
-    public function m_updatePortfolioImage(Request $request, Int $id)
-    {
-        $this->m_validatePortfolioImage($request);
-        $image_url = !is_null($request->image_url) ?
-            $this->UploadImage($request->file('image_url')->getRealPath()) : null;
-        $this->m_portfolioImage->UpdatePortfolioImage($image_url, $request->portfolio_id, $id);
+        if (count($request->image_url) > 0) {
+            for ($i = 0; $i < count($request->image_url); $i++) {
+                $iu = $this->UploadImage($request->file('image_url')[$i]->getRealPath());
+                $this->m_portfolioImage->CreatePortfolioImage($iu, $portfolio_id);
+            }
+        }
         return back()->with('success', 'Portfolio Image is successfully updated!');
     }
 
-    public function m_destroyPortfolioImage(Int $id)
+    public function m_destroyPortfolioImage(Int $id, Int $portfolio_id)
     {
+        if (count($this->m_portfolioImage->GetPortfolioImageViaPortfolio($portfolio_id)) == 1) {
+            return back()->with('error', 'Cannot remove image! at least one image is required');
+        }
         $this->m_portfolioImage->DestroyPI($id);
         return back()->with('success', 'Portfolio Image is successfully deleted!');
+    }
+
+    public function m_destroyAllPortfolioImage(Int $portfolio_id)
+    {
+        $this->m_portfolioImage->DestroyAll($portfolio_id);
+        return back()->with('success', 'All Portfolio Images are successfully deleted!');
     }
 
     private function validate__(Request $req)
     {
         $this->validate($req, [
-            'image_url' => !is_null($req->image_url) ? 'required|image|mimes:jpg,png,jpeg,svg' : '',
+            'image_url' => !is_null($req->image_url) && count($req->image_url) > 0 ? 'required|array' : '',
+            'image_url.*' => !is_null($req->image_url) && count($req->image_url) > 0 ? 'required|image|mimes:jpg,png,jpeg,svg' : '',
             'portfolio_category_id' => 'required|integer',
             'title' => 'required',
             'slug' => 'required',
             'project_date' => 'required',
-            'portfolio_url' => 'required'
+            'portfolio_url' => 'required',
+            'client' => 'required'
         ]);
     }
 
     public function store(Request $request)
     {
         $this->validate__($request);
-        $image_url = !is_null($request->image_url) ?
-            $this->UploadImage($request->file('image_url')->getRealPath()) : null;
-        $this->m_portfolio->CreatePortfolio($request->title, $image_url, $request->portfolio_category_id, $request->project_date, $request->slug, $request->portfolio_url);
+        $portfolio = $this->m_portfolio->CreatePortfolio($request->title, $request->portfolio_category_id, $request->project_date, $request->slug, $request->portfolio_url, $request->client);
+        if (count($request->image_url) > 0) {
+            for ($i = 0; $i < count($request->image_url); $i++) {
+                $iu = $this->UploadImage($request->file('image_url')[$i]->getRealPath());
+                $this->m_portfolioImage->CreatePortfolioImage($iu, $portfolio->id);
+            }
+        }
         return back()->with('success', 'Portfolio is successfully created!');
     }
 
     public function update(Request $request, Int $id)
     {
         $this->validate__($request);
-        $image_url = !is_null($request->image_url) ?
-            $this->UploadImage($request->file('image_url')->getRealPath()) : null;
-        $this->m_portfolio->UpdatePortfolio($request->title, $image_url, $request->portfolio_category_id, $request->project_date, $request->slug, $request->portfolio_url, $id);
+        $this->m_portfolio->UpdatePortfolio($request->title, $request->portfolio_category_id, $request->project_date, $request->slug, $request->portfolio_url, $id, $request->client);
         return back()->with('success', 'Portfolio is successfully updated!');
     }
 

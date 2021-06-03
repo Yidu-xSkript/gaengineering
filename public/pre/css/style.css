@@ -2,7 +2,7 @@
 # General
 --------------------------------------------------------------*/
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
   color: #444444;
 }
 
@@ -888,7 +888,7 @@ section {
   color: #297ed3;
 }
 
-.services .description {
+.services p {
   font-size: 14px;
   margin-left: 60px;
   line-height: 24px;
@@ -2203,14 +2203,15 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: rgb(26, 32, 53);
+  background: #fff;
   padding: 0 0 0 0;
-  color: #fff;
+  color: #000;
   font-size: 14px;
+  box-shadow: 10px 0px 10px rgba(0,0,0,0.1);
 }
 
 #footer .footer-top {
-  background: #1c1f18;
+  background: #fff;
   padding: 60px 0 30px 0;
 }
 
@@ -2232,8 +2233,8 @@ section {
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 0;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: #fff;
+  font-family: "Poppins", Geneva, Tahoma, sans-serif;
+  color: #000;
 }
 
 #footer .footer-top h4 {
@@ -2264,7 +2265,7 @@ section {
 #footer .footer-top h4 {
   font-size: 14px;
   font-weight: bold;
-  color: #fff;
+  color: #000;
   text-transform: uppercase;
   position: relative;
   padding-bottom: 12px;
@@ -2280,7 +2281,7 @@ section {
 
 #footer .footer-top h4::before {
   right: 0;
-  background: #3c4133;
+  background: #fff;
 }
 
 #footer .footer-top h4::after {
@@ -2313,7 +2314,7 @@ section {
 }
 
 #footer .footer-top .footer-links ul a {
-  color: #fff;
+  color: #000;
   transition: 0.3s;
 }
 
@@ -2338,6 +2339,7 @@ section {
   padding: 6px 8px;
   width: 65%;
   border-radius: 4px 0 0 4px;
+  box-shadow: 0px 1px 10px rgba(0,0,0,0.1);
 }
 
 #footer .footer-top .footer-newsletter input[type="submit"] {

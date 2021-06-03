@@ -1,7 +1,7 @@
 @extends('pre-login.index.header')
 
-@section('title', 'Home - GA Engineering')
-@section('meta_keywords', 'Home - GA Engineering')
+@section('title', 'FAQs - GA Engineering')
+@section('meta_keywords', 'FAQs - GA Engineering, Faq, frequently asked questions')
 @section('meta_description', 'Home - GA Engineering')
 
 @section('content')
@@ -29,72 +29,17 @@
         <section id="faq" class="faq">
             <div class="container">
 
-                <div class="section-title" data-aos="fade-up">
-                    <!-- <h2></h2> -->
-                    <p></p>
-                </div>
-
+                @foreach($faqs as $faq)
                 <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up">
                     <div class="col-lg-5">
                         <i class="bx bx-help-circle"></i>
-                        <h4>How long does it take to import industrial machinaries?</h4>
+                        <h4>{{ $faq->question }}</h4>
                     </div>
                     <div class="col-lg-7">
-                        <p>
-                            The average time it takes us to import your machinery is 2 months - 3 months.
-                        </p>
+                        <p>{{ $faq->answer }}</p>
                     </div>
                 </div><!-- End F.A.Q Item-->
-
-                <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-                    <div class="col-lg-5">
-                        <i class="bx bx-help-circle"></i>
-                        <h4>What is included in your Maintenance and consultancy service in detail?</h4>
-                    </div>
-                    <div class="col-lg-7">
-                        <p>
-                            Our maintenance & consultancy service includes a regular maintenance, updating systems, proving
-                            business process best practices and many more...
-                        </p>
-                    </div>
-                </div><!-- End F.A.Q Item-->
-
-                <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up">
-                    <div class="col-lg-5">
-                        <i class="bx bx-help-circle"></i>
-                        <h4>How long does it take to import industrial machinaries?</h4>
-                    </div>
-                    <div class="col-lg-7">
-                        <p>
-                            The average time it takes us to import your machinery is 2 months - 3 months.
-                        </p>
-                    </div>
-                </div><!-- End F.A.Q Item-->
-
-                <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-                    <div class="col-lg-5">
-                        <i class="bx bx-help-circle"></i>
-                        <h4>What is included in your Maintenance and consultancy service in detail?</h4>
-                    </div>
-                    <div class="col-lg-7">
-                        <p>
-                            Our maintenance & consultancy service includes a regular maintenance, updating systems, proving
-                            business process best practices and many more...
-                        </p>
-                    </div>
-                </div><!-- End F.A.Q Item-->
-
-                <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up">
-                    <div class="col-lg-5">
-                        <i class="bx bx-help-circle"></i>
-                        <h4>How long does it take to import industrial machinaries?</h4>
-                    </div>
-                    <div class="col-lg-7">
-                        <p>
-                            The average time it takes us to import your machinery is 2 months - 3 months.
-                        </p>
-                    </div>
-                </div><!-- End F.A.Q Item-->
+                @endforeach
 
             </div>
         </section><!-- End Frequently Asked Questions Section -->

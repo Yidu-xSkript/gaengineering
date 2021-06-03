@@ -18,12 +18,14 @@ class ServiceController extends Controller
 
     public function index()
     {
-        return View('pre-login.pages.Service.Index');
+        $services = $this->m_service->GetService();
+        return View('pre-login.pages.Service.Index', compact('services'));
     }
 
-    public function detail()
+    public function detail(Int $id)
     {
-        return View('pre-login.pages.Service.Detail');
+        $service = $this->m_service->ViewService($id);
+        return View('pre-login.pages.Service.Detail', compact('service'));
     }
 
     public function adminIndex()
@@ -40,7 +42,7 @@ class ServiceController extends Controller
     private function validate__(Request $req)
     {
         $this->validate($req, [
-            'imageURL' => !is_null($req->imageURL) ? 'required|image|mimes:jpeg,jpg,png,svg' : '',
+            'imageURL' => !is_null($req->imageURL) ? 'required|image|mimes:png,svg' : '',
             'title' => 'required',
             'slug' => 'required'
         ]);

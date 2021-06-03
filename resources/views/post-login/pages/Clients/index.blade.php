@@ -28,19 +28,15 @@
                         @csrf
 		                    <div class="form-group">
                                 <label for="image" style="font-size: 15px;">Image</label>
-                                <input type="file" class="form-control" required style="font-size: 16px;" id=image name="image" placeholder="Image">
+                                <input type="file" class="form-control" required style="font-size: 16px;" id=image name="imageURL" placeholder="Image">
                             </div>
                             <div class="form-group">
                                 <label for="company name" style="font-size: 15px;">Company Name</label>
                                 <input type="text" class="form-control" name="company_name" id="company_name" placeholder="Company Name" style="font-size: 15px;">
                             </div>
                             <div class="form-group">
-
                                 <label for="slug" style="font-size: 15px;">Description/slug <small style="color: red;">*</small></label>
-
-                                <textarea class="form-control" rows="8" name="slug" id="slug"
-                                    placeholder="Slug / Description" style="font-size: 15px;"
-                                    required></textarea>
+                                <textarea class="form-control" rows="8" name="slug" id="slug" placeholder="Slug / Description" required></textarea>
                             </div>
 
 			                <button type="submit" class="btn btn-primary mr-2 mt-4"><i class="mdi mdi-plus"></i>Add</button>
@@ -68,15 +64,15 @@
 
                                 <tbody>
                                     @foreach($clients as $client)
-                                    @include('post-login.partials.modal.client-modal')
+                                    @include('post-login.partials.client-modal')
                                     <tr class="record">
                                         <td style="font-size: 15px;"><img src="{{ $client->image_url }}" alt="{{$client->image_url}}"></td>
                                         <td style="font-size: 15px;">{{ $client->company_name }}</td>
-                                        <td style="font-size: 15px;"><?= str_limit($client->slug, 200); ?></td>
+                                        <td style="font-size: 15px;"><?= Str::limit($client->slug, 100); ?></td>
 
-                                        <td style="font-size: 17px;"><button type="button" class="btn btn-success"  data-toggle="modal" data-target=<?= '#edit-client'.$client->id;?>><i class="mdi mdi-image"></i> Update Client</button></td>
+                                        <td style="font-size: 17px;"><button type="button" class="btn btn-primary"  data-toggle="modal" data-target=<?= '#edit'.$client->id;?>><i class="mdi mdi-pencil"></i> Update Client</button></td>
 
-                                        <td style="font-size: 17px;"><button type="button" class="btn btn-danger"  data-toggle="modal" data-target=<?= '#delete-client'.$client->id;?>><i class="mdi mdi-delete"></i> Delete</button></td>
+                                        <td style="font-size: 17px;"><button type="button" class="btn btn-danger"  data-toggle="modal" data-target=<?= '#delete'.$client->id;?>><i class="mdi mdi-delete"></i> Delete</button></td>
                                     </tr>
                                     @endforeach
                                 </tbody>

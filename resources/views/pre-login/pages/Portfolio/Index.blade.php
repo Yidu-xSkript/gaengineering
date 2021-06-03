@@ -33,151 +33,32 @@
                     <div class="col-lg-12 d-flex justify-content-center" data-aos="fade-up">
                         <ul id="portfolio-flters">
                             <li data-filter="*" class="filter-active">All</li>
-                            <li data-filter=".filter-supply">Supply</li>
-                            <li data-filter=".filter-design">Design and consultancy</li>
-                            <li data-filter=".filter-product">Product Manufacturing</li>
-                            <li data-filter=".filter-installation">Installation & Commissioning</li>
-                            <li data-filter=".filter-maintenance">Maintenance Work</li>
+                            @foreach($categories as $category)
+                            <li data-filter=".filter-{{$category->id}}">{{$category->name}}</li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
 
                 <div class="row portfolio-container" data-aos="fade-up">
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-design">
+                    @foreach($portfolios as $portfolio)
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-{{$portfolio->category->id}}">
                         <div class="portfolio-wrap">
-                            <img src="pre/img/portfolio/news-4.jpg" class="img-fluid" alt="">
+                            <img src="{{ $portfolio->images[0]->image_url }}" class="img-fluid" alt="">
                             <div class="portfolio-info">
-                                <h4>App 1</h4>
-                                <p>App</p>
+                                <h4>{{ $portfolio->title }}</h4>
+                                <p>{{ $portfolio->category->name }}</p>
                                 <div class="portfolio-links">
-                                    <a href="pre/img/portfolio/news-4.jpg" data-gall="portfolioGallery" class="venobox"
+                                    <a href="{{ $portfolio->images[0]->image_url }}" data-gall="portfolioGallery" class="venobox"
                                         title="App 1"><i class="bx bx-plus"></i></a>
-                                    <a href="/portfolio/detail" title="More Details"><i class="bx bx-link"></i></a>
+                                    <a href="/portfolio/{{$portfolio->id}}" title="More Details"><i class="bx bx-link"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    @endforeach
 
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-supply">
-                        <div class="portfolio-wrap">
-                            <img src="pre/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Web 3</h4>
-                                <p>Web</p>
-                                <div class="portfolio-links">
-                                    <a href="pre/img/portfolio/portfolio-2.jpg" data-gall="portfolioGallery"
-                                        class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
-                                    <a href="/portfolio/detail" title="More Details"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-design">
-                        <div class="portfolio-wrap">
-                            <img src="pre/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>App 2</h4>
-                                <p>App</p>
-                                <div class="portfolio-links">
-                                    <a href="pre/img/portfolio/portfolio-3.jpg" data-gall="portfolioGallery"
-                                        class="venobox" title="App 2"><i class="bx bx-plus"></i></a>
-                                    <a href="/portfolio/detail" title="More Details"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-installation">
-                        <div class="portfolio-wrap">
-                            <img src="pre/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Card 2</h4>
-                                <p>Card</p>
-                                <div class="portfolio-links">
-                                    <a href="pre/img/portfolio/portfolio-4.jpg" data-gall="portfolioGallery"
-                                        class="venobox" title="Card 2"><i class="bx bx-plus"></i></a>
-                                    <a href="/portfolio/detail" title="More Details"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-maintenance">
-                        <div class="portfolio-wrap">
-                            <img src="pre/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Web 2</h4>
-                                <p>Web</p>
-                                <div class="portfolio-links">
-                                    <a href="pre/img/portfolio/portfolio-5.jpg" data-gall="portfolioGallery"
-                                        class="venobox" title="Web 2"><i class="bx bx-plus"></i></a>
-                                    <a href="/portfolio/detail" title="More Details"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-supply">
-                        <div class="portfolio-wrap">
-                            <img src="pre/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>App 3</h4>
-                                <p>App</p>
-                                <div class="portfolio-links">
-                                    <a href="pre/img/portfolio/portfolio-6.jpg" data-gall="portfolioGallery"
-                                        class="venobox" title="App 3"><i class="bx bx-plus"></i></a>
-                                    <a href="/portfolio/detail" title="More Details"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-product">
-                        <div class="portfolio-wrap">
-                            <img src="pre/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Card 1</h4>
-                                <p>Card</p>
-                                <div class="portfolio-links">
-                                    <a href="pre/img/portfolio/portfolio-7.jpg" data-gall="portfolioGallery"
-                                        class="venobox" title="Card 1"><i class="bx bx-plus"></i></a>
-                                    <a href="/portfolio/detail" title="More Details"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <div class="portfolio-wrap">
-                            <img src="pre/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Card 3</h4>
-                                <p>Card</p>
-                                <div class="portfolio-links">
-                                    <a href="pre/img/portfolio/portfolio-8.jpg" data-gall="portfolioGallery"
-                                        class="venobox" title="Card 3"><i class="bx bx-plus"></i></a>
-                                    <a href="/portfolio/detail" title="More Details"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <div class="portfolio-wrap">
-                            <img src="pre/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Web 3</h4>
-                                <p>Web</p>
-                                <div class="portfolio-links">
-                                    <a href="pre/img/portfolio/portfolio-9.jpg" data-gall="portfolioGallery"
-                                        class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
-                                    <a href="/portfolio/detail" title="More Details"><i class="bx bx-link"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section><!-- End Portfolio Section -->

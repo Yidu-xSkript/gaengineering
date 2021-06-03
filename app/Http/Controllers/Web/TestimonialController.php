@@ -19,7 +19,8 @@ class TestimonialController extends Controller
 
     public function index()
     {
-        return View('pre-login.pages.Testimonials');
+        $testimonies = $this->m_testimony->GetAllTestimonies();
+        return View('pre-login.pages.Testimonials', compact('testimonies'));
     }
 
     public function adminIndex()

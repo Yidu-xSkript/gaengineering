@@ -20,6 +20,11 @@ class Contact extends Model
         ]);
     }
 
+    public function RemoveContact(int $id)
+    {
+        $this::find($id)->delete();
+    }
+
     public function GetMessages()
     {
         return $this::latest()->get();

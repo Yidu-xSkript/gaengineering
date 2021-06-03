@@ -19,11 +19,11 @@ class WhyChooseUs extends Model
         ]);
     }
 
-    public function UpdateWCU(Int $id, String $title, String $imageURL, String $slug)
+    public function UpdateWCU(Int $id, String $title, $imageURL, String $slug)
     {
         $WCU = $this::find($id);
         $WCU->title = $title;
-        $WCU->image_url = $imageURL;
+        if (!is_null($imageURL)) $WCU->image_url = $imageURL;
         $WCU->slug = $slug;
         $WCU->save();
     }

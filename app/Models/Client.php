@@ -19,10 +19,10 @@ class Client extends Model
         ]);
     }
 
-    public function UpdateClient(Int $id, String $imageURL, String $company_name, String $slug)
+    public function UpdateClient(Int $id, $imageURL, String $company_name, String $slug)
     {
         $Client = $this::find($id);
-        $Client->image_url = $imageURL;
+        if (!is_null($imageURL)) $Client->image_url = $imageURL;
         $Client->company_name = $company_name;
         $Client->slug = $slug;
         $Client->save();

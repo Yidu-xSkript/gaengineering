@@ -55,6 +55,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/auth/custom-header">Customize Header</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/auth/custom-about">Customize About</a>
+                    </li>
                 </ul>
             </div>
         </li>
@@ -102,6 +105,30 @@
             <a class="nav-link" href="/auth/clients">
                 <i class="menu-icon mdi mdi-account-multiple-plus-outline"></i>
                 <span class="menu-title">Clients</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/auth/skills">
+                <i class="menu-icon mdi mdi-spotlight-beam"></i>
+                <span class="menu-title">Skills</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/auth/why-choose-us">
+                <i class="menu-icon mdi mdi-help"></i>
+                <span class="menu-title">Why Choose us</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/auth/work-process">
+                <i class="menu-icon mdi mdi-comment-processing"></i>
+                <span class="menu-title">Work Process</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/auth/faqs">
+                <i class="menu-icon mdi mdi-help-circle"></i>
+                <span class="menu-title">FAQs</span>
             </a>
         </li>
         <li class="nav-item">

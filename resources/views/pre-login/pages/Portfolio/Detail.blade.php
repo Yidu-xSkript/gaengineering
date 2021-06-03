@@ -1,8 +1,8 @@
 @extends('pre-login.index.header')
 
-@section('title', 'Home - GA Engineering')
-@section('meta_keywords', 'Home - GA Engineering')
-@section('meta_description', 'Home - GA Engineering')
+@section('title', $portfolio->title . ' - GA Engineering')
+@section('meta_keywords', $portfolio->title . ' , Portfolio, GA Engineering, Gezahegn Ayalew')
+@section('meta_description', $portfolio->slug)
 
 @section('content')
     <main id="main">
@@ -12,14 +12,14 @@
             <div class="breadcrumb-hero">
                 <div class="container">
                     <div class="breadcrumb-hero">
-                        <h2>Portfolio Details</h2>
+                        <h2>{{$portfolio->title}}</h2>
                     </div>
                 </div>
             </div>
             <div class="container">
                 <ol>
                     <li><a href="/">Home</a></li>
-                    <li>Portfolio Details</li>
+                    <li>{{$portfolio->title}}</li>
                 </ol>
             </div>
         </section><!-- End Breadcrumbs -->
@@ -30,30 +30,26 @@
                 <div class="portfolio-details-container">
 
                     <div class="owl-carousel portfolio-details-carousel">
-                        <img src="/pre/img/portfolio/news-4.jpg" class="img-fluid" alt="">
-                        <img src="/pre/img/portfolio/news-2.jpg" class="img-fluid" alt="">
-                        <img src="/pre/img/portfolio/news-4.jpg" class="img-fluid" alt="">
+                        @foreach($portfolio->images as $image)
+                        <img src="{{$image->image_url}}" class="img-fluid" alt="">
+                        @endforeach
                     </div>
 
                     <div class="portfolio-info">
                         <h3>Project information</h3>
                         <ul>
-                            <li><strong>Category</strong>: Installation</li>
-                            <li><strong>Client</strong>: Ethiopian Airlines</li>
-                            <li><strong>Project date</strong>: 01 March, 2021</li>
-                            <li><strong>Project URL</strong>: <a href="https://www.ethiopianairlines.com/">Ethiopian
-                                    Airlines</a></li>
+                            <li><strong>Category</strong>: {{ $portfolio->category->name }}</li>
+                            <li><strong>Client</strong>: {{ $portfolio->client }}</li>
+                            <li><strong>Project date</strong>: {{ $portfolio->project_date }}</li>
+                            <li><strong>Project URL</strong>: <a href="{{ $portfolio->portfolio_url }}">{{ $portfolio->client }}</a></li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="portfolio-description">
-                    <h2>Our Mega Project with Ethiopian Airlines</h2>
+                    <h2>{{$portfolio->title}}</h2>
                     <p>
-                        Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia
-                        quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem
-                        officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum
-                        deserunt eius.
+                        <?= $portfolio->slug; ?>
                     </p>
                 </div>
             </div>

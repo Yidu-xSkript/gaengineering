@@ -41,7 +41,7 @@
 
 		                    <div class="form-group">
 		                      	<label for="slug" style="font-size: 15px;">Slug / Description</label>
-		                      	<textarea class="form-control testimony" rows="10" style="font-size: 16px;" id="slug" name="slug" placeholder="Description" ></textarea>
+		                      	<textarea class="form-control testimony" rows="10" id="slug" name="slug" placeholder="Description"></textarea>
 		                    </div>
 
                             <div class="row">

@@ -46,7 +46,7 @@
 
                             <div class="form-group">
                                 <label for="slug" style="font-size: 15px;">Testimony</label>
-                                <textarea class="form-control" rows="8" name="testimony" id="slug" placeholder="Description/slug" style="font-size: 15px;" required></textarea>
+                                <textarea class="form-control" rows="8" name="testimony" id="slug" placeholder="Description/slug" required></textarea>
                             </div>
 
 			                <button type="submit" class="btn btn-primary mr-2 mt-4"><i class="mdi mdi-plus"></i>Add</button>

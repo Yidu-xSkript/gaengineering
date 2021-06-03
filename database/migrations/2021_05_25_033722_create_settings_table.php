@@ -30,6 +30,7 @@ class CreateSettingsTable extends Migration
             $table->string("instagram")->nullable();
             $table->string("skype")->nullable();
             $table->string("linked_in")->nullable();
+            $table->string("skill_img");
             $table->timestamps();
         });
     }

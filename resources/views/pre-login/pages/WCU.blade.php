@@ -27,14 +27,15 @@
 
         <section>
             <div class="container">
+                @foreach($wcus as $wcu)
                 <div>
                     <div class="row content why-bg">
                         <div class="col-md-5" data-aos="fade-right">
-                            <img src="pre/img/work-process-1.png" class="img-fluid" alt="">
+                            <img src="{{ $wcu->image_url }}" class="img-fluid" alt="">
                         </div>
                         <div class="col-md-7 pt-4" data-aos="fade-left">
-                            <h3>Reason 1</h3>
-                            <p>Description.</p>
+                            <h3>{{ $wcu->title }}</h3>
+                            <p><?= $wcu->slug; ?></p>
                         </div>
 
                     </div>
@@ -43,15 +44,7 @@
 
                 <hr style="height: 15px;">
 
-                <div class="row content ">
-                    <div class="col-md-5" data-aos="fade-right">
-                        <img src="pre/img/work-process-2.png" class="img-fluid" alt="">
-                    </div>
-                    <div class="col-md-7 pt-4" data-aos="fade-left">
-                        <h3>Reason 2</h3>
-                        <p>Description.</p>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </section>
     </main><!-- End #main -->

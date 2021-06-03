@@ -3,7 +3,7 @@
     <div class="container d-flex">
 
         <div class="logo mr-auto">
-            <a href="/"><img src="{{URL::asset('storage/uploads/logo-icon.png')}}" alt="" class="img-fluid"></a>
+            <a href="/"><img src="{{URL::asset('storage/uploads/logo.png')}}" alt="" class="img-fluid"></a>
         </div>
 
         <nav class="nav-menu d-none d-lg-block">
@@ -25,24 +25,11 @@
                 </li>
                 <li class="drop-down"><a href="/services">Services</a>
                     <ul>
-                        <li @if(\Request::is('/service/detail')) class="active" @endif>
-                            <a href="/service/detail">Maintenance and consultancy</a>
+                        @foreach(App\Models\Service::all() as $service)
+                        <li @if(\Request::is('/service/{{$service->id}}')) class="active" @endif>
+                            <a href="/service/{{$service->id}}">{{$service->title}}</a>
                         </li>
-                        <li @if(\Request::is('/service/detail')) class="active" @endif>
-                            <a href="/service/detail">Import/Supply</a>
-                        </li>
-                        <li @if(\Request::is('/service/detail')) class="active" @endif>
-                            <a href="/service/detail">Supply, design and commissioning</a>
-                        </li>
-                        <li @if(\Request::is('/service/detail')) class="active" @endif>
-                            <a href="/service/detail">Electrical, Electronics and Electro-mechanical Products</a>
-                        </li>
-                        <li @if(\Request::is('/service/detail')) class="active" @endif>
-                            <a href="/service/detail">Industrial Machinary</a>
-                        </li>
-                        <li @if(\Request::is('/service/detail')) class="active" @endif>
-                            <a href="/service/detail">Installation and Implementation</a>
-                        </li>
+                        @endforeach
                     </ul>
                 </li>
                 <li @if(\Request::is('/porfolio')) class="active" @endif>

@@ -19,14 +19,14 @@ class WCUController extends Controller
 
     public function index()
     {
-        // $wcu = $this->m_wcu->GetWCU();
-        return View('pre-login.pages.WCU'/*, compact(['wcu'])*/);
+        $wcus = $this->m_wcu->GetWCU();
+        return View('pre-login.pages.WCU', compact(['wcus']));
     }
 
     public function adminIndex()
     {
-        $wcu = $this->m_wcu->GetWCU();
-        return View('', compact(['wcu']));
+        $wcus = $this->m_wcu->GetWCU();
+        return View('post-login.pages.wcu.index', compact(['wcus']));
     }
 
     private function validate__(Request $request)
@@ -38,7 +38,7 @@ class WCUController extends Controller
         ]);
     }
 
-    public function create(Request $request)
+    public function store(Request $request)
     {
         $this->validate__($request);
         $imageURL__ = !is_null($request->imageURL) ?

@@ -32,6 +32,7 @@ class SettingFactory extends Factory
             'map_location' => $this->faker->locale,
             'email' => $this->faker->safeEmail,
             'phone_number_2' => $this->faker->phoneNumber,
+            'skill_img' => $this->faker->imageUrl()
         ];
     }
 }

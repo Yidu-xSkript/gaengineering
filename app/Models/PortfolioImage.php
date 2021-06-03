@@ -31,6 +31,16 @@ class PortfolioImage extends Model
         $PI->save();
     }
 
+    public function GetPortfolioImageViaPortfolio(int $portfolio_id)
+    {
+        return $this::where('portfolio_id', $portfolio_id)->get();
+    }
+
+    public function DestroyAll(Int $portfolio_id){
+        $portfolio = $this->GetPortfolioImageViaPortfolio($portfolio_id);
+        for ($i = 0; $i < count($portfolio); $i++) $this::find($portfolio[$i]->id)->delete();
+    }
+
     public function DestroyPI(Int $id)
     {
         $this::find($id)->delete();

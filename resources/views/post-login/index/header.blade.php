@@ -1,4 +1,3 @@
-<?php $settings = App\Models\Setting::first(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>{{ $settings->company_name }} | Admin</title>
+    <title>Admin Panel - GA Engineering</title>
 
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ URL::asset('post/vendors/iconfonts/mdi/css/materialdesignicons.min.css') }}">
@@ -30,7 +29,7 @@
     <link rel="stylesheet" href="{{ URL::asset('post/css/style_admin.css') }}">
 
     <!-- endinject -->
-    <link rel="shortcut icon" href="{{ URL::asset('storage/app/public/uploads/favicon.png') }}" />
+    <link rel="shortcut icon" href="{{ URL::asset('storage/uploads/favicon.png') }}" />
 </head>
 
 <style type="text/css">
@@ -67,7 +66,7 @@
     <script type="text/javascript">
         $('#slug').summernote({
             height: 400,
-            fontSizes: ['8', '9', '10', '11', '12', '14', '16', '18', '20'],
+            fontSizes: ['8', '9', '10', '11', '12', '14', '16', '18'],
             toolbar: [
                 ['style', ['bold', 'italic', 'underline', 'clear', 'style']],
                 ['para', ['ul', 'ol', 'paragraph']],
@@ -82,7 +81,7 @@
         });
         $('#slug_modal').summernote({
             height: 400,
-            fontSizes: ['8', '9', '10', '11', '12', '14', '16', '18', '20'],
+            fontSizes: ['8', '9', '10', '11', '12', '14', '16', '18'],
             toolbar: [
                 ['style', ['bold', 'italic', 'underline', 'clear', 'style']],
                 ['para', ['ul', 'ol', 'paragraph']],

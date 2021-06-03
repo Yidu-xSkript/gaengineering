@@ -16,7 +16,7 @@ class CreatePortfoliosTable extends Migration
         Schema::create('portfolios', function (Blueprint $table) {
             $table->id();
             $table->string("title");
-            $table->string("image_url");
+            $table->string("client");
             $table->foreignId("portfolio_category_id");
             $table->foreign("portfolio_category_id")->references('id')->on('portfolio_categories')->onDelete('cascade');
             $table->date("project_date");

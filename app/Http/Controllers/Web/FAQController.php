@@ -16,12 +16,14 @@ class FAQController extends Controller
 
     public function index()
     {
-        return View('pre-login.pages.FAQs');
+        $faqs = $this->m_faq->GetFAQ();
+        return View('pre-login.pages.FAQs', compact('faqs'));
     }
 
     public function adminIndex()
     {
-        return View();
+        $faqs = $this->m_faq->GetFAQ();
+        return View('post-login.pages.faq.index', compact('faqs'));
     }
 
     private function validate__(Request $request)
@@ -32,7 +34,7 @@ class FAQController extends Controller
         ]);
     }
 
-    public function create(Request $request)
+    public function store(Request $request)
     {
         $this->validate__($request);
         $this->m_faq->CreateFAQ($request->question, $request->answer);

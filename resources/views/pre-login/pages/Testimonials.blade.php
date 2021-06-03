@@ -28,128 +28,25 @@
         <section class="section-primary t-bordered">
             <div class="container">
                 <div class="row testimonial-three testimonial-three--col-three">
+                    @foreach($testimonies as $testimony)
                     <div class="col-md-4 testimonial-three-col">
                         <div class="testimonial-inner">
                             <div class="testimonial-image" itemprop="image">
-                                <img width="180" height="180" src="pre/img/testimonials/testimonials-4.jpg">
+                                <img width="180" height="180" style="background-position: center; object-fit: cover;" src="{{$testimony->image_url}}">
                             </div>
                             <div class="testimonial-content">
                                 <p>
-                                    “Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec,
-                                    vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
-                                    Nullam dictum felis eu pede mollis pretium.”
+                                    <?= $testimony->testimony; ?>
                                 </p>
                             </div>
                             <div class="testimonial-meta">
-                                <strong class="testimonial-name" itemprop="name">Anna Vandana</strong>
-                                <span class="testimonial-job-title" itemprop="jobTitle">CEO</span> – <a
-                                    class="testimonial-link" href="#">Media Wiki</a>
+                                <strong class="testimonial-name" itemprop="name">{{$testimony->name}}</strong>
+                                <span class="testimonial-job-title" itemprop="jobTitle">{{$testimony->job_title}}</span> – <a
+                                    class="testimonial-link" href="#">{{ $testimony->company_name }}</a>
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-md-4 testimonial-three-col">
-                        <div class="testimonial-inner">
-                            <div class="testimonial-image" itemprop="image">
-                                <img width="180" height="180" src="pre/img/testimonials/testimonials-5.jpg">
-                            </div>
-
-                            <div class="testimonial-content">
-                                <p>
-                                    In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu
-                                    pede mollis pretium. Integer tincidunt. Cras dapibus.
-                                </p>
-                            </div>
-
-                            <div class="testimonial-meta">
-                                <strong class="testimonial-name" itemprop="name">Anna Vandana</strong>
-                                <span class="testimonial-job-title" itemprop="jobTitle">CEO</span> – <a
-                                    class="testimonial-link" href="#">Media Wiki</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 testimonial-three-col">
-                        <div class="testimonial-inner">
-                            <div class="testimonial-image" itemprop="image">
-                                <img width="180" height="180" src="pre/img/testimonials/testimonials-1.jpg">
-                            </div>
-                            <div class="testimonial-content">
-                                <p>
-                                    Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate
-                                    eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam
-                                    dictum felis eu pede mollis pretium.
-                                </p>
-                            </div>
-                            <div class="testimonial-meta">
-                                <strong class="testimonial-name" itemprop="name">Anna Vandana</strong>
-                                <span class="testimonial-job-title" itemprop="jobTitle">CEO</span> – <a
-                                    class="testimonial-link" href="#">Media Wiki</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 testimonial-three-col">
-                        <div class="testimonial-inner">
-                            <div class="testimonial-image" itemprop="image">
-                                <img width="180" height="180" src="pre/img/testimonials/testimonials-2.jpg">
-                            </div>
-
-                            <div class="testimonial-content">
-                                <p>
-                                    In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu
-                                    pede mollis pretium. Integer tincidunt. Cras dapibus.
-                                </p>
-                            </div>
-
-                            <div class="testimonial-meta">
-                                <strong class="testimonial-name" itemprop="name">Anna Vandana</strong>
-                                <span class="testimonial-job-title" itemprop="jobTitle">CEO</span> – <a
-                                    class="testimonial-link" href="#">Media Wiki</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 testimonial-three-col">
-                        <div class="testimonial-inner">
-                            <div class="testimonial-image" itemprop="image">
-                                <img width="180" height="180" src="pre/img/testimonials/testimonials-3.jpg">
-                            </div>
-                            <div class="testimonial-content">
-                                <p>
-                                    Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate
-                                    eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam
-                                    dictum felis eu pede mollis pretium.
-                                </p>
-                            </div>
-                            <div class="testimonial-meta">
-                                <strong class="testimonial-name" itemprop="name">Anna Vandana</strong>
-                                <span class="testimonial-job-title" itemprop="jobTitle">CEO</span> – <a
-                                    class="testimonial-link" href="#">Media Wiki</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 testimonial-three-col">
-                        <div class="testimonial-inner">
-                            <div class="testimonial-image" itemprop="image">
-                                <img width="180" height="180" src="pre/img/testimonials/testimonials-4.jpg">
-                            </div>
-
-                            <div class="testimonial-content">
-                                <p>
-                                    In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu
-                                    pede mollis pretium. Integer tincidunt. Cras dapibus.
-                                </p>
-                            </div>
-
-                            <div class="testimonial-meta">
-                                <strong class="testimonial-name" itemprop="name">Anna Vandana</strong>
-                                <span class="testimonial-job-title" itemprop="jobTitle">CEO</span> – <a
-                                    class="testimonial-link" href="#">Media Wiki</a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>

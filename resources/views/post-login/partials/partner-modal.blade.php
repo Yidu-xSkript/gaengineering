@@ -1,7 +1,7 @@
 <div class="modal modal-edu-general Customwidth-popup-WarningModal fade" role="dialog" id=<?= 'edit-partner-image'.$partner->id ?>>
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header header-color-modal bg-color-3" style="background: #ffaf00; color: #fff;">
+            <div class="modal-header header-color-modal bg-color-3" style="background: #136eca; color: #fff;">
                 <h4 class="modal-title"><i class="fa fa-edit"></i> Edit Partner</h4>
                 <div class="modal-close-area modal-close-df">
                     <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close" style="color: #fff;"></i></a>

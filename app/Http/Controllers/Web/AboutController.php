@@ -26,29 +26,29 @@ class AboutController extends Controller
     public function adminIndex()
     {
         $about = $this->m_about->GetAbout();
-        return View('', compact(['about']));
+        return View('post-login.pages.Custom-pages.about.index', compact('about'));
     }
 
     public function index()
     {
-        // $setting = $this->m_setting->RetrieveSetting();
-        // $about = $this->m_about->GetAbout();
-        // $workProcess = $this->m_workProcess->GetWorkProcess();
-        // $skills = $this->m_skill->GetSkills();
-        return View('pre-login.pages.About'/*, compact(['setting', 'about', 'workProcess', 'skills'])*/);
+        $setting = $this->m_setting->RetrieveSetting();
+        $about = $this->m_about->GetAbout();
+        $workProcess = $this->m_workProcess->GetWorkProcess();
+        $skills = $this->m_skill->GetSkills();
+        return View('pre-login.pages.About', compact(['setting', 'about', 'workProcess', 'skills']));
     }
 
     public function update(Request $request)
     {
         $this->validate($request, [
-            'thumbnail' => 'required|image|mimes:jpg,png,jpeg,svg',
+            'thumbnail' => !is_null($request->thumbnail) ? 'required|image|mimes:jpg,png,jpeg,svg' : '',
             'videoURL' => 'required',
             'content' => 'required'
         ]);
-        !is_null($request->thumbnail) ?
-            $thumbnailURL = $this->UploadImage($request->file('thumbnail')->getRealPath()) : $thumbnailURL = null;
+        $thumbnailURL = !is_null($request->thumbnail) ?
+             $this->UploadImage($request->file('thumbnail')->getRealPath()) : null;
         $this->m_about->UpdateAbout($thumbnailURL, $request->videoURL, $request->content);
-        return back()->with('success', 'About successfully created!');
+        return back()->with('success', 'About successfully updated!');
     }
 
     public function m_validateSkill(Request $req)

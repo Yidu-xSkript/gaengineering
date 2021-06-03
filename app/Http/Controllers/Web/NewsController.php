@@ -19,12 +19,24 @@ class NewsController extends Controller
 
     public function index()
     {
-        return View('pre-login.pages.News.Index');
+        $newz = $this->m_news->GetPaginatedNews();
+        return View('pre-login.pages.News.Index', compact('newz'));
     }
 
-    public function detail()
+    public function search(Request $request)
     {
-        return View('pre-login.pages.News.Detail');
+        $this->validate($request, [
+            'query' => 'required'
+        ]);
+        $newz = $this->m_news->GetSearchResults($request->query('query'));
+        return View('pre-login.pages.News.search', compact('newz'));
+    }
+
+    public function detail(Int $id)
+    {
+        $news = $this->m_news->ViewNews($id);
+        $recents = $this->m_news->GetRecentNews($id);
+        return View('pre-login.pages.News.Detail', compact('news', 'recents'));
     }
 
     public function adminIndex()

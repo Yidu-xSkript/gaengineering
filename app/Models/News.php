@@ -28,6 +28,16 @@ class News extends Model
         $News->save();
     }
 
+    public function GetSearchResults(string $query)
+    {
+        return $this::where('title', 'LIKE', '%' . $query . '%')->paginate(9);
+    }
+
+    public function GetRecentNews(int $id)
+    {
+        return $this::where('id', '!=', $id)->latest()->get()->take(6);
+    }
+
     public function DestroyNews(Int $id)
     {
         $this::find($id)->delete();
@@ -40,7 +50,7 @@ class News extends Model
 
     public function GetPaginatedNews()
     {
-        return $this::latest()->paginate(9);
+        return $this::paginate(9);
     }
 
     public function ViewNews($id)

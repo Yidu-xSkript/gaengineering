@@ -24,7 +24,7 @@
 
       					<div class="dropdown-divider w-25 "></div>
 
-      					<form class="forms-sample mt-4" action="/partners" method="post" enctype="multipart/form-data">
+      					<form class="forms-sample mt-4" action="/auth/video" method="post" enctype="multipart/form-data">
                         @csrf
 		                    <div class="form-group">
                                 <label for="thumbnail" style="font-size: 15px;">Thumbnail</label>
@@ -60,12 +60,12 @@
 
                                 <tbody>
                                     @foreach($videos as $video)
-                                    @include('post-login.partials.modal.video-modal')
+                                    @include('post-login.partials.video-modal')
                                     <tr class="record">
-                                        <td style="font-size: 15px;"><img src="{{ $video->image_url }}" alt="{{$video->image_url}}"></td>
-                                        <td style="font-size: 15px;">{{ $video->url }}</td>
+                                        <td style="font-size: 15px;"><img src="{{ $video->thumbnail }}" alt="{{$video->thumbnail}}"></td>
+                                        <td style="font-size: 15px;">{{ $video->video_url }}</td>
 
-                                        <td style="font-size: 17px;"><button type="button" class="btn btn-success"  data-toggle="modal" data-target=<?= '#edit-video'.$video->id;?>><i class="mdi mdi-eimagedit"></i> Edit</button></td>
+                                        <td style="font-size: 17px;"><button type="button" class="btn btn-primary"  data-toggle="modal" data-target=<?= '#edit-video'.$video->id;?>><i class="mdi mdi-pencil"></i> Edit</button></td>
 
                                         <td style="font-size: 17px;"><button type="button" class="btn btn-danger"  data-toggle="modal" data-target=<?= '#delete-video'.$video->id;?>><i class="mdi mdi-delete"></i> Delete</button></td>
                                     </tr>

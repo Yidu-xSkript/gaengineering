@@ -37,23 +37,28 @@
 
               					<div class="dropdown-divider w-25 "></div>
 
-              					<form class="forms-sample mt-4" action="/add-portfolio" method="post" enctype="multipart/form-data">
+              					<form class="forms-sample mt-4" action="/auth/portfolio" method="post" enctype="multipart/form-data">
               						@csrf
 
 					                <div class="form-group">
 					                  	<label for="title" style="font-size: 15px;">Title <small style="color: red;">*</small></label>
-					                  	<input type="text" class="form-control" name="title" id="title" placeholder="Title" style="font-size: 15px;">
+					                  	<input type="text" class="form-control" name="title" id="title" placeholder="Title" style="font-size: 15px;" required>
 					                </div>
+
+                                    <div class="form-group">
+                                        <label for="client" style="font-size: 15px;">Client</label>
+                                        <input class="form-control" id="client" name="client" type="text" style="font-size: 15px;" required placeholder="Client">
+                                    </div>
 
 					                <div class="form-group">
 					                  	<label for="image" style="font-size: 15px;">Image</label>
-					                  	<input type="file" name="image_url[]" class="form-control" id="image" placeholder="Image" style="font-size: 15px; font-weight: bold;" multiple>
+					                  	<input type="file" name="image_url[]" class="form-control" id="image" placeholder="Image" required style="font-size: 15px; font-weight: bold;" multiple>
 					                </div>
 
                                     <div class="form-group">
                                         <label for="portfolio_category_id" style="font-size: 15px;">Portfolio Category <small style="color: red;">*</small></label>
-                                        <select class="form-control" style="font-size: 17px;" name="portfolio_category_id">
-                                            <option value="" selected="" disabled="">Please select a category</option>
+                                        <select class="form-control" style="font-size: 17px;" name="portfolio_category_id" required>
+                                            <option selected="" disabled="">Please select a category</option>
                                             @foreach($categories as $category)
                                                 <option value="{{ $category->id }}">{{ $category->name }}</option>
                                             @endforeach
@@ -62,12 +67,12 @@
 
                                     <div class="form-group">
                                         <label for="date" style="font-size: 15px;">Project Date</label>
-                                        <input class="form-control" id="date" type="date" required>
+                                        <input class="form-control" id="date" name="project_date" type="date" required>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="project_url" style="font-size: 15px;">Project URL</label>
-                                        <input class="form-control" id="project_url" name="project_url" type="url" style="font-size: 15px;" placeholder="Project URL">
+                                        <label for="project_url" style="font-size: 15px;">Portfolio URL</label>
+                                        <input class="form-control" id="project_url" name="portfolio_url" type="url" style="font-size: 15px;" required placeholder="Project URL">
                                     </div>
 
 					                <div class="form-group">
