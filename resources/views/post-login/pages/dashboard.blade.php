@@ -31,7 +31,7 @@
                 </a>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 grid-margin stretch-card">
-                <a href="/auth/service" class="card-href card card-statistics"
+                <a @if(auth()->user()->role == 'admin') href="/auth/service" @endif class="card-href card card-statistics"
                     style="color: #000 !important;text-decoration: none !important; border-radius: 10px;">
                     <div class="card-body">
                         <div class="clearfix">
@@ -55,7 +55,7 @@
                 </a>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 grid-margin stretch-card">
-                <a href="/auth/portfolio" class="card-href card card-statistics"
+                <a @if(auth()->user()->role == 'admin') href="/auth/portfolio" @endif class="card-href card card-statistics"
                     style="color: #000 !important;text-decoration: none !important; border-radius: 10px;">
                     <div class="card-body">
                         <div class="clearfix">
@@ -90,7 +90,9 @@
                                 <p class="mb-0 text-right" style="font-size: 15px; font-weight: 700;">
                                     Videos</p>
                                 <div class="fluid-container">
-                                    <h3 class="font-weight-medium text-right mb-0">0</h3>
+                                    <h3 class="font-weight-medium text-right mb-0">
+                                        {{ App\Models\Video::all()->count() }}
+                                    </h3>
                                 </div>
                             </div>
                         </div>
@@ -124,7 +126,7 @@
                 </a>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 grid-margin stretch-card">
-                <a href="/auth/clients" class="card-href card card-statistics"
+                <a @if(auth()->user()->role == 'admin') href="/auth/clients" @endif class="card-href card card-statistics"
                     style="color: #000 !important;text-decoration: none !important; border-radius: 10px;">
                     <div class="card-body">
                         <div class="clearfix">
@@ -135,7 +137,7 @@
                                 <p class="mb-0 text-right" style="font-size: 15px; font-weight: 700;">
                                     Clients</p>
                                 <div class="fluid-container">
-                                    <h3 class="font-weight-medium text-right mb-0">{{ App\Models\News::all()->count() }}
+                                    <h3 class="font-weight-medium text-right mb-0">{{ App\Models\Client::all()->count() }}
                                     </h3>
                                 </div>
                             </div>
@@ -147,7 +149,7 @@
                 </a>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 grid-margin stretch-card">
-                <a href="/auth/manager" class="card-href card card-statistics"
+                <a @if(auth()->user()->role == 'admin') href="/auth/manager" @endif class="card-href card card-statistics"
                     style="color: #000 !important;text-decoration: none !important; border-radius: 10px;">
                     <div class="card-body">
                         <div class="clearfix">
@@ -158,7 +160,7 @@
                                 <p class="mb-0 text-right" style="font-size: 15px; font-weight: 700;">
                                     Content Managers</p>
                                 <div class="fluid-container">
-                                    <h3 class="font-weight-medium text-right mb-0">{{ App\Models\News::all()->count() }}
+                                    <h3 class="font-weight-medium text-right mb-0">{{ App\Models\User::where('role', 'content_manager')->count() }}
                                     </h3>
                                 </div>
                             </div>
@@ -181,7 +183,7 @@
                                 <p class="mb-0 text-right" style="font-size: 15px; font-weight: 700;">
                                     Team Members</p>
                                 <div class="fluid-container">
-                                    <h3 class="font-weight-medium text-right mb-0">{{ App\Models\News::all()->count() }}
+                                    <h3 class="font-weight-medium text-right mb-0">{{ App\Models\Team::all()->count() }}
                                     </h3>
                                 </div>
                             </div>
@@ -204,7 +206,7 @@
                                 <p class="mb-0 text-right" style="font-size: 15px; font-weight: 700;">
                                     Testimonies</p>
                                 <div class="fluid-container">
-                                    <h3 class="font-weight-medium text-right mb-0">{{ App\Models\News::all()->count() }}
+                                    <h3 class="font-weight-medium text-right mb-0">{{ App\Models\Testimonial::all()->count() }}
                                     </h3>
                                 </div>
                             </div>
@@ -216,7 +218,7 @@
                 </a>
             </div>
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 grid-margin stretch-card">
-                <a href="/auth/partners" class="card-href card card-statistics"
+                <a @if(auth()->user()->role == 'admin') href="/auth/partners" @endif class="card-href card card-statistics"
                     style="color: #000 !important;text-decoration: none !important; border-radius: 10px;">
                     <div class="card-body">
                         <div class="clearfix">
@@ -227,7 +229,7 @@
                                 <p class="mb-0 text-right" style="font-size: 15px; font-weight: 700;">
                                     Partners</p>
                                 <div class="fluid-container">
-                                    <h3 class="font-weight-medium text-right mb-0">{{ App\Models\News::all()->count() }}
+                                    <h3 class="font-weight-medium text-right mb-0">{{ App\Models\Partner::all()->count() }}
                                     </h3>
                                 </div>
                             </div>
@@ -250,7 +252,7 @@
                                 <p class="mb-0 text-right" style="font-size: 15px; font-weight: 700;">
                                     Newsletters</p>
                                 <div class="fluid-container">
-                                    <h3 class="font-weight-medium text-right mb-0">{{ App\Models\News::all()->count() }}
+                                    <h3 class="font-weight-medium text-right mb-0">{{ App\Models\NewsLetter::all()->count() }}
                                     </h3>
                                 </div>
                             </div>
@@ -261,30 +263,53 @@
                     </div>
                 </a>
             </div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 grid-margin stretch-card">
-                <a href="/auth/failed-emails" class="card-href card card-statistics"
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 grid-margin stretch-card">
+                <a @if(auth()->user()->role == 'admin') href="/auth/skills" @endif class="card-href card card-statistics"
                     style="color: #000 !important;text-decoration: none !important; border-radius: 10px;">
                     <div class="card-body">
                         <div class="clearfix">
                             <div class="float-left">
-                                <i class="mdi mdi-email-alert text-danger icon-lg"></i>
+                                <i class="mdi mdi-spotlight-beam text-warning icon-lg"></i>
                             </div>
                             <div class="float-right">
                                 <p class="mb-0 text-right" style="font-size: 16px; font-weight: 700;">
-                                    Failed Emails</p>
+                                    Skills</p>
                                 <div class="fluid-container">
-                                    <h3 class="font-weight-medium text-right mb-0">{{ App\Models\News::all()->count() }}
+                                    <h3 class="font-weight-medium text-right mb-0">{{ App\Models\Skill::all()->count() }}
                                     </h3>
                                 </div>
                             </div>
                         </div>
                         <p class="text-muted mt-3 mb-0" style="font-size: 14px;">
-                            <i class="mdi mdi-reload mr-1" aria-hidden="true"></i> Number of failed emails that need to be resent
+                            <i class="mdi mdi-reload mr-1" aria-hidden="true"></i> Skills the company has
                         </p>
                     </div>
                 </a>
             </div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 grid-margin stretch-card">
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 grid-margin stretch-card">
+                <a @if(auth()->user()->role == 'admin') href="/auth/faqs" @endif class="card-href card card-statistics"
+                    style="color: #000 !important;text-decoration: none !important; border-radius: 10px;">
+                    <div class="card-body">
+                        <div class="clearfix">
+                            <div class="float-left">
+                                <i class="mdi mdi-help-circle text-danger icon-lg"></i>
+                            </div>
+                            <div class="float-right">
+                                <p class="mb-0 text-right" style="font-size: 16px; font-weight: 700;">
+                                    FAQs</p>
+                                <div class="fluid-container">
+                                    <h3 class="font-weight-medium text-right mb-0">{{ App\Models\Faq::all()->count() }}
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-muted mt-3 mb-0" style="font-size: 14px;">
+                            <i class="mdi mdi-reload mr-1" aria-hidden="true"></i> Total FAQs created
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 grid-margin stretch-card">
                 <a href="/auth/subscription" class="card-href card card-statistics"
                     style="color: #000 !important;text-decoration: none !important; border-radius: 10px;">
                     <div class="card-body">
@@ -296,7 +321,7 @@
                                 <p class="mb-0 text-right" style="font-size: 15px; font-weight: 700;">
                                     Subscribers</p>
                                 <div class="fluid-container">
-                                    <h3 class="font-weight-medium text-right mb-0">{{ App\Models\News::all()->count() }}
+                                    <h3 class="font-weight-medium text-right mb-0">{{ App\Models\Subscription::all()->count() }}
                                     </h3>
                                 </div>
                             </div>

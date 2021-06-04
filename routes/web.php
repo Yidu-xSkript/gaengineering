@@ -182,28 +182,28 @@ Route::group(['middleware' => 'auth', 'prefix' => 'auth'], function () {
         Route::delete('/{id}/destroy', [ContactController::class, 'removeContactInfo']);
     });
 
-    Route::group(['prefix' => 'skills'], function() {
+    Route::group(['prefix' => 'skills', 'middleware' => 'role:admin'], function() {
         Route::get('/', [SkillController::class, 'index']);
         Route::post('/', [SkillController::class, 'store']);
         Route::patch('/{id}/edit', [SkillController::class, 'update']);
         Route::delete('/{id}/destroy', [SkillController::class, 'destroy']);
     });
 
-    Route::group(['prefix' => 'why-choose-us'], function() {
+    Route::group(['prefix' => 'why-choose-us', 'middleware' => 'role:admin'], function() {
         Route::get('/', [WCUController::class, 'adminIndex']);
         Route::post('/', [WCUController::class, 'store']);
         Route::patch('/{id}/edit', [WCUController::class, 'update']);
         Route::delete('/{id}/destroy', [WCUController::class, 'destroy']);
     });
 
-    Route::group(['prefix' => 'work-process'], function() {
+    Route::group(['prefix' => 'work-process', 'middleware' => 'role:admin'], function() {
         Route::get('/', [WorkProcessController::class, 'index']);
         Route::post('/', [WorkProcessController::class, 'store']);
         Route::patch('/{id}/edit', [WorkProcessController::class, 'update']);
         Route::delete('/{id}/destroy', [WorkProcessController::class, 'destroy']);
     });
 
-    Route::group(['prefix' => 'faqs'], function() {
+    Route::group(['prefix' => 'faqs', 'middleware' => 'role:admin'], function() {
         Route::get('/', [FAQController::class, 'adminIndex']);
         Route::post('/', [FAQController::class, 'store']);
         Route::patch('/{id}/edit', [FAQController::class, 'update']);

@@ -1,6 +1,5 @@
 @extends('pre-login.index.header')
 @section('content')
-    @include('partials.error2')
     <main id="main">
         <section id="breadcrumbs" class="breadcrumbs">
             <div class="breadcrumb-hero">

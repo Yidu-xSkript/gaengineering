@@ -19,7 +19,7 @@ class EnsureUserHasRole
     {
         $user = new User();
         if (auth()->check() && !$user->hasRole($role, auth()->id()))
-            return redirect('/dashboard');
+            return redirect('/auth/dashboard');
         return $next($request);
     }
 }
