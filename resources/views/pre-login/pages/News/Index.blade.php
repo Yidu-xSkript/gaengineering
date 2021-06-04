@@ -1,8 +1,8 @@
 @extends('pre-login.index.header')
 
-@section('title', 'Home - GA Engineering')
-@section('meta_keywords', 'Home - GA Engineering')
-@section('meta_description', 'Home - GA Engineering')
+@section('title', 'News - GA Engineering')
+@section('meta_keywords', 'News, GA Engineering, Gezahegn Ayalew')
+@section('meta_description', 'We provide you the latest news from our company. Browse through our news.')
 
 @section('content')
     <main id="main">
@@ -13,7 +13,7 @@
                 <div class="container">
                     <div class="breadcrumb-hero">
                         <h2>News</h2>
-                        <p>Browse through our news...</p>
+                        <p>Browse through our news.</p>
                     </div>
                 </div>
             </div>

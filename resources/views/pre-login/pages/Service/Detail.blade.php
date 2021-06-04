@@ -1,7 +1,7 @@
 @extends('pre-login.index.header')
 
 @section('title', $service->title.' - GA Engineering')
-@section('meta_keywords', 'Services we provide, Services - GA Engineering, Gezahegn Ayalew, GA general trading, '. $service->title)
+@section('meta_keywords', 'Service, Services we provide, Services - GA Engineering, Gezahegn Ayalew, GA general trading, '. $service->title)
 @section('meta_description', $service->slug)
 
 @section('content')

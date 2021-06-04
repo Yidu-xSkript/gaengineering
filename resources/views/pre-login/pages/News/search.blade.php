@@ -1,7 +1,7 @@
 @extends('pre-login.index.header')
 
 @section('title', Request::get('query') . ' - Search - GA Engineering')
-@section('meta_keywords', 'Search Result, GA Engineering, Search, Result, Gezahegn Ayalew, Engineering News, Ethiopia')
+@section('meta_keywords', 'Search Result, Search news, GA Engineering, Search, Result, Gezahegn Ayalew, Engineering News, Ethiopia')
 @section('meta_description', 'News Search Result')
 
 @section('content')

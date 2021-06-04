@@ -2,7 +2,7 @@
 
 @section('title', 'Home - GA Engineering')
 @section('meta_keywords', 'Gezahegn Ayalew, GA Engineering, Home Page, Engineering Co., GA general trading')
-@section('meta_description', 'Home - GA Engineering')
+@section('meta_description', 'We are GA Engineering. Learn about us, who we work with, the nature of our work and more.')
 
 @section('content')
     <!-- ======= Hero Section ======= -->

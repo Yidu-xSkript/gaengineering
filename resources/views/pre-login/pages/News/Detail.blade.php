@@ -1,8 +1,8 @@
 @extends('pre-login.index.header')
 
 @section('title', $news->title . ' - News')
-@section('meta_keywords', 'Home - GA Engineering')
-@section('meta_description', 'Home - GA Engineering')
+@section('meta_keywords', $news->title . ', News, GA Engineering, Gezahegn Ayalew, Engineering')
+@section('meta_description', $news->slug)
 
 @section('content')
     <main id="main">

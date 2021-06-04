@@ -2,7 +2,7 @@
 
 @section('title', 'FAQs - GA Engineering')
 @section('meta_keywords', 'FAQs - GA Engineering, Faq, frequently asked questions')
-@section('meta_description', 'Home - GA Engineering')
+@section('meta_description', 'You may have many questions regarding what we do. Here are the main questions we get asked frequently and their answers.')
 
 @section('content')
     <main id="main">

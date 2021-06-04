@@ -1,8 +1,8 @@
 @extends('pre-login.index.header')
 
-@section('title', 'Home - GA Engineering')
-@section('meta_keywords', 'Home - GA Engineering')
-@section('meta_description', 'Home - GA Engineering')
+@section('title', 'Team - GA Engineering')
+@section('meta_keywords', 'Team, GA Engineering, Gezahegn Ayalew')
+@section('meta_description', 'Our company is comprised of many talented professionals with strong expertise in the Engineering industry.')
 
 @section('content')
     <main id="main">
