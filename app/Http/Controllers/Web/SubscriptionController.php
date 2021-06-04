@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Web;
 use App\Http\Controllers\Controller;
 use App\Models\Subscription;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 class SubscriptionController extends Controller
 {
@@ -27,9 +28,17 @@ class SubscriptionController extends Controller
         return back()->with('success', 'Thank you for subscribing.');
     }
 
+    public function destroyIndex(int $id)
+    {
+        return View('partials.unsubscribe', compact('id'));
+    }
+
     public function removeSubscriber(int $id)
     {
         $this->m_subscription->DestroySubscription($id);
-        return back()->with('success', 'Subscriber is removed from email list.');
+        if (Route::getCurrentRoute()->uri == "unsubscribe/{id}")
+            return redirect('/')->with('success', 'Sorry to see you leave. good bye.');
+        else
+            return back()->with('success', 'Subscriber is removed from email list.');
     }
 }

@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use App\Mail\NewsletterMail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Mail;
 
 class NewsLetter extends Model
 {
@@ -36,10 +38,7 @@ class NewsLetter extends Model
         $newsLetter = $this::find($newsLetterID);
         $_subscribers = Subscription::all();
         for ($i = 0; $i < count($_subscribers); $i++) {
-            // send newsletter email to subscribers.
-            // job queue (DB) needs to be performed.
-            // failed jobs need to be viewed.
-            // failed jobs need to be re-executed.
+            Mail::to($_subscribers[$i]->email)->send(new NewsletterMail($newsLetter, $_subscribers[$i]));
         }
     }
 

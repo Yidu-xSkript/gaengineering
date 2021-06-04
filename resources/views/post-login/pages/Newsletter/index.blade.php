@@ -62,7 +62,7 @@
                                     @include('post-login.partials.newsletter-modal')
                                     <tr class="record">
                                         <td style="font-size: 15px;">{{ $newsletter->title }}</td>
-                                        <td style="font-size: 15px;"><?= Str::limit($newsletter->slug, 200); ?></td>
+                                        <td style="font-size: 15px;"><?= Str::limit($newsletter->slug, 120); ?></td>
 
                                         <td style="font-size: 17px;"><button type="button" class="btn btn-info"  data-toggle="modal" data-target=<?= '#send'.$newsletter->id;?>><i class="mdi mdi-send"></i> Send Email</button></td>
 

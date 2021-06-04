@@ -58,6 +58,8 @@ Route::group(['prefix' => 'contact'], function() {
     Route::post('/', [ContactController::class, 'sendContactMessage']);
 });
 Route::post('/subscribe', [SubscriptionController::class, 'store']);
+Route::get('/unsubscribe/{id}', [SubscriptionController::class, 'destroyIndex']);
+Route::delete('/unsubscribe/{id}', [SubscriptionController::class, 'removeSubscriber']);
 
 Route::group(['middleware' => 'auth', 'prefix' => 'auth'], function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
@@ -102,7 +104,6 @@ Route::group(['middleware' => 'auth', 'prefix' => 'auth'], function () {
         Route::delete('/{id}/destroy', [TeamController::class, 'destroy']);
     });
 
-    Route::get('/failed-emails', [EmailController::class, 'index'])->name('failed-email.admin.index');
     Route::group(['prefix' => 'partners', 'middleware' => 'role:admin'], function() {
         Route::get('/', [PartnerController::class, 'index']);
         Route::post('/', [PartnerController::class, 'store']);
@@ -127,8 +128,9 @@ Route::group(['middleware' => 'auth', 'prefix' => 'auth'], function () {
     Route::group(['prefix' => 'newsletter'], function() {
         Route::get('/', [NewsletterController::class, 'index'])->name('newsletter.admin.index');
         Route::post('/', [NewsletterController::class, 'store'])->name('newsletter.admin.store');
-        Route::patch('/{id}/edit', [NewsletterController::class, 'update'])->name('newsletter.admin.update');
-        Route::delete('/{id}/destroy', [NewsletterController::class, 'destroy'])->name('newsletter.admin.destroy');
+        Route::patch('/{id}/edit', [NewsletterController::class, 'update']);
+        Route::patch('/{id}/send', [NewsletterController::class, 'sendMail']);
+        Route::delete('/{id}/destroy', [NewsletterController::class, 'destroy']);
     });
 
     Route::group(['prefix' => 'subscription'], function() {

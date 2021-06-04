@@ -162,11 +162,5 @@
                 <span class="menu-title">Contact</span>
             </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/auth/failed-emails">
-                <i class="menu-icon mdi mdi-email-alert"></i>
-                <span class="menu-title">Failed Emails</span>
-            </a>
-        </li>
     </ul>
 </nav>

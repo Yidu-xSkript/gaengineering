@@ -24,7 +24,8 @@ class Subscription extends Model
 
     public function DestroySubscription($id)
     {
-        $this::find($id)->delete();
+        $user = $this::find($id);
+        if (!is_null($user)) $user->delete();
     }
 
     public function GetSubscribers()

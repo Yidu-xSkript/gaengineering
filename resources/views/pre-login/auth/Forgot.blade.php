@@ -18,16 +18,14 @@
                 </ol>
             </div>
         </section>
-        <section id="contact" class="contact">
+        <section id="login" class="login">
             <div class="container">
                 <div class="row mt-5">
                     <div class="offset-md-2 col-lg-8 mt-5 mt-lg-0 shadow-md p-5" data-aos="fade-left">
-                        <form action="{{ route('password.email') }}" method="POST" role="form" class="php-email-form">
+                        <form action="{{ route('password.email') }}" method="POST" role="form">
                             @csrf
                             <div class="form-group">
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
-                                    data-rule="email" data-msg="Please enter a valid email" />
-                                <div class="validate"></div>
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
                             </div>
                             <div class="text-center"><button type="submit">Send Email</button></div>
                         </form>

@@ -19,23 +19,21 @@
                 </ol>
             </div>
         </section>
-        <section id="contact" class="contact">
+        <section id="login" class="login">
             <div class="container">
                 <div class="row mt-5">
                     <div class="offset-md-2 col-lg-8 mt-5 mt-lg-0 shadow-md p-5" data-aos="fade-left">
-                        <form action="{{ route('reset-password') }}" method="POST" role="form" class="php-email-form">
+                        <form action="{{ route('reset-password') }}" method="POST" role="form">
                             @csrf
                             <input type="hidden" name="token" value="{{ $token }}">
                             <div class="form-group">
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                                <div class="validate"></div>
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required/>
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" name="password" id="email" placeholder="Password" />
+                                <input type="password" class="form-control" name="password" id="email" placeholder="Password" required/>
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" name="password_confirmation"
-                                    id="password_confirmation" placeholder="Password Confirmation" />
+                                <input type="password" class="form-control" name="password_confirmation" id="password_confirmation" placeholder="Password Confirmation" required/>
                             </div>
                             <div class="text-center"><button type="submit">Reset</button></div>
                         </form>

@@ -28,6 +28,12 @@ class NewsletterController extends Controller
         ]);
     }
 
+    public function sendMail(int $id)
+    {
+        $this->m_newsletter->SendMassEmails($id);
+        return back()->with('success', 'newsletter email is successfully sent to all subscribers');
+    }
+
     public function store(Request $request)
     {
         $this->validate__($request);
